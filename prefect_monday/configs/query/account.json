@@ -1,0 +1,20 @@
+{
+  "account": [
+    "first_day_of_the_week",
+    "id",
+    "logo",
+    "name",
+    {
+      "plan": [
+        "max_users",
+        "period",
+        "tier",
+        "version"
+      ]
+    },
+    "show_timeline_weekends",
+    "sign_up_product_kind",
+    "slug",
+    "tier"
+  ]
+}

@@ -1,5 +1,4 @@
 site_name: prefect-monday
-repo_url: https://github.com/PrefectHQ/prefect-monday
 theme:
   name: material
   palette:
@@ -36,4 +35,21 @@ plugins:
 
 nav:
     - Home: index.md
-
+    - Account: account.md
+    - App Subscription: app_subscription.md
+    - Apps Monetization Status: apps_monetization_status.md
+    - Assets: assets.md
+    - Boards: boards.md
+    - Complexity: complexity.md
+    - Credentials: credentials.md
+    - Graphql: graphql.md
+    - Items: items.md
+    - Items By Column Values: items_by_column_values.md
+    - Items By Multiple Column Values: items_by_multiple_column_values.md
+    - Me: me.md
+    - Mutations: mutations.md
+    - Tags: tags.md
+    - Teams: teams.md
+    - Updates: updates.md
+    - Users: users.md
+    - Utils: utils.md
