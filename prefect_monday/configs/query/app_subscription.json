@@ -1,0 +1,9 @@
+{
+  "app_subscription": [
+    "billing_period",
+    "days_left",
+    "is_trial",
+    "plan_id",
+    "renewal_date"
+  ]
+}

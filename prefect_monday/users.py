@@ -1,5 +1,5 @@
 """
-This is a module for interacting with Monday Queryusers tasks.
+This is a module for interacting with Monday Query users tasks.
 It was auto-generated using prefect-collection-generator so
 manually editing this file is not recommended.
 """
@@ -43,7 +43,7 @@ async def query_users(
             fields listed in configs/query/*.json.
 
     Returns:
-        A dict of the returneds fields.
+        A dict of the returned fields.
     """
     op = Operation(graphql_schema.Query)
     op_settings = op.users(
@@ -55,6 +55,7 @@ async def query_users(
             emails=emails,
         )
     )
+
     if not return_fields:
         op_stack = ("users",)
         return_fields = return_fields_defaults[op_stack]
@@ -96,7 +97,7 @@ async def query_users_account(
             fields listed in configs/query/*.json.
 
     Returns:
-        A dict of the returneds fields.
+        A dict of the returned fields.
     """
     op = Operation(graphql_schema.Query)
     op_settings = op.users(
@@ -108,6 +109,7 @@ async def query_users_account(
             emails=emails,
         )
     ).account(**strip_kwargs())
+
     if not return_fields:
         op_stack = (
             "users",
@@ -154,7 +156,7 @@ async def query_users_teams(
             fields listed in configs/query/*.json.
 
     Returns:
-        A dict of the returneds fields.
+        A dict of the returned fields.
     """
     op = Operation(graphql_schema.Query)
     op_settings = op.users(
@@ -170,6 +172,7 @@ async def query_users_teams(
             ids=teams_ids,
         )
     )
+
     if not return_fields:
         op_stack = (
             "users",

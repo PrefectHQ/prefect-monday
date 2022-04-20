@@ -1,5 +1,5 @@
 """
-This is a module for interacting with Monday Queryupdates tasks.
+This is a module for interacting with Monday Query updates tasks.
 It was auto-generated using prefect-collection-generator so
 manually editing this file is not recommended.
 """
@@ -36,7 +36,7 @@ async def query_updates(
             fields listed in configs/query/*.json.
 
     Returns:
-        A dict of the returneds fields.
+        A dict of the returned fields.
     """
     op = Operation(graphql_schema.Query)
     op_settings = op.updates(
@@ -45,6 +45,7 @@ async def query_updates(
             page=page,
         )
     )
+
     if not return_fields:
         op_stack = ("updates",)
         return_fields = return_fields_defaults[op_stack]
@@ -78,7 +79,7 @@ async def query_updates_assets(
             fields listed in configs/query/*.json.
 
     Returns:
-        A dict of the returneds fields.
+        A dict of the returned fields.
     """
     op = Operation(graphql_schema.Query)
     op_settings = op.updates(
@@ -87,6 +88,7 @@ async def query_updates_assets(
             page=page,
         )
     ).assets(**strip_kwargs())
+
     if not return_fields:
         op_stack = (
             "updates",
@@ -123,7 +125,7 @@ async def query_updates_creator(
             fields listed in configs/query/*.json.
 
     Returns:
-        A dict of the returneds fields.
+        A dict of the returned fields.
     """
     op = Operation(graphql_schema.Query)
     op_settings = op.updates(
@@ -132,6 +134,7 @@ async def query_updates_creator(
             page=page,
         )
     ).creator(**strip_kwargs())
+
     if not return_fields:
         op_stack = (
             "updates",
@@ -168,7 +171,7 @@ async def query_updates_replies(
             fields listed in configs/query/*.json.
 
     Returns:
-        A dict of the returneds fields.
+        A dict of the returned fields.
     """
     op = Operation(graphql_schema.Query)
     op_settings = op.updates(
@@ -177,6 +180,7 @@ async def query_updates_replies(
             page=page,
         )
     ).replies(**strip_kwargs())
+
     if not return_fields:
         op_stack = (
             "updates",

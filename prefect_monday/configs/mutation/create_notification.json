@@ -1,0 +1,6 @@
+{
+  "create_notification": [
+    "id",
+    "text"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "create_column": [
+    "archived",
+    "description",
+    "id",
+    "pos",
+    "settings_str",
+    "title",
+    "type",
+    "width"
+  ]
+}
