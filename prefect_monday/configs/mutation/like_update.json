@@ -1,0 +1,65 @@
+{
+  "like_update": [
+    {
+      "assets": [
+        "created_at",
+        "file_extension",
+        "file_size",
+        "id",
+        "name",
+        "original_geometry",
+        "public_url",
+        "url",
+        "url_thumbnail"
+      ]
+    },
+    "body",
+    "created_at",
+    {
+      "creator": [
+        "birthday",
+        "country_code",
+        "created_at",
+        "email",
+        "enabled",
+        "encrypt_api_token",
+        "id",
+        "is_admin",
+        "is_guest",
+        "is_pending",
+        "is_verified",
+        "is_view_only",
+        "join_date",
+        "location",
+        "mobile_phone",
+        "name",
+        "phone",
+        "photo_original",
+        "photo_small",
+        "photo_thumb",
+        "photo_thumb_small",
+        "photo_tiny",
+        "sign_up_product_kind",
+        "time_zone_identifier",
+        "title",
+        "url",
+        "utc_hours_diff"
+      ]
+    },
+    "creator_id",
+    "id",
+    "item_id",
+    {
+      "replies": [
+        "body",
+        "created_at",
+        "creator_id",
+        "id",
+        "text_body",
+        "updated_at"
+      ]
+    },
+    "text_body",
+    "updated_at"
+  ]
+}
