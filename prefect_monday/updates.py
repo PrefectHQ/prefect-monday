@@ -9,7 +9,7 @@ from typing import Any, Dict, Iterable
 
 from prefect import task
 from prefect_monday import MondayCredentials
-from prefect_monday.graphql import _execute_graphql_op
+from prefect_monday.graphql import _execute_graphql_op, _subset_return_fields
 from prefect_monday.schemas import graphql_schema
 from prefect_monday.utils import initialize_return_fields_defaults, strip_kwargs
 from sgqlc.operation import Operation
@@ -18,7 +18,7 @@ config_path = Path(__file__).parent.resolve() / "configs" / "query" / "updates.j
 return_fields_defaults = initialize_return_fields_defaults(config_path)
 
 
-@task()
+@task
 async def query_updates(
     monday_credentials: MondayCredentials,
     limit: int = 25,
@@ -39,29 +39,23 @@ async def query_updates(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Query)
-    op_settings = op.updates(
+    op_selection = op.updates(
         **strip_kwargs(
             limit=limit,
             page=page,
         )
     )
 
-    if not return_fields:
-        op_stack = ("updates",)
-        return_fields = return_fields_defaults[op_stack]
-    elif isinstance(return_fields, str):
-        return_fields = (return_fields,)
-
-    try:
-        op_settings.__fields__(*return_fields)
-    except KeyError:  # nested under node
-        op_settings.nodes().__fields__(*return_fields)
+    op_stack = ("updates",)
+    op_selection = _subset_return_fields(
+        op_selection, op_stack, return_fields, return_fields_defaults
+    )
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["updates"]
 
 
-@task()
+@task
 async def query_updates_assets(
     monday_credentials: MondayCredentials,
     limit: int = 25,
@@ -82,32 +76,26 @@ async def query_updates_assets(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Query)
-    op_settings = op.updates(
+    op_selection = op.updates(
         **strip_kwargs(
             limit=limit,
             page=page,
         )
     ).assets(**strip_kwargs())
 
-    if not return_fields:
-        op_stack = (
-            "updates",
-            "assets",
-        )
-        return_fields = return_fields_defaults[op_stack]
-    elif isinstance(return_fields, str):
-        return_fields = (return_fields,)
-
-    try:
-        op_settings.__fields__(*return_fields)
-    except KeyError:  # nested under node
-        op_settings.nodes().__fields__(*return_fields)
+    op_stack = (
+        "updates",
+        "assets",
+    )
+    op_selection = _subset_return_fields(
+        op_selection, op_stack, return_fields, return_fields_defaults
+    )
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["updates"]["assets"]
 
 
-@task()
+@task
 async def query_updates_creator(
     monday_credentials: MondayCredentials,
     limit: int = 25,
@@ -128,32 +116,26 @@ async def query_updates_creator(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Query)
-    op_settings = op.updates(
+    op_selection = op.updates(
         **strip_kwargs(
             limit=limit,
             page=page,
         )
     ).creator(**strip_kwargs())
 
-    if not return_fields:
-        op_stack = (
-            "updates",
-            "creator",
-        )
-        return_fields = return_fields_defaults[op_stack]
-    elif isinstance(return_fields, str):
-        return_fields = (return_fields,)
-
-    try:
-        op_settings.__fields__(*return_fields)
-    except KeyError:  # nested under node
-        op_settings.nodes().__fields__(*return_fields)
+    op_stack = (
+        "updates",
+        "creator",
+    )
+    op_selection = _subset_return_fields(
+        op_selection, op_stack, return_fields, return_fields_defaults
+    )
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["updates"]["creator"]
 
 
-@task()
+@task
 async def query_updates_replies(
     monday_credentials: MondayCredentials,
     limit: int = 25,
@@ -174,26 +156,20 @@ async def query_updates_replies(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Query)
-    op_settings = op.updates(
+    op_selection = op.updates(
         **strip_kwargs(
             limit=limit,
             page=page,
         )
     ).replies(**strip_kwargs())
 
-    if not return_fields:
-        op_stack = (
-            "updates",
-            "replies",
-        )
-        return_fields = return_fields_defaults[op_stack]
-    elif isinstance(return_fields, str):
-        return_fields = (return_fields,)
-
-    try:
-        op_settings.__fields__(*return_fields)
-    except KeyError:  # nested under node
-        op_settings.nodes().__fields__(*return_fields)
+    op_stack = (
+        "updates",
+        "replies",
+    )
+    op_selection = _subset_return_fields(
+        op_selection, op_stack, return_fields, return_fields_defaults
+    )
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["updates"]["replies"]

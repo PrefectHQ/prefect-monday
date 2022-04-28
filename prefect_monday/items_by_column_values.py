@@ -9,7 +9,7 @@ from typing import Any, Dict, Iterable
 
 from prefect import task
 from prefect_monday import MondayCredentials
-from prefect_monday.graphql import _execute_graphql_op
+from prefect_monday.graphql import _execute_graphql_op, _subset_return_fields
 from prefect_monday.schemas import graphql_schema
 from prefect_monday.utils import initialize_return_fields_defaults, strip_kwargs
 from sgqlc.operation import Operation
@@ -23,7 +23,7 @@ config_path = (
 return_fields_defaults = initialize_return_fields_defaults(config_path)
 
 
-@task()
+@task
 async def query_items_by_column_values(
     board_id: int,
     column_id: str,
@@ -55,7 +55,7 @@ async def query_items_by_column_values(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Query)
-    op_settings = op.items_by_column_values(
+    op_selection = op.items_by_column_values(
         **strip_kwargs(
             board_id=board_id,
             column_id=column_id,
@@ -67,22 +67,16 @@ async def query_items_by_column_values(
         )
     )
 
-    if not return_fields:
-        op_stack = ("items_by_column_values",)
-        return_fields = return_fields_defaults[op_stack]
-    elif isinstance(return_fields, str):
-        return_fields = (return_fields,)
-
-    try:
-        op_settings.__fields__(*return_fields)
-    except KeyError:  # nested under node
-        op_settings.nodes().__fields__(*return_fields)
+    op_stack = ("items_by_column_values",)
+    op_selection = _subset_return_fields(
+        op_selection, op_stack, return_fields, return_fields_defaults
+    )
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["items_by_column_values"]
 
 
-@task()
+@task
 async def query_items_by_column_values_assets(
     board_id: int,
     column_id: str,
@@ -119,7 +113,7 @@ async def query_items_by_column_values_assets(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Query)
-    op_settings = op.items_by_column_values(
+    op_selection = op.items_by_column_values(
         **strip_kwargs(
             board_id=board_id,
             column_id=column_id,
@@ -136,25 +130,19 @@ async def query_items_by_column_values_assets(
         )
     )
 
-    if not return_fields:
-        op_stack = (
-            "items_by_column_values",
-            "assets",
-        )
-        return_fields = return_fields_defaults[op_stack]
-    elif isinstance(return_fields, str):
-        return_fields = (return_fields,)
-
-    try:
-        op_settings.__fields__(*return_fields)
-    except KeyError:  # nested under node
-        op_settings.nodes().__fields__(*return_fields)
+    op_stack = (
+        "items_by_column_values",
+        "assets",
+    )
+    op_selection = _subset_return_fields(
+        op_selection, op_stack, return_fields, return_fields_defaults
+    )
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["items_by_column_values"]["assets"]
 
 
-@task()
+@task
 async def query_items_by_column_values_board(
     board_id: int,
     column_id: str,
@@ -187,7 +175,7 @@ async def query_items_by_column_values_board(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Query)
-    op_settings = op.items_by_column_values(
+    op_selection = op.items_by_column_values(
         **strip_kwargs(
             board_id=board_id,
             column_id=column_id,
@@ -199,25 +187,19 @@ async def query_items_by_column_values_board(
         )
     ).board(**strip_kwargs())
 
-    if not return_fields:
-        op_stack = (
-            "items_by_column_values",
-            "board",
-        )
-        return_fields = return_fields_defaults[op_stack]
-    elif isinstance(return_fields, str):
-        return_fields = (return_fields,)
-
-    try:
-        op_settings.__fields__(*return_fields)
-    except KeyError:  # nested under node
-        op_settings.nodes().__fields__(*return_fields)
+    op_stack = (
+        "items_by_column_values",
+        "board",
+    )
+    op_selection = _subset_return_fields(
+        op_selection, op_stack, return_fields, return_fields_defaults
+    )
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["items_by_column_values"]["board"]
 
 
-@task()
+@task
 async def query_items_by_column_values(
     board_id: int,
     column_id: str,
@@ -252,7 +234,7 @@ async def query_items_by_column_values(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Query)
-    op_settings = op.items_by_column_values(
+    op_selection = op.items_by_column_values(
         **strip_kwargs(
             board_id=board_id,
             column_id=column_id,
@@ -268,25 +250,19 @@ async def query_items_by_column_values(
         )
     )
 
-    if not return_fields:
-        op_stack = (
-            "items_by_column_values",
-            "column_values",
-        )
-        return_fields = return_fields_defaults[op_stack]
-    elif isinstance(return_fields, str):
-        return_fields = (return_fields,)
-
-    try:
-        op_settings.__fields__(*return_fields)
-    except KeyError:  # nested under node
-        op_settings.nodes().__fields__(*return_fields)
+    op_stack = (
+        "items_by_column_values",
+        "column_values",
+    )
+    op_selection = _subset_return_fields(
+        op_selection, op_stack, return_fields, return_fields_defaults
+    )
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["items_by_column_values"]["column_values"]
 
 
-@task()
+@task
 async def query_items_by_column_values_creator(
     board_id: int,
     column_id: str,
@@ -319,7 +295,7 @@ async def query_items_by_column_values_creator(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Query)
-    op_settings = op.items_by_column_values(
+    op_selection = op.items_by_column_values(
         **strip_kwargs(
             board_id=board_id,
             column_id=column_id,
@@ -331,25 +307,19 @@ async def query_items_by_column_values_creator(
         )
     ).creator(**strip_kwargs())
 
-    if not return_fields:
-        op_stack = (
-            "items_by_column_values",
-            "creator",
-        )
-        return_fields = return_fields_defaults[op_stack]
-    elif isinstance(return_fields, str):
-        return_fields = (return_fields,)
-
-    try:
-        op_settings.__fields__(*return_fields)
-    except KeyError:  # nested under node
-        op_settings.nodes().__fields__(*return_fields)
+    op_stack = (
+        "items_by_column_values",
+        "creator",
+    )
+    op_selection = _subset_return_fields(
+        op_selection, op_stack, return_fields, return_fields_defaults
+    )
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["items_by_column_values"]["creator"]
 
 
-@task()
+@task
 async def query_items_by_column_values_group(
     board_id: int,
     column_id: str,
@@ -382,7 +352,7 @@ async def query_items_by_column_values_group(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Query)
-    op_settings = op.items_by_column_values(
+    op_selection = op.items_by_column_values(
         **strip_kwargs(
             board_id=board_id,
             column_id=column_id,
@@ -394,25 +364,19 @@ async def query_items_by_column_values_group(
         )
     ).group(**strip_kwargs())
 
-    if not return_fields:
-        op_stack = (
-            "items_by_column_values",
-            "group",
-        )
-        return_fields = return_fields_defaults[op_stack]
-    elif isinstance(return_fields, str):
-        return_fields = (return_fields,)
-
-    try:
-        op_settings.__fields__(*return_fields)
-    except KeyError:  # nested under node
-        op_settings.nodes().__fields__(*return_fields)
+    op_stack = (
+        "items_by_column_values",
+        "group",
+    )
+    op_selection = _subset_return_fields(
+        op_selection, op_stack, return_fields, return_fields_defaults
+    )
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["items_by_column_values"]["group"]
 
 
-@task()
+@task
 async def query_items_by_column_values_parent_item(
     board_id: int,
     column_id: str,
@@ -445,7 +409,7 @@ async def query_items_by_column_values_parent_item(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Query)
-    op_settings = op.items_by_column_values(
+    op_selection = op.items_by_column_values(
         **strip_kwargs(
             board_id=board_id,
             column_id=column_id,
@@ -457,25 +421,19 @@ async def query_items_by_column_values_parent_item(
         )
     ).parent_item(**strip_kwargs())
 
-    if not return_fields:
-        op_stack = (
-            "items_by_column_values",
-            "parent_item",
-        )
-        return_fields = return_fields_defaults[op_stack]
-    elif isinstance(return_fields, str):
-        return_fields = (return_fields,)
-
-    try:
-        op_settings.__fields__(*return_fields)
-    except KeyError:  # nested under node
-        op_settings.nodes().__fields__(*return_fields)
+    op_stack = (
+        "items_by_column_values",
+        "parent_item",
+    )
+    op_selection = _subset_return_fields(
+        op_selection, op_stack, return_fields, return_fields_defaults
+    )
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["items_by_column_values"]["parent_item"]
 
 
-@task()
+@task
 async def query_items_by_column_values_subscribers(
     board_id: int,
     column_id: str,
@@ -508,7 +466,7 @@ async def query_items_by_column_values_subscribers(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Query)
-    op_settings = op.items_by_column_values(
+    op_selection = op.items_by_column_values(
         **strip_kwargs(
             board_id=board_id,
             column_id=column_id,
@@ -520,25 +478,19 @@ async def query_items_by_column_values_subscribers(
         )
     ).subscribers(**strip_kwargs())
 
-    if not return_fields:
-        op_stack = (
-            "items_by_column_values",
-            "subscribers",
-        )
-        return_fields = return_fields_defaults[op_stack]
-    elif isinstance(return_fields, str):
-        return_fields = (return_fields,)
-
-    try:
-        op_settings.__fields__(*return_fields)
-    except KeyError:  # nested under node
-        op_settings.nodes().__fields__(*return_fields)
+    op_stack = (
+        "items_by_column_values",
+        "subscribers",
+    )
+    op_selection = _subset_return_fields(
+        op_selection, op_stack, return_fields, return_fields_defaults
+    )
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["items_by_column_values"]["subscribers"]
 
 
-@task()
+@task
 async def query_items_by_column_values_updates(
     board_id: int,
     column_id: str,
@@ -575,7 +527,7 @@ async def query_items_by_column_values_updates(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Query)
-    op_settings = op.items_by_column_values(
+    op_selection = op.items_by_column_values(
         **strip_kwargs(
             board_id=board_id,
             column_id=column_id,
@@ -592,19 +544,13 @@ async def query_items_by_column_values_updates(
         )
     )
 
-    if not return_fields:
-        op_stack = (
-            "items_by_column_values",
-            "updates",
-        )
-        return_fields = return_fields_defaults[op_stack]
-    elif isinstance(return_fields, str):
-        return_fields = (return_fields,)
-
-    try:
-        op_settings.__fields__(*return_fields)
-    except KeyError:  # nested under node
-        op_settings.nodes().__fields__(*return_fields)
+    op_stack = (
+        "items_by_column_values",
+        "updates",
+    )
+    op_selection = _subset_return_fields(
+        op_selection, op_stack, return_fields, return_fields_defaults
+    )
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["items_by_column_values"]["updates"]

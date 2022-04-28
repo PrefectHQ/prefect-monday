@@ -10,7 +10,7 @@ from typing import Any, Dict, Iterable
 
 from prefect import task
 from prefect_monday import MondayCredentials
-from prefect_monday.graphql import _execute_graphql_op
+from prefect_monday.graphql import _execute_graphql_op, _subset_return_fields
 from prefect_monday.schemas import graphql_schema
 from prefect_monday.utils import initialize_return_fields_defaults, strip_kwargs
 from sgqlc.operation import Operation
@@ -19,7 +19,7 @@ config_path = Path(__file__).parent.resolve() / "configs" / "query" / "boards.js
 return_fields_defaults = initialize_return_fields_defaults(config_path)
 
 
-@task()
+@task
 async def query_boards(
     monday_credentials: MondayCredentials,
     limit: int = 25,
@@ -52,7 +52,7 @@ async def query_boards(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Query)
-    op_settings = op.boards(
+    op_selection = op.boards(
         **strip_kwargs(
             limit=limit,
             page=page,
@@ -64,22 +64,16 @@ async def query_boards(
         )
     )
 
-    if not return_fields:
-        op_stack = ("boards",)
-        return_fields = return_fields_defaults[op_stack]
-    elif isinstance(return_fields, str):
-        return_fields = (return_fields,)
-
-    try:
-        op_settings.__fields__(*return_fields)
-    except KeyError:  # nested under node
-        op_settings.nodes().__fields__(*return_fields)
+    op_stack = ("boards",)
+    op_selection = _subset_return_fields(
+        op_selection, op_stack, return_fields, return_fields_defaults
+    )
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["boards"]
 
 
-@task()
+@task
 async def query_boards_activity_logs(
     monday_credentials: MondayCredentials,
     limit: int = 25,
@@ -128,7 +122,7 @@ async def query_boards_activity_logs(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Query)
-    op_settings = op.boards(
+    op_selection = op.boards(
         **strip_kwargs(
             limit=limit,
             page=page,
@@ -151,25 +145,19 @@ async def query_boards_activity_logs(
         )
     )
 
-    if not return_fields:
-        op_stack = (
-            "boards",
-            "activity_logs",
-        )
-        return_fields = return_fields_defaults[op_stack]
-    elif isinstance(return_fields, str):
-        return_fields = (return_fields,)
-
-    try:
-        op_settings.__fields__(*return_fields)
-    except KeyError:  # nested under node
-        op_settings.nodes().__fields__(*return_fields)
+    op_stack = (
+        "boards",
+        "activity_logs",
+    )
+    op_selection = _subset_return_fields(
+        op_selection, op_stack, return_fields, return_fields_defaults
+    )
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["boards"]["activity_logs"]
 
 
-@task()
+@task
 async def query_boards_columns(
     monday_credentials: MondayCredentials,
     limit: int = 25,
@@ -204,7 +192,7 @@ async def query_boards_columns(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Query)
-    op_settings = op.boards(
+    op_selection = op.boards(
         **strip_kwargs(
             limit=limit,
             page=page,
@@ -220,25 +208,19 @@ async def query_boards_columns(
         )
     )
 
-    if not return_fields:
-        op_stack = (
-            "boards",
-            "columns",
-        )
-        return_fields = return_fields_defaults[op_stack]
-    elif isinstance(return_fields, str):
-        return_fields = (return_fields,)
-
-    try:
-        op_settings.__fields__(*return_fields)
-    except KeyError:  # nested under node
-        op_settings.nodes().__fields__(*return_fields)
+    op_stack = (
+        "boards",
+        "columns",
+    )
+    op_selection = _subset_return_fields(
+        op_selection, op_stack, return_fields, return_fields_defaults
+    )
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["boards"]["columns"]
 
 
-@task()
+@task
 async def query_boards_creator(
     monday_credentials: MondayCredentials,
     limit: int = 25,
@@ -271,7 +253,7 @@ async def query_boards_creator(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Query)
-    op_settings = op.boards(
+    op_selection = op.boards(
         **strip_kwargs(
             limit=limit,
             page=page,
@@ -283,25 +265,19 @@ async def query_boards_creator(
         )
     ).creator(**strip_kwargs())
 
-    if not return_fields:
-        op_stack = (
-            "boards",
-            "creator",
-        )
-        return_fields = return_fields_defaults[op_stack]
-    elif isinstance(return_fields, str):
-        return_fields = (return_fields,)
-
-    try:
-        op_settings.__fields__(*return_fields)
-    except KeyError:  # nested under node
-        op_settings.nodes().__fields__(*return_fields)
+    op_stack = (
+        "boards",
+        "creator",
+    )
+    op_selection = _subset_return_fields(
+        op_selection, op_stack, return_fields, return_fields_defaults
+    )
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["boards"]["creator"]
 
 
-@task()
+@task
 async def query_boards_groups(
     monday_credentials: MondayCredentials,
     limit: int = 25,
@@ -336,7 +312,7 @@ async def query_boards_groups(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Query)
-    op_settings = op.boards(
+    op_selection = op.boards(
         **strip_kwargs(
             limit=limit,
             page=page,
@@ -352,25 +328,19 @@ async def query_boards_groups(
         )
     )
 
-    if not return_fields:
-        op_stack = (
-            "boards",
-            "groups",
-        )
-        return_fields = return_fields_defaults[op_stack]
-    elif isinstance(return_fields, str):
-        return_fields = (return_fields,)
-
-    try:
-        op_settings.__fields__(*return_fields)
-    except KeyError:  # nested under node
-        op_settings.nodes().__fields__(*return_fields)
+    op_stack = (
+        "boards",
+        "groups",
+    )
+    op_selection = _subset_return_fields(
+        op_selection, op_stack, return_fields, return_fields_defaults
+    )
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["boards"]["groups"]
 
 
-@task()
+@task
 async def query_boards_items(
     monday_credentials: MondayCredentials,
     limit: int = 25,
@@ -416,7 +386,7 @@ async def query_boards_items(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Query)
-    op_settings = op.boards(
+    op_selection = op.boards(
         **strip_kwargs(
             limit=limit,
             page=page,
@@ -436,25 +406,19 @@ async def query_boards_items(
         )
     )
 
-    if not return_fields:
-        op_stack = (
-            "boards",
-            "items",
-        )
-        return_fields = return_fields_defaults[op_stack]
-    elif isinstance(return_fields, str):
-        return_fields = (return_fields,)
-
-    try:
-        op_settings.__fields__(*return_fields)
-    except KeyError:  # nested under node
-        op_settings.nodes().__fields__(*return_fields)
+    op_stack = (
+        "boards",
+        "items",
+    )
+    op_selection = _subset_return_fields(
+        op_selection, op_stack, return_fields, return_fields_defaults
+    )
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["boards"]["items"]
 
 
-@task()
+@task
 async def query_boards_owner(
     monday_credentials: MondayCredentials,
     limit: int = 25,
@@ -487,7 +451,7 @@ async def query_boards_owner(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Query)
-    op_settings = op.boards(
+    op_selection = op.boards(
         **strip_kwargs(
             limit=limit,
             page=page,
@@ -499,25 +463,19 @@ async def query_boards_owner(
         )
     ).owner(**strip_kwargs())
 
-    if not return_fields:
-        op_stack = (
-            "boards",
-            "owner",
-        )
-        return_fields = return_fields_defaults[op_stack]
-    elif isinstance(return_fields, str):
-        return_fields = (return_fields,)
-
-    try:
-        op_settings.__fields__(*return_fields)
-    except KeyError:  # nested under node
-        op_settings.nodes().__fields__(*return_fields)
+    op_stack = (
+        "boards",
+        "owner",
+    )
+    op_selection = _subset_return_fields(
+        op_selection, op_stack, return_fields, return_fields_defaults
+    )
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["boards"]["owner"]
 
 
-@task()
+@task
 async def query_boards_owners(
     monday_credentials: MondayCredentials,
     limit: int = 25,
@@ -550,7 +508,7 @@ async def query_boards_owners(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Query)
-    op_settings = op.boards(
+    op_selection = op.boards(
         **strip_kwargs(
             limit=limit,
             page=page,
@@ -562,25 +520,19 @@ async def query_boards_owners(
         )
     ).owners(**strip_kwargs())
 
-    if not return_fields:
-        op_stack = (
-            "boards",
-            "owners",
-        )
-        return_fields = return_fields_defaults[op_stack]
-    elif isinstance(return_fields, str):
-        return_fields = (return_fields,)
-
-    try:
-        op_settings.__fields__(*return_fields)
-    except KeyError:  # nested under node
-        op_settings.nodes().__fields__(*return_fields)
+    op_stack = (
+        "boards",
+        "owners",
+    )
+    op_selection = _subset_return_fields(
+        op_selection, op_stack, return_fields, return_fields_defaults
+    )
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["boards"]["owners"]
 
 
-@task()
+@task
 async def query_boards_subscribers(
     monday_credentials: MondayCredentials,
     limit: int = 25,
@@ -613,7 +565,7 @@ async def query_boards_subscribers(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Query)
-    op_settings = op.boards(
+    op_selection = op.boards(
         **strip_kwargs(
             limit=limit,
             page=page,
@@ -625,25 +577,19 @@ async def query_boards_subscribers(
         )
     ).subscribers(**strip_kwargs())
 
-    if not return_fields:
-        op_stack = (
-            "boards",
-            "subscribers",
-        )
-        return_fields = return_fields_defaults[op_stack]
-    elif isinstance(return_fields, str):
-        return_fields = (return_fields,)
-
-    try:
-        op_settings.__fields__(*return_fields)
-    except KeyError:  # nested under node
-        op_settings.nodes().__fields__(*return_fields)
+    op_stack = (
+        "boards",
+        "subscribers",
+    )
+    op_selection = _subset_return_fields(
+        op_selection, op_stack, return_fields, return_fields_defaults
+    )
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["boards"]["subscribers"]
 
 
-@task()
+@task
 async def query_boards_tags(
     monday_credentials: MondayCredentials,
     limit: int = 25,
@@ -676,7 +622,7 @@ async def query_boards_tags(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Query)
-    op_settings = op.boards(
+    op_selection = op.boards(
         **strip_kwargs(
             limit=limit,
             page=page,
@@ -688,25 +634,19 @@ async def query_boards_tags(
         )
     ).tags(**strip_kwargs())
 
-    if not return_fields:
-        op_stack = (
-            "boards",
-            "tags",
-        )
-        return_fields = return_fields_defaults[op_stack]
-    elif isinstance(return_fields, str):
-        return_fields = (return_fields,)
-
-    try:
-        op_settings.__fields__(*return_fields)
-    except KeyError:  # nested under node
-        op_settings.nodes().__fields__(*return_fields)
+    op_stack = (
+        "boards",
+        "tags",
+    )
+    op_selection = _subset_return_fields(
+        op_selection, op_stack, return_fields, return_fields_defaults
+    )
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["boards"]["tags"]
 
 
-@task()
+@task
 async def query_boards_top_group(
     monday_credentials: MondayCredentials,
     limit: int = 25,
@@ -739,7 +679,7 @@ async def query_boards_top_group(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Query)
-    op_settings = op.boards(
+    op_selection = op.boards(
         **strip_kwargs(
             limit=limit,
             page=page,
@@ -751,25 +691,19 @@ async def query_boards_top_group(
         )
     ).top_group(**strip_kwargs())
 
-    if not return_fields:
-        op_stack = (
-            "boards",
-            "top_group",
-        )
-        return_fields = return_fields_defaults[op_stack]
-    elif isinstance(return_fields, str):
-        return_fields = (return_fields,)
-
-    try:
-        op_settings.__fields__(*return_fields)
-    except KeyError:  # nested under node
-        op_settings.nodes().__fields__(*return_fields)
+    op_stack = (
+        "boards",
+        "top_group",
+    )
+    op_selection = _subset_return_fields(
+        op_selection, op_stack, return_fields, return_fields_defaults
+    )
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["boards"]["top_group"]
 
 
-@task()
+@task
 async def query_boards_updates(
     monday_credentials: MondayCredentials,
     limit: int = 25,
@@ -806,7 +740,7 @@ async def query_boards_updates(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Query)
-    op_settings = op.boards(
+    op_selection = op.boards(
         **strip_kwargs(
             limit=limit,
             page=page,
@@ -823,25 +757,19 @@ async def query_boards_updates(
         )
     )
 
-    if not return_fields:
-        op_stack = (
-            "boards",
-            "updates",
-        )
-        return_fields = return_fields_defaults[op_stack]
-    elif isinstance(return_fields, str):
-        return_fields = (return_fields,)
-
-    try:
-        op_settings.__fields__(*return_fields)
-    except KeyError:  # nested under node
-        op_settings.nodes().__fields__(*return_fields)
+    op_stack = (
+        "boards",
+        "updates",
+    )
+    op_selection = _subset_return_fields(
+        op_selection, op_stack, return_fields, return_fields_defaults
+    )
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["boards"]["updates"]
 
 
-@task()
+@task
 async def query_boards_views(
     monday_credentials: MondayCredentials,
     limit: int = 25,
@@ -878,7 +806,7 @@ async def query_boards_views(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Query)
-    op_settings = op.boards(
+    op_selection = op.boards(
         **strip_kwargs(
             limit=limit,
             page=page,
@@ -895,25 +823,19 @@ async def query_boards_views(
         )
     )
 
-    if not return_fields:
-        op_stack = (
-            "boards",
-            "views",
-        )
-        return_fields = return_fields_defaults[op_stack]
-    elif isinstance(return_fields, str):
-        return_fields = (return_fields,)
-
-    try:
-        op_settings.__fields__(*return_fields)
-    except KeyError:  # nested under node
-        op_settings.nodes().__fields__(*return_fields)
+    op_stack = (
+        "boards",
+        "views",
+    )
+    op_selection = _subset_return_fields(
+        op_selection, op_stack, return_fields, return_fields_defaults
+    )
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["boards"]["views"]
 
 
-@task()
+@task
 async def query_boards_workspace(
     monday_credentials: MondayCredentials,
     limit: int = 25,
@@ -946,7 +868,7 @@ async def query_boards_workspace(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Query)
-    op_settings = op.boards(
+    op_selection = op.boards(
         **strip_kwargs(
             limit=limit,
             page=page,
@@ -958,19 +880,13 @@ async def query_boards_workspace(
         )
     ).workspace(**strip_kwargs())
 
-    if not return_fields:
-        op_stack = (
-            "boards",
-            "workspace",
-        )
-        return_fields = return_fields_defaults[op_stack]
-    elif isinstance(return_fields, str):
-        return_fields = (return_fields,)
-
-    try:
-        op_settings.__fields__(*return_fields)
-    except KeyError:  # nested under node
-        op_settings.nodes().__fields__(*return_fields)
+    op_stack = (
+        "boards",
+        "workspace",
+    )
+    op_selection = _subset_return_fields(
+        op_selection, op_stack, return_fields, return_fields_defaults
+    )
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["boards"]["workspace"]

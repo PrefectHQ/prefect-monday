@@ -9,7 +9,7 @@ from typing import Any, Dict, Iterable
 
 from prefect import task
 from prefect_monday import MondayCredentials
-from prefect_monday.graphql import _execute_graphql_op
+from prefect_monday.graphql import _execute_graphql_op, _subset_return_fields
 from prefect_monday.schemas import graphql_schema
 from prefect_monday.utils import initialize_return_fields_defaults, strip_kwargs
 from sgqlc.operation import Operation
@@ -18,7 +18,7 @@ config_path = Path(__file__).parent.resolve() / "configs" / "query" / "users.jso
 return_fields_defaults = initialize_return_fields_defaults(config_path)
 
 
-@task()
+@task
 async def query_users(
     monday_credentials: MondayCredentials,
     ids: Iterable[int] = None,
@@ -46,7 +46,7 @@ async def query_users(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Query)
-    op_settings = op.users(
+    op_selection = op.users(
         **strip_kwargs(
             ids=ids,
             kind=kind,
@@ -56,22 +56,16 @@ async def query_users(
         )
     )
 
-    if not return_fields:
-        op_stack = ("users",)
-        return_fields = return_fields_defaults[op_stack]
-    elif isinstance(return_fields, str):
-        return_fields = (return_fields,)
-
-    try:
-        op_settings.__fields__(*return_fields)
-    except KeyError:  # nested under node
-        op_settings.nodes().__fields__(*return_fields)
+    op_stack = ("users",)
+    op_selection = _subset_return_fields(
+        op_selection, op_stack, return_fields, return_fields_defaults
+    )
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["users"]
 
 
-@task()
+@task
 async def query_users_account(
     monday_credentials: MondayCredentials,
     ids: Iterable[int] = None,
@@ -100,7 +94,7 @@ async def query_users_account(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Query)
-    op_settings = op.users(
+    op_selection = op.users(
         **strip_kwargs(
             ids=ids,
             kind=kind,
@@ -110,25 +104,19 @@ async def query_users_account(
         )
     ).account(**strip_kwargs())
 
-    if not return_fields:
-        op_stack = (
-            "users",
-            "account",
-        )
-        return_fields = return_fields_defaults[op_stack]
-    elif isinstance(return_fields, str):
-        return_fields = (return_fields,)
-
-    try:
-        op_settings.__fields__(*return_fields)
-    except KeyError:  # nested under node
-        op_settings.nodes().__fields__(*return_fields)
+    op_stack = (
+        "users",
+        "account",
+    )
+    op_selection = _subset_return_fields(
+        op_selection, op_stack, return_fields, return_fields_defaults
+    )
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["users"]["account"]
 
 
-@task()
+@task
 async def query_users_teams(
     monday_credentials: MondayCredentials,
     ids: Iterable[int] = None,
@@ -159,7 +147,7 @@ async def query_users_teams(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Query)
-    op_settings = op.users(
+    op_selection = op.users(
         **strip_kwargs(
             ids=ids,
             kind=kind,
@@ -173,19 +161,13 @@ async def query_users_teams(
         )
     )
 
-    if not return_fields:
-        op_stack = (
-            "users",
-            "teams",
-        )
-        return_fields = return_fields_defaults[op_stack]
-    elif isinstance(return_fields, str):
-        return_fields = (return_fields,)
-
-    try:
-        op_settings.__fields__(*return_fields)
-    except KeyError:  # nested under node
-        op_settings.nodes().__fields__(*return_fields)
+    op_stack = (
+        "users",
+        "teams",
+    )
+    op_selection = _subset_return_fields(
+        op_selection, op_stack, return_fields, return_fields_defaults
+    )
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["users"]["teams"]

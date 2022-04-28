@@ -9,7 +9,7 @@ from typing import Any, Dict, Iterable
 
 from prefect import task
 from prefect_monday import MondayCredentials
-from prefect_monday.graphql import _execute_graphql_op
+from prefect_monday.graphql import _execute_graphql_op, _subset_return_fields
 from prefect_monday.schemas import graphql_schema
 from prefect_monday.utils import initialize_return_fields_defaults, strip_kwargs
 from sgqlc.operation import Operation
@@ -20,7 +20,7 @@ config_path = (
 return_fields_defaults = initialize_return_fields_defaults(config_path)
 
 
-@task()
+@task
 async def query_app_subscription(
     monday_credentials: MondayCredentials,
     return_fields: Iterable[str] = None,
@@ -37,18 +37,12 @@ async def query_app_subscription(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Query)
-    op_settings = op.app_subscription(**strip_kwargs())
+    op_selection = op.app_subscription(**strip_kwargs())
 
-    if not return_fields:
-        op_stack = ("app_subscription",)
-        return_fields = return_fields_defaults[op_stack]
-    elif isinstance(return_fields, str):
-        return_fields = (return_fields,)
-
-    try:
-        op_settings.__fields__(*return_fields)
-    except KeyError:  # nested under node
-        op_settings.nodes().__fields__(*return_fields)
+    op_stack = ("app_subscription",)
+    op_selection = _subset_return_fields(
+        op_selection, op_stack, return_fields, return_fields_defaults
+    )
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["app_subscription"]
