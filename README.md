@@ -28,18 +28,16 @@ pip install prefect-monday
 
 ```python
 from prefect import flow
-from prefect_monday.tasks import (
-    goodbye_prefect_monday,
-    hello_prefect_monday,
-)
-
+from prefect_monday.credentials import MondayCredentials
+from prefect_monday.me import query_me
 
 @flow
-def example_flow():
-    hello_prefect_monday
-    goodbye_prefect_monday
+def query_me_flow():
+    monday_credentials = MondayCredentials("token")
+    result = query_me(monday_credentials)
+    return result
 
-example_flow()
+query_me_flow()
 ```
 
 ## Resources
