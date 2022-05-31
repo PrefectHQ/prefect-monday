@@ -1,0 +1,6 @@
+{
+  "delete_webhook": [
+    "board_id",
+    "id"
+  ]
+}

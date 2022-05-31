@@ -1,3 +1,2 @@
 include versioneer.py
 include prefect_monday/_version.py
-include prefect_monday/configs/*/*.json

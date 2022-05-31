@@ -27,7 +27,7 @@ return_fields_defaults = initialize_return_fields_defaults(config_path)
 async def query_items_by_multiple_column_values(
     board_id: int,
     column_id: str,
-    column_values: str,
+    column_values: Iterable[str],
     monday_credentials: MondayCredentials,
     limit: int = None,
     page: int = 1,
@@ -80,7 +80,7 @@ async def query_items_by_multiple_column_values(
 async def query_items_by_multiple_column_values_assets(
     board_id: int,
     column_id: str,
-    column_values: str,
+    column_values: Iterable[str],
     monday_credentials: MondayCredentials,
     limit: int = None,
     page: int = 1,
@@ -147,7 +147,7 @@ async def query_items_by_multiple_column_values_assets(
 async def query_items_by_multiple_column_values_board(
     board_id: int,
     column_id: str,
-    column_values: str,
+    column_values: Iterable[str],
     monday_credentials: MondayCredentials,
     limit: int = None,
     page: int = 1,
@@ -205,7 +205,7 @@ async def query_items_by_multiple_column_values_board(
 async def query_items_by_multiple_column_values(
     board_id: int,
     column_id: str,
-    column_values: str,
+    column_values: Iterable[str],
     monday_credentials: MondayCredentials,
     limit: int = None,
     page: int = 1,
@@ -269,7 +269,7 @@ async def query_items_by_multiple_column_values(
 async def query_items_by_multiple_column_values_creator(
     board_id: int,
     column_id: str,
-    column_values: str,
+    column_values: Iterable[str],
     monday_credentials: MondayCredentials,
     limit: int = None,
     page: int = 1,
@@ -327,7 +327,7 @@ async def query_items_by_multiple_column_values_creator(
 async def query_items_by_multiple_column_values_group(
     board_id: int,
     column_id: str,
-    column_values: str,
+    column_values: Iterable[str],
     monday_credentials: MondayCredentials,
     limit: int = None,
     page: int = 1,
@@ -385,7 +385,7 @@ async def query_items_by_multiple_column_values_group(
 async def query_items_by_multiple_column_values_parent_item(
     board_id: int,
     column_id: str,
-    column_values: str,
+    column_values: Iterable[str],
     monday_credentials: MondayCredentials,
     limit: int = None,
     page: int = 1,
@@ -443,7 +443,7 @@ async def query_items_by_multiple_column_values_parent_item(
 async def query_items_by_multiple_column_values_subscribers(
     board_id: int,
     column_id: str,
-    column_values: str,
+    column_values: Iterable[str],
     monday_credentials: MondayCredentials,
     limit: int = None,
     page: int = 1,
@@ -501,7 +501,7 @@ async def query_items_by_multiple_column_values_subscribers(
 async def query_items_by_multiple_column_values_updates(
     board_id: int,
     column_id: str,
-    column_values: str,
+    column_values: Iterable[str],
     monday_credentials: MondayCredentials,
     limit: int = None,
     page: int = 1,

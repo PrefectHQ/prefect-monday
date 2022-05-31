@@ -13,9 +13,9 @@ with open("README.md") as readme_file:
 
 setup(
     name="prefect-monday",
-    description="Prefect tasks and subflows for monday.com",
+    description="Prefect integrations interacting with monday.com",
     license="Apache License 2.0",
-    author="Prefect Technologies Inc.",
+    author="Prefect Technologies, Inc.",
     author_email="help@prefect.io",
     keywords="prefect",
     url="https://github.com/PrefectHQ/prefect-monday",
@@ -26,7 +26,6 @@ setup(
     packages=find_packages(exclude=("tests", "docs")),
     python_requires=">=3.7",
     install_requires=install_requires,
-    include_package_data=True,
     extras_require={"dev": dev_requires},
     classifiers=[
         "Natural Language :: English",

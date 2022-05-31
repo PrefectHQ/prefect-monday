@@ -89,8 +89,8 @@ async def query_boards_activity_logs(
     column_ids: Iterable[str] = None,
     group_ids: Iterable[str] = None,
     item_ids: Iterable[int] = None,
-    from_: datetime = None,
-    to: datetime = None,
+    from_: None = None,
+    to: None = None,
     return_fields: Iterable[str] = None,
 ) -> Dict[str, Any]:
     """

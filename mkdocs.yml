@@ -36,13 +36,13 @@ plugins:
 
 nav:
     - Home: index.md
+    - Credentials: credentials.md
     - Account: account.md
     - App Subscription: app_subscription.md
     - Apps Monetization Status: apps_monetization_status.md
     - Assets: assets.md
     - Boards: boards.md
     - Complexity: complexity.md
-    - Credentials: credentials.md
     - Graphql: graphql.md
     - Items: items.md
     - Items By Column Values: items_by_column_values.md
@@ -53,4 +53,5 @@ nav:
     - Teams: teams.md
     - Updates: updates.md
     - Users: users.md
-    - Utils: utils.md 
+    - Utils: utils.md
+    

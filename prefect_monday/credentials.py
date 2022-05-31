@@ -14,7 +14,7 @@ class MondayCredentials:
         token: the token to authenticate into Monday.
     """
 
-    token: str
+    token: str = None
 
     def get_endpoint(self) -> HTTPEndpoint:
         """
@@ -39,7 +39,9 @@ class MondayCredentials:
             example_get_endpoint_flow()
             ```
         """
-        endpoint = HTTPEndpoint(
-            "https://api.monday.com/v2", {"Authorization": f"Bearer {self.token}"}
-        )
+        if self.token is not None:
+            base_headers = {"Authorization": f"Bearer {self.token}"}
+        else:
+            base_headers = None
+        endpoint = HTTPEndpoint("https://api.monday.com/v2", base_headers=base_headers)
         return endpoint

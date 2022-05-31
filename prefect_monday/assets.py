@@ -20,7 +20,7 @@ return_fields_defaults = initialize_return_fields_defaults(config_path)
 
 @task
 async def query_assets(
-    ids: int,
+    ids: Iterable[int],
     monday_credentials: MondayCredentials,
     return_fields: Iterable[str] = None,
 ) -> Dict[str, Any]:
@@ -54,7 +54,7 @@ async def query_assets(
 
 @task
 async def query_assets_uploaded_by(
-    ids: int,
+    ids: Iterable[int],
     monday_credentials: MondayCredentials,
     return_fields: Iterable[str] = None,
 ) -> Dict[str, Any]:

@@ -5338,7 +5338,7 @@
                 },
                 {
                   "defaultValue": null,
-                  "description": "The event to listen to (incoming_notification / change_column_value / change_subitem_column_value / change_specific_column_value / create_item / create_subitem / create_update / create_subitem_update / change_subitem_name / change_name / when_date_arrived)",
+                  "description": "The event to listen to (incoming_notification / change_column_value / change_subitem_column_value / change_specific_column_value / create_item / create_subitem / create_update / create_subitem_update / change_subitem_name / change_name / when_date_arrived / item_deleted / subitem_deleted / item_archived / subitem_archived)",
                   "name": "event",
                   "type": {
                     "kind": "NON_NULL",
@@ -6614,6 +6614,30 @@
               "description": "An item date has arrived",
               "isDeprecated": false,
               "name": "when_date_arrived"
+            },
+            {
+              "deprecationReason": null,
+              "description": "An item was deleted from a board",
+              "isDeprecated": false,
+              "name": "item_deleted"
+            },
+            {
+              "deprecationReason": null,
+              "description": "A subitem was deleted from a board",
+              "isDeprecated": false,
+              "name": "subitem_deleted"
+            },
+            {
+              "deprecationReason": null,
+              "description": "An item was archived on a board",
+              "isDeprecated": false,
+              "name": "item_archived"
+            },
+            {
+              "deprecationReason": null,
+              "description": "An subitem was archived on a board",
+              "isDeprecated": false,
+              "name": "subitem_archived"
             }
           ],
           "fields": null,
@@ -6763,6 +6787,30 @@
               "description": "Work Management",
               "isDeprecated": false,
               "name": "core"
+            },
+            {
+              "deprecationReason": null,
+              "description": "monday sales CRM",
+              "isDeprecated": false,
+              "name": "crm"
+            },
+            {
+              "deprecationReason": null,
+              "description": "monday dev",
+              "isDeprecated": false,
+              "name": "software"
+            },
+            {
+              "deprecationReason": null,
+              "description": "monday marketer",
+              "isDeprecated": false,
+              "name": "marketing"
+            },
+            {
+              "deprecationReason": null,
+              "description": "monday projects",
+              "isDeprecated": false,
+              "name": "project_management"
             }
           ],
           "fields": null,

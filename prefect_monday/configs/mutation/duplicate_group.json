@@ -1,0 +1,20 @@
+{
+  "duplicate_group": [
+    "archived",
+    "color",
+    "deleted",
+    "id",
+    {
+      "items": [
+        "created_at",
+        "creator_id",
+        "id",
+        "name",
+        "state",
+        "updated_at"
+      ]
+    },
+    "position",
+    "title"
+  ]
+}

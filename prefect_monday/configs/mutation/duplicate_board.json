@@ -1,0 +1,20 @@
+{
+  "duplicate_board": [
+    {
+      "board": [
+        "board_folder_id",
+        "board_kind",
+        "communication",
+        "description",
+        "id",
+        "name",
+        "permissions",
+        "pos",
+        "state",
+        "updated_at",
+        "workspace_id"
+      ]
+    },
+    "is_async"
+  ]
+}

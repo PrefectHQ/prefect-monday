@@ -96,7 +96,7 @@ class NotificationTargetType(sgqlc.types.Enum):
 
 class ProductKind(sgqlc.types.Enum):
     __schema__ = graphql_schema
-    __choices__ = ('core', 'forms', 'knowledge', 'whiteboard', 'workflows')
+    __choices__ = ('core', 'crm', 'forms', 'knowledge', 'marketing', 'project_management', 'software', 'whiteboard', 'workflows')
 
 
 class State(sgqlc.types.Enum):
@@ -113,7 +113,7 @@ class UserKind(sgqlc.types.Enum):
 
 class WebhookEventType(sgqlc.types.Enum):
     __schema__ = graphql_schema
-    __choices__ = ('change_column_value', 'change_name', 'change_specific_column_value', 'change_subitem_column_value', 'change_subitem_name', 'create_item', 'create_subitem', 'create_subitem_update', 'create_update', 'when_date_arrived')
+    __choices__ = ('change_column_value', 'change_name', 'change_specific_column_value', 'change_subitem_column_value', 'change_subitem_name', 'create_item', 'create_subitem', 'create_subitem_update', 'create_update', 'item_archived', 'item_deleted', 'subitem_archived', 'subitem_deleted', 'when_date_arrived')
 
 
 class WorkspaceKind(sgqlc.types.Enum):

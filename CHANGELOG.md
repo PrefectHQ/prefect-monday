@@ -25,4 +25,4 @@ Released on ????? ?th, 20??.
 
 ### Added
 
-- `execute_graphql`, `query_account*`, `query_app_subscription*`, `query_apps_monetization_status*`, `query_assets*`, `query_boards*`, `query_complexity*`, `query_credentials*`, `query_graphql*`, `query_items*`, `query_items_by_column_values*`, `query_items_by_multiple_column_values*`, `query_me*`, `query_tags*`, `query_teams*`, `query_updates*`, `query_users*` tasks - [#1](https://github.com/PrefectHQ/prefect-monday/pull/1)
+- `task_name` task - [#1](https://github.com/PrefectHQ/prefect-monday/pull/1)
