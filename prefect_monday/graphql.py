@@ -10,9 +10,10 @@ from typing import Any, Dict, Iterable, List, Tuple, Union
 
 from anyio import to_thread
 from prefect import task
+from sgqlc.operation import Operation, Selection
+
 from prefect_monday import MondayCredentials
 from prefect_monday.utils import camel_to_snake_case
-from sgqlc.operation import Operation, Selection
 
 
 async def _execute_graphql_op(

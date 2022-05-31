@@ -4,15 +4,17 @@ It was auto-generated using prefect-collection-generator so
 manually editing this file is not recommended.
 """
 
+from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, Iterable
 
 from prefect import task
+from sgqlc.operation import Operation
+
 from prefect_monday import MondayCredentials
 from prefect_monday.graphql import _execute_graphql_op, _subset_return_fields
 from prefect_monday.schemas import graphql_schema
 from prefect_monday.utils import initialize_return_fields_defaults, strip_kwargs
-from sgqlc.operation import Operation
 
 config_dir = Path(__file__).parent.resolve() / "configs" / "mutation"
 return_fields_defaults = {}
@@ -521,6 +523,8 @@ async def change_simple_column_value_updates(
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["change_simple_column_value"]["updates"]
+
+
 @task
 async def remove_mock_app_subscription(
     app_id: int,
@@ -559,7 +563,6 @@ async def remove_mock_app_subscription(
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["remove_mock_app_subscription"]
-from datetime import datetime
 
 
 @task
@@ -717,64 +720,6 @@ async def change_multiple_column_values_board(
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["change_multiple_column_values"]["board"]
-
-
-@task
-async def change_multiple_column_values(
-    board_id: int,
-    column_values: datetime,
-    monday_credentials: MondayCredentials,
-    item_id: int = None,
-    create_labels_if_missing: bool = None,
-    ids: Iterable[str] = None,
-    return_fields: Iterable[str] = None,
-) -> Dict[str, Any]:
-    """
-    Changes the column values of a specific item.
-
-    Args:
-        board_id: The board's unique identifier.
-        column_values: The column values updates.
-        monday_credentials: Credentials to use for authentication with Monday.
-        item_id: The item's unique identifier.
-        create_labels_if_missing: Create
-            Status/Dropdown labels if they're missing. (Requires
-            permission to change board structure).
-        ids: None.
-        return_fields: Subset the return fields (as snake_case); defaults to
-            fields listed in configs/mutation/*.json.
-
-    Returns:
-        A dict of the returned fields.
-    """
-    op = Operation(graphql_schema.Mutation)
-    op_selection = op.change_multiple_column_values(
-        **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                column_values=column_values,
-                item_id=item_id,
-                create_labels_if_missing=create_labels_if_missing,
-            )
-        )
-    ).column_values(
-        **strip_kwargs(
-            input=dict(
-                ids=ids,
-            )
-        )
-    )
-
-    op_stack = (
-        "change_multiple_column_values",
-        "column_values",
-    )
-    op_selection = _subset_return_fields(
-        op_selection, op_stack, return_fields, return_fields_defaults
-    )
-
-    result = await _execute_graphql_op(op, monday_credentials)
-    return result["change_multiple_column_values"]["column_values"]
 
 
 @task
@@ -1036,7 +981,6 @@ async def change_multiple_column_values_updates(
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["change_multiple_column_values"]["updates"]
-from datetime import datetime
 
 
 @task
@@ -1124,6 +1068,8 @@ async def add_file_to_column_uploaded_by(
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["add_file_to_column"]["uploaded_by"]
+
+
 @task
 async def delete_item(
     monday_credentials: MondayCredentials,
@@ -1488,7 +1434,6 @@ async def delete_item_updates(
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["delete_item"]["updates"]
-from datetime import datetime
 
 
 @task
@@ -1540,7 +1485,6 @@ async def create_webhook(
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["create_webhook"]
-from datetime import datetime
 
 
 @task
@@ -1589,6 +1533,8 @@ async def create_column(
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["create_column"]
+
+
 @task
 async def create_notification(
     text: str,
@@ -1632,6 +1578,8 @@ async def create_notification(
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["create_notification"]
+
+
 @task
 async def change_column_title(
     column_id: str,
@@ -1672,7 +1620,6 @@ async def change_column_title(
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["change_column_title"]
-from datetime import datetime
 
 
 @task
@@ -2149,7 +2096,6 @@ async def create_subitem_updates(
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["create_subitem"]["updates"]
-from datetime import datetime
 
 
 @task
@@ -3032,6 +2978,8 @@ async def create_board_workspace(
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["create_board"]["workspace"]
+
+
 @task
 async def duplicate_item(
     board_id: int,
@@ -3462,6 +3410,8 @@ async def duplicate_item_updates(
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["duplicate_item"]["updates"]
+
+
 @task
 async def like_update(
     monday_credentials: MondayCredentials,
@@ -3613,6 +3563,8 @@ async def like_update_replies(
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["like_update"]["replies"]
+
+
 @task
 async def archive_group(
     board_id: int,
@@ -3712,6 +3664,8 @@ async def archive_group_items(
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["archive_group"]["items"]
+
+
 @task
 async def create_workspace(
     name: str,
@@ -3752,6 +3706,8 @@ async def create_workspace(
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["create_workspace"]
+
+
 @task
 async def move_item_to_group(
     group_id: str,
@@ -3979,48 +3935,6 @@ async def move_item_to_group_creator(
 
 
 @task
-async def move_item_to_group(
-    group_id: str,
-    monday_credentials: MondayCredentials,
-    item_id: int = None,
-    return_fields: Iterable[str] = None,
-) -> Dict[str, Any]:
-    """
-    Move an item to a different group.
-
-    Args:
-        group_id: The group's unique identifier.
-        monday_credentials: Credentials to use for authentication with Monday.
-        item_id: The item's unique identifier.
-        return_fields: Subset the return fields (as snake_case); defaults to
-            fields listed in configs/mutation/*.json.
-
-    Returns:
-        A dict of the returned fields.
-    """
-    op = Operation(graphql_schema.Mutation)
-    op_selection = op.move_item_to_group(
-        **strip_kwargs(
-            input=dict(
-                group_id=group_id,
-                item_id=item_id,
-            )
-        )
-    ).group(**strip_kwargs())
-
-    op_stack = (
-        "move_item_to_group",
-        "group",
-    )
-    op_selection = _subset_return_fields(
-        op_selection, op_stack, return_fields, return_fields_defaults
-    )
-
-    result = await _execute_graphql_op(op, monday_credentials)
-    return result["move_item_to_group"]["group"]
-
-
-@task
 async def move_item_to_group_subitems(
     group_id: str,
     monday_credentials: MondayCredentials,
@@ -4155,6 +4069,8 @@ async def move_item_to_group_updates(
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["move_item_to_group"]["updates"]
+
+
 @task
 async def duplicate_group(
     board_id: int,
@@ -4266,6 +4182,8 @@ async def duplicate_group_items(
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["duplicate_group"]["items"]
+
+
 @task
 async def delete_users_from_workspace(
     workspace_id: int,
@@ -4399,6 +4317,8 @@ async def delete_users_from_workspace_teams(
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["delete_users_from_workspace"]["teams"]
+
+
 @task
 async def delete_subscribers_from_board(
     board_id: int,
@@ -4530,6 +4450,8 @@ async def delete_subscribers_from_board_teams(
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["delete_subscribers_from_board"]["teams"]
+
+
 @task
 async def create_update(
     body: str,
@@ -4705,7 +4627,6 @@ async def create_update_replies(
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["create_update"]["replies"]
-from datetime import datetime
 
 
 @task
@@ -4758,6 +4679,8 @@ async def set_mock_app_subscription(
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["set_mock_app_subscription"]
+
+
 @task
 async def clear_item_updates(
     item_id: int,
@@ -5087,57 +5010,6 @@ async def clear_item_updates_subscribers(
 
 
 @task
-async def clear_item_updates(
-    item_id: int,
-    monday_credentials: MondayCredentials,
-    limit: int = 25,
-    page: int = 1,
-    return_fields: Iterable[str] = None,
-) -> Dict[str, Any]:
-    """
-    Clear an item's updates.
-
-    Args:
-        item_id: The item's unique identifier.
-        monday_credentials: Credentials to use for authentication with Monday.
-        limit: None.
-        page: None.
-        return_fields: Subset the return fields (as snake_case); defaults to
-            fields listed in configs/mutation/*.json.
-
-    Returns:
-        A dict of the returned fields.
-    """
-    op = Operation(graphql_schema.Mutation)
-    op_selection = op.clear_item_updates(
-        **strip_kwargs(
-            input=dict(
-                item_id=item_id,
-            )
-        )
-    ).updates(
-        **strip_kwargs(
-            input=dict(
-                limit=limit,
-                page=page,
-            )
-        )
-    )
-
-    op_stack = (
-        "clear_item_updates",
-        "updates",
-    )
-    op_selection = _subset_return_fields(
-        op_selection, op_stack, return_fields, return_fields_defaults
-    )
-
-    result = await _execute_graphql_op(op, monday_credentials)
-    return result["clear_item_updates"]["updates"]
-from datetime import datetime
-
-
-@task
 async def add_file_to_update(
     update_id: int,
     file: datetime,
@@ -5216,6 +5088,8 @@ async def add_file_to_update_uploaded_by(
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["add_file_to_update"]["uploaded_by"]
+
+
 @task
 async def delete_update(
     id: int,
@@ -5367,6 +5241,8 @@ async def delete_update_replies(
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["delete_update"]["replies"]
+
+
 @task
 async def add_subscribers_to_board(
     board_id: int,
@@ -5505,6 +5381,8 @@ async def add_subscribers_to_board_teams(
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["add_subscribers_to_board"]["teams"]
+
+
 @task
 async def delete_webhook(
     id: int,
@@ -5539,6 +5417,8 @@ async def delete_webhook(
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["delete_webhook"]
+
+
 @task
 async def add_teams_to_workspace(
     workspace_id: int,
@@ -5638,6 +5518,8 @@ async def add_teams_to_workspace_users(
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["add_teams_to_workspace"]["users"]
+
+
 @task
 async def complexity(
     monday_credentials: MondayCredentials,
@@ -5664,7 +5546,6 @@ async def complexity(
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["complexity"]
-from datetime import datetime
 
 
 @task
@@ -6168,7 +6049,6 @@ async def create_item_updates(
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["create_item"]["updates"]
-from datetime import datetime
 
 
 @task
@@ -6672,6 +6552,8 @@ async def change_column_value_updates(
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["change_column_value"]["updates"]
+
+
 @task
 async def delete_group(
     board_id: int,
@@ -6771,6 +6653,8 @@ async def delete_group_items(
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["delete_group"]["items"]
+
+
 @task
 async def archive_item(
     monday_credentials: MondayCredentials,
@@ -7141,6 +7025,8 @@ async def archive_item_updates(
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["archive_item"]["updates"]
+
+
 @task
 async def add_users_to_workspace(
     workspace_id: int,
@@ -7279,6 +7165,8 @@ async def add_users_to_workspace_teams(
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["add_users_to_workspace"]["teams"]
+
+
 @task
 async def create_group(
     board_id: int,
@@ -7378,7 +7266,6 @@ async def create_group_items(
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["create_group"]["items"]
-from datetime import datetime
 
 
 @task
@@ -8009,6 +7896,8 @@ async def archive_board_workspace(
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["archive_board"]["workspace"]
+
+
 @task
 async def delete_teams_from_workspace(
     workspace_id: int,
@@ -8110,6 +7999,8 @@ async def delete_teams_from_workspace_users(
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["delete_teams_from_workspace"]["users"]
+
+
 @task
 async def change_column_metadata(
     column_id: str,
@@ -8154,6 +8045,8 @@ async def change_column_metadata(
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["change_column_metadata"]
+
+
 @task
 async def create_or_get_tag(
     monday_credentials: MondayCredentials,
@@ -8192,59 +8085,6 @@ async def create_or_get_tag(
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["create_or_get_tag"]
-@task
-async def duplicate_board(
-    board_id: int,
-    duplicate_type: graphql_schema.DuplicateBoardType,
-    monday_credentials: MondayCredentials,
-    board_name: str = None,
-    workspace_id: int = None,
-    folder_id: int = None,
-    keep_subscribers: bool = None,
-    return_fields: Iterable[str] = None,
-) -> Dict[str, Any]:
-    """
-    Duplicate a board.
-
-    Args:
-        board_id: The board's unique identifier.
-        duplicate_type: The duplication type.
-        monday_credentials: Credentials to use for authentication with Monday.
-        board_name: Optional the new board's name. If omitted then automaticlly
-            generated.
-        workspace_id: Optional destination workspace. Defaults to the original
-            board workspace.
-        folder_id: Optional destination folder in destionation workspace.
-            Defaults to the original board folder.
-        keep_subscribers: Duplicate the subscribers to the new board. Defaults
-            to false.
-        return_fields: Subset the return fields (as snake_case); defaults to
-            fields listed in configs/mutation/*.json.
-
-    Returns:
-        A dict of the returned fields.
-    """
-    op = Operation(graphql_schema.Mutation)
-    op_selection = op.duplicate_board(
-        **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                duplicate_type=duplicate_type,
-                board_name=board_name,
-                workspace_id=workspace_id,
-                folder_id=folder_id,
-                keep_subscribers=keep_subscribers,
-            )
-        )
-    )
-
-    op_stack = ("duplicate_board",)
-    op_selection = _subset_return_fields(
-        op_selection, op_stack, return_fields, return_fields_defaults
-    )
-
-    result = await _execute_graphql_op(op, monday_credentials)
-    return result["duplicate_board"]
 
 
 @task

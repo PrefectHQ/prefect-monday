@@ -8,11 +8,12 @@ from pathlib import Path
 from typing import Any, Dict, Iterable
 
 from prefect import task
+from sgqlc.operation import Operation
+
 from prefect_monday import MondayCredentials
 from prefect_monday.graphql import _execute_graphql_op, _subset_return_fields
 from prefect_monday.schemas import graphql_schema
 from prefect_monday.utils import initialize_return_fields_defaults, strip_kwargs
-from sgqlc.operation import Operation
 
 config_path = Path(__file__).parent.resolve() / "configs" / "query" / "updates.json"
 return_fields_defaults = initialize_return_fields_defaults(config_path)

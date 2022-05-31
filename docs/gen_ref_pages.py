@@ -1,8 +1,9 @@
-"Copies README.md to index.md."
-
 from pathlib import Path
 
 import mkdocs_gen_files
+
+"Copies README.md to index.md."
+
 
 readme_path = Path("README.md")
 docs_index_path = Path("index.md")
