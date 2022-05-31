@@ -2,7 +2,9 @@
 
 ## Welcome!
 
-Prefect integrations interacting with monday.com
+Prefect tasks and subflows for monday.com
+
+The tasks within this collection were created by a code generator using the service's GraphQL schema.
 
 ## Getting Started
 
