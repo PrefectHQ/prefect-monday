@@ -32,6 +32,7 @@ def initialize_return_fields_defaults(config_path: Union[Path, str]) -> List:
         config = json.load(f)
 
     return_fields_defaults = defaultdict(lambda: [])
+    print(config_path)
     for op_type, sub_op_types in config.items():
         for sub_op_type in sub_op_types:
             if isinstance(sub_op_type, str):
