@@ -28,12 +28,11 @@ setup(
     install_requires=install_requires,
     include_package_data=True,
     extras_require={"dev": dev_requires},
-    # entry_points={
-    #     "prefect.collections": [
-    #         "prefect-mondayCredentials = prefect_monday.credentials",
-    #     ]
-    # },
-    # UPDATE ENTRY POINT ABOVE WITH VALID CLASS
+    entry_points={
+        "prefect.collections": [
+            "MondayCredentials = prefect_monday.credentials",
+        ]
+    },
     classifiers=[
         "Natural Language :: English",
         "Intended Audience :: Developers",
