@@ -1,5 +1,5 @@
 """
-This is a module for interacting with Monday Query boards tasks.
+This is a module for interacting with Monday boards tasks.
 It was auto-generated using prefect-collection-generator so
 manually editing this file is not recommended.
 """
@@ -9,11 +9,12 @@ from pathlib import Path
 from typing import Any, Dict, Iterable
 
 from prefect import task
+from sgqlc.operation import Operation
+
 from prefect_monday import MondayCredentials
 from prefect_monday.graphql import _execute_graphql_op, _subset_return_fields
 from prefect_monday.schemas import graphql_schema
 from prefect_monday.utils import initialize_return_fields_defaults, strip_kwargs
-from sgqlc.operation import Operation
 
 config_path = Path(__file__).parent.resolve() / "configs" / "query" / "boards.json"
 return_fields_defaults = initialize_return_fields_defaults(config_path)
@@ -74,154 +75,7 @@ async def query_boards(
 
 
 @task
-async def query_boards_activity_logs(
-    monday_credentials: MondayCredentials,
-    limit: int = 25,
-    page: int = 1,
-    ids: Iterable[int] = None,
-    board_kind: graphql_schema.BoardKind = None,
-    state: graphql_schema.State = "active",
-    newest_first: bool = None,
-    order_by: graphql_schema.BoardsOrderBy = None,
-    activity_logs_limit: int = 25,
-    activity_logs_page: int = 1,
-    user_ids: Iterable[int] = None,
-    column_ids: Iterable[str] = None,
-    group_ids: Iterable[str] = None,
-    item_ids: Iterable[int] = None,
-    from_: datetime = None,
-    to: datetime = None,
-    return_fields: Iterable[str] = None,
-) -> Dict[str, Any]:
-    """
-    The board log events.
-
-    Args:
-        monday_credentials: Credentials to use for authentication with Monday.
-        limit: Number of items to get, the default is 25.
-        page: Page number to get, starting at 1.
-        ids: A list of boards unique identifiers.
-        board_kind: The board's kind (public / private / share).
-        state: The state of the board (all / active / archived /
-            deleted), the default is active.
-        newest_first: Get the recently created boards at the top of the
-            list, (Deprecated, use order_by:created_at).
-        order_by: Property to order by (created_at / used_at).
-        activity_logs_limit: Number of items to get, the default is 25.
-        activity_logs_page: Page number to get, starting at 1.
-        user_ids: User ids to filter.
-        column_ids: Column ids to filter.
-        group_ids: Group ids to filter.
-        item_ids: Item id to filter.
-        from_: From timestamp (ISO8601).
-        to: To timestamp (ISO8601).
-        return_fields: Subset the return fields (as snake_case); defaults to
-            fields listed in configs/query/*.json.
-
-    Returns:
-        A dict of the returned fields.
-    """
-    op = Operation(graphql_schema.Query)
-    op_selection = op.boards(
-        **strip_kwargs(
-            limit=limit,
-            page=page,
-            ids=ids,
-            board_kind=board_kind,
-            state=state,
-            newest_first=newest_first,
-            order_by=order_by,
-        )
-    ).activity_logs(
-        **strip_kwargs(
-            limit=activity_logs_limit,
-            page=activity_logs_page,
-            user_ids=user_ids,
-            column_ids=column_ids,
-            group_ids=group_ids,
-            item_ids=item_ids,
-            from_=from_,
-            to=to,
-        )
-    )
-
-    op_stack = (
-        "boards",
-        "activity_logs",
-    )
-    op_selection = _subset_return_fields(
-        op_selection, op_stack, return_fields, return_fields_defaults
-    )
-
-    result = await _execute_graphql_op(op, monday_credentials)
-    return result["boards"]["activity_logs"]
-
-
-@task
-async def query_boards_columns(
-    monday_credentials: MondayCredentials,
-    limit: int = 25,
-    page: int = 1,
-    ids: Iterable[int] = None,
-    board_kind: graphql_schema.BoardKind = None,
-    state: graphql_schema.State = "active",
-    newest_first: bool = None,
-    order_by: graphql_schema.BoardsOrderBy = None,
-    columns_ids: Iterable[str] = None,
-    return_fields: Iterable[str] = None,
-) -> Dict[str, Any]:
-    """
-    The board's visible columns.
-
-    Args:
-        monday_credentials: Credentials to use for authentication with Monday.
-        limit: Number of items to get, the default is 25.
-        page: Page number to get, starting at 1.
-        ids: A list of boards unique identifiers.
-        board_kind: The board's kind (public / private / share).
-        state: The state of the board (all / active / archived /
-            deleted), the default is active.
-        newest_first: Get the recently created boards at the top of the
-            list, (Deprecated, use order_by:created_at).
-        order_by: Property to order by (created_at / used_at).
-        columns_ids: A list of column unique identifiers.
-        return_fields: Subset the return fields (as snake_case); defaults to
-            fields listed in configs/query/*.json.
-
-    Returns:
-        A dict of the returned fields.
-    """
-    op = Operation(graphql_schema.Query)
-    op_selection = op.boards(
-        **strip_kwargs(
-            limit=limit,
-            page=page,
-            ids=ids,
-            board_kind=board_kind,
-            state=state,
-            newest_first=newest_first,
-            order_by=order_by,
-        )
-    ).columns(
-        **strip_kwargs(
-            ids=columns_ids,
-        )
-    )
-
-    op_stack = (
-        "boards",
-        "columns",
-    )
-    op_selection = _subset_return_fields(
-        op_selection, op_stack, return_fields, return_fields_defaults
-    )
-
-    result = await _execute_graphql_op(op, monday_credentials)
-    return result["boards"]["columns"]
-
-
-@task
-async def query_boards_creator(
+async def query_boards_tags(
     monday_credentials: MondayCredentials,
     limit: int = 25,
     page: int = 1,
@@ -233,7 +87,7 @@ async def query_boards_creator(
     return_fields: Iterable[str] = None,
 ) -> Dict[str, Any]:
     """
-    The creator of the board.
+    The board's specific tags.
 
     Args:
         monday_credentials: Credentials to use for authentication with Monday.
@@ -263,81 +117,18 @@ async def query_boards_creator(
             newest_first=newest_first,
             order_by=order_by,
         )
-    ).creator(**strip_kwargs())
+    ).tags(**strip_kwargs())
 
     op_stack = (
         "boards",
-        "creator",
+        "tags",
     )
     op_selection = _subset_return_fields(
         op_selection, op_stack, return_fields, return_fields_defaults
     )
 
     result = await _execute_graphql_op(op, monday_credentials)
-    return result["boards"]["creator"]
-
-
-@task
-async def query_boards_groups(
-    monday_credentials: MondayCredentials,
-    limit: int = 25,
-    page: int = 1,
-    ids: Iterable[int] = None,
-    board_kind: graphql_schema.BoardKind = None,
-    state: graphql_schema.State = "active",
-    newest_first: bool = None,
-    order_by: graphql_schema.BoardsOrderBy = None,
-    groups_ids: Iterable[str] = None,
-    return_fields: Iterable[str] = None,
-) -> Dict[str, Any]:
-    """
-    The board's visible groups.
-
-    Args:
-        monday_credentials: Credentials to use for authentication with Monday.
-        limit: Number of items to get, the default is 25.
-        page: Page number to get, starting at 1.
-        ids: A list of boards unique identifiers.
-        board_kind: The board's kind (public / private / share).
-        state: The state of the board (all / active / archived /
-            deleted), the default is active.
-        newest_first: Get the recently created boards at the top of the
-            list, (Deprecated, use order_by:created_at).
-        order_by: Property to order by (created_at / used_at).
-        groups_ids: A list of group unique identifiers.
-        return_fields: Subset the return fields (as snake_case); defaults to
-            fields listed in configs/query/*.json.
-
-    Returns:
-        A dict of the returned fields.
-    """
-    op = Operation(graphql_schema.Query)
-    op_selection = op.boards(
-        **strip_kwargs(
-            limit=limit,
-            page=page,
-            ids=ids,
-            board_kind=board_kind,
-            state=state,
-            newest_first=newest_first,
-            order_by=order_by,
-        )
-    ).groups(
-        **strip_kwargs(
-            ids=groups_ids,
-        )
-    )
-
-    op_stack = (
-        "boards",
-        "groups",
-    )
-    op_selection = _subset_return_fields(
-        op_selection, op_stack, return_fields, return_fields_defaults
-    )
-
-    result = await _execute_graphql_op(op, monday_credentials)
-    return result["boards"]["groups"]
+    return result["boards"]["tags"]
 
 
 @task
@@ -476,6 +267,135 @@ async def query_boards_owner(
 
 
 @task
+async def query_boards_views(
+    monday_credentials: MondayCredentials,
+    limit: int = 25,
+    page: int = 1,
+    ids: Iterable[int] = None,
+    board_kind: graphql_schema.BoardKind = None,
+    state: graphql_schema.State = "active",
+    newest_first: bool = None,
+    order_by: graphql_schema.BoardsOrderBy = None,
+    views_ids: Iterable[int] = None,
+    type: str = None,
+    return_fields: Iterable[str] = None,
+) -> Dict[str, Any]:
+    """
+    The board's views.
+
+    Args:
+        monday_credentials: Credentials to use for authentication with Monday.
+        limit: Number of items to get, the default is 25.
+        page: Page number to get, starting at 1.
+        ids: A list of boards unique identifiers.
+        board_kind: The board's kind (public / private / share).
+        state: The state of the board (all / active / archived /
+            deleted), the default is active.
+        newest_first: Get the recently created boards at the top of the
+            list, (Deprecated, use order_by:created_at).
+        order_by: Property to order by (created_at / used_at).
+        views_ids: A list of view unique identifiers.
+        type: The view's type.
+        return_fields: Subset the return fields (as snake_case); defaults to
+            fields listed in configs/query/*.json.
+
+    Returns:
+        A dict of the returned fields.
+    """
+    op = Operation(graphql_schema.Query)
+    op_selection = op.boards(
+        **strip_kwargs(
+            limit=limit,
+            page=page,
+            ids=ids,
+            board_kind=board_kind,
+            state=state,
+            newest_first=newest_first,
+            order_by=order_by,
+        )
+    ).views(
+        **strip_kwargs(
+            ids=views_ids,
+            type=type,
+        )
+    )
+
+    op_stack = (
+        "boards",
+        "views",
+    )
+    op_selection = _subset_return_fields(
+        op_selection, op_stack, return_fields, return_fields_defaults
+    )
+
+    result = await _execute_graphql_op(op, monday_credentials)
+    return result["boards"]["views"]
+
+
+@task
+async def query_boards_groups(
+    monday_credentials: MondayCredentials,
+    limit: int = 25,
+    page: int = 1,
+    ids: Iterable[int] = None,
+    board_kind: graphql_schema.BoardKind = None,
+    state: graphql_schema.State = "active",
+    newest_first: bool = None,
+    order_by: graphql_schema.BoardsOrderBy = None,
+    groups_ids: Iterable[str] = None,
+    return_fields: Iterable[str] = None,
+) -> Dict[str, Any]:
+    """
+    The board's visible groups.
+
+    Args:
+        monday_credentials: Credentials to use for authentication with Monday.
+        limit: Number of items to get, the default is 25.
+        page: Page number to get, starting at 1.
+        ids: A list of boards unique identifiers.
+        board_kind: The board's kind (public / private / share).
+        state: The state of the board (all / active / archived /
+            deleted), the default is active.
+        newest_first: Get the recently created boards at the top of the
+            list, (Deprecated, use order_by:created_at).
+        order_by: Property to order by (created_at / used_at).
+        groups_ids: A list of group unique identifiers.
+        return_fields: Subset the return fields (as snake_case); defaults to
+            fields listed in configs/query/*.json.
+
+    Returns:
+        A dict of the returned fields.
+    """
+    op = Operation(graphql_schema.Query)
+    op_selection = op.boards(
+        **strip_kwargs(
+            limit=limit,
+            page=page,
+            ids=ids,
+            board_kind=board_kind,
+            state=state,
+            newest_first=newest_first,
+            order_by=order_by,
+        )
+    ).groups(
+        **strip_kwargs(
+            ids=groups_ids,
+        )
+    )
+
+    op_stack = (
+        "boards",
+        "groups",
+    )
+    op_selection = _subset_return_fields(
+        op_selection, op_stack, return_fields, return_fields_defaults
+    )
+
+    result = await _execute_graphql_op(op, monday_credentials)
+    return result["boards"]["groups"]
+
+
+@task
 async def query_boards_owners(
     monday_credentials: MondayCredentials,
     limit: int = 25,
@@ -533,7 +453,7 @@ async def query_boards_owners(
 
 
 @task
-async def query_boards_subscribers(
+async def query_boards_columns(
     monday_credentials: MondayCredentials,
     limit: int = 25,
     page: int = 1,
@@ -542,10 +462,11 @@ async def query_boards_subscribers(
     state: graphql_schema.State = "active",
     newest_first: bool = None,
     order_by: graphql_schema.BoardsOrderBy = None,
+    columns_ids: Iterable[str] = None,
     return_fields: Iterable[str] = None,
 ) -> Dict[str, Any]:
     """
-    The board's subscribers.
+    The board's visible columns.
 
     Args:
         monday_credentials: Credentials to use for authentication with Monday.
@@ -558,6 +479,7 @@ async def query_boards_subscribers(
         newest_first: Get the recently created boards at the top of the
             list, (Deprecated, use order_by:created_at).
         order_by: Property to order by (created_at / used_at).
+        columns_ids: A list of column unique identifiers.
         return_fields: Subset the return fields (as snake_case); defaults to
             fields listed in configs/query/*.json.
 
@@ -575,22 +497,26 @@ async def query_boards_subscribers(
             newest_first=newest_first,
             order_by=order_by,
         )
-    ).subscribers(**strip_kwargs())
+    ).columns(
+        **strip_kwargs(
+            ids=columns_ids,
+        )
+    )
 
     op_stack = (
         "boards",
-        "subscribers",
+        "columns",
     )
     op_selection = _subset_return_fields(
         op_selection, op_stack, return_fields, return_fields_defaults
     )
 
     result = await _execute_graphql_op(op, monday_credentials)
-    return result["boards"]["subscribers"]
+    return result["boards"]["columns"]
 
 
 @task
-async def query_boards_tags(
+async def query_boards_creator(
     monday_credentials: MondayCredentials,
     limit: int = 25,
     page: int = 1,
@@ -602,7 +528,7 @@ async def query_boards_tags(
     return_fields: Iterable[str] = None,
 ) -> Dict[str, Any]:
     """
-    The board's specific tags.
+    The creator of the board.
 
     Args:
         monday_credentials: Credentials to use for authentication with Monday.
@@ -632,75 +558,18 @@ async def query_boards_tags(
             newest_first=newest_first,
             order_by=order_by,
         )
-    ).tags(**strip_kwargs())
+    ).creator(**strip_kwargs())
 
     op_stack = (
         "boards",
-        "tags",
+        "creator",
     )
     op_selection = _subset_return_fields(
         op_selection, op_stack, return_fields, return_fields_defaults
     )
 
     result = await _execute_graphql_op(op, monday_credentials)
-    return result["boards"]["tags"]
-
-
-@task
-async def query_boards_top_group(
-    monday_credentials: MondayCredentials,
-    limit: int = 25,
-    page: int = 1,
-    ids: Iterable[int] = None,
-    board_kind: graphql_schema.BoardKind = None,
-    state: graphql_schema.State = "active",
-    newest_first: bool = None,
-    order_by: graphql_schema.BoardsOrderBy = None,
-    return_fields: Iterable[str] = None,
-) -> Dict[str, Any]:
-    """
-    The top group at this board.
-
-    Args:
-        monday_credentials: Credentials to use for authentication with Monday.
-        limit: Number of items to get, the default is 25.
-        page: Page number to get, starting at 1.
-        ids: A list of boards unique identifiers.
-        board_kind: The board's kind (public / private / share).
-        state: The state of the board (all / active / archived /
-            deleted), the default is active.
-        newest_first: Get the recently created boards at the top of the
-            list, (Deprecated, use order_by:created_at).
-        order_by: Property to order by (created_at / used_at).
-        return_fields: Subset the return fields (as snake_case); defaults to
-            fields listed in configs/query/*.json.
-
-    Returns:
-        A dict of the returned fields.
-    """
-    op = Operation(graphql_schema.Query)
-    op_selection = op.boards(
-        **strip_kwargs(
-            limit=limit,
-            page=page,
-            ids=ids,
-            board_kind=board_kind,
-            state=state,
-            newest_first=newest_first,
-            order_by=order_by,
-        )
-    ).top_group(**strip_kwargs())
-
-    op_stack = (
-        "boards",
-        "top_group",
-    )
-    op_selection = _subset_return_fields(
-        op_selection, op_stack, return_fields, return_fields_defaults
-    )
-
-    result = await _execute_graphql_op(op, monday_credentials)
-    return result["boards"]["top_group"]
+    return result["boards"]["creator"]
 
 
 @task
@@ -770,7 +639,7 @@ async def query_boards_updates(
 
 
 @task
-async def query_boards_views(
+async def query_boards_top_group(
     monday_credentials: MondayCredentials,
     limit: int = 25,
     page: int = 1,
@@ -779,12 +648,10 @@ async def query_boards_views(
     state: graphql_schema.State = "active",
     newest_first: bool = None,
     order_by: graphql_schema.BoardsOrderBy = None,
-    views_ids: Iterable[int] = None,
-    type: str = None,
     return_fields: Iterable[str] = None,
 ) -> Dict[str, Any]:
     """
-    The board's views.
+    The top group at this board.
 
     Args:
         monday_credentials: Credentials to use for authentication with Monday.
@@ -797,8 +664,6 @@ async def query_boards_views(
         newest_first: Get the recently created boards at the top of the
             list, (Deprecated, use order_by:created_at).
         order_by: Property to order by (created_at / used_at).
-        views_ids: A list of view unique identifiers.
-        type: The view's type.
         return_fields: Subset the return fields (as snake_case); defaults to
             fields listed in configs/query/*.json.
 
@@ -816,23 +681,18 @@ async def query_boards_views(
             newest_first=newest_first,
             order_by=order_by,
         )
-    ).views(
-        **strip_kwargs(
-            ids=views_ids,
-            type=type,
-        )
-    )
+    ).top_group(**strip_kwargs())
 
     op_stack = (
         "boards",
-        "views",
+        "top_group",
     )
     op_selection = _subset_return_fields(
         op_selection, op_stack, return_fields, return_fields_defaults
     )
 
     result = await _execute_graphql_op(op, monday_credentials)
-    return result["boards"]["views"]
+    return result["boards"]["top_group"]
 
 
 @task
@@ -890,3 +750,144 @@ async def query_boards_workspace(
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["boards"]["workspace"]
+
+
+@task
+async def query_boards_subscribers(
+    monday_credentials: MondayCredentials,
+    limit: int = 25,
+    page: int = 1,
+    ids: Iterable[int] = None,
+    board_kind: graphql_schema.BoardKind = None,
+    state: graphql_schema.State = "active",
+    newest_first: bool = None,
+    order_by: graphql_schema.BoardsOrderBy = None,
+    return_fields: Iterable[str] = None,
+) -> Dict[str, Any]:
+    """
+    The board's subscribers.
+
+    Args:
+        monday_credentials: Credentials to use for authentication with Monday.
+        limit: Number of items to get, the default is 25.
+        page: Page number to get, starting at 1.
+        ids: A list of boards unique identifiers.
+        board_kind: The board's kind (public / private / share).
+        state: The state of the board (all / active / archived /
+            deleted), the default is active.
+        newest_first: Get the recently created boards at the top of the
+            list, (Deprecated, use order_by:created_at).
+        order_by: Property to order by (created_at / used_at).
+        return_fields: Subset the return fields (as snake_case); defaults to
+            fields listed in configs/query/*.json.
+
+    Returns:
+        A dict of the returned fields.
+    """
+    op = Operation(graphql_schema.Query)
+    op_selection = op.boards(
+        **strip_kwargs(
+            limit=limit,
+            page=page,
+            ids=ids,
+            board_kind=board_kind,
+            state=state,
+            newest_first=newest_first,
+            order_by=order_by,
+        )
+    ).subscribers(**strip_kwargs())
+
+    op_stack = (
+        "boards",
+        "subscribers",
+    )
+    op_selection = _subset_return_fields(
+        op_selection, op_stack, return_fields, return_fields_defaults
+    )
+
+    result = await _execute_graphql_op(op, monday_credentials)
+    return result["boards"]["subscribers"]
+
+
+@task
+async def query_boards_activity_logs(
+    monday_credentials: MondayCredentials,
+    limit: int = 25,
+    page: int = 1,
+    ids: Iterable[int] = None,
+    board_kind: graphql_schema.BoardKind = None,
+    state: graphql_schema.State = "active",
+    newest_first: bool = None,
+    order_by: graphql_schema.BoardsOrderBy = None,
+    activity_logs_limit: int = 25,
+    activity_logs_page: int = 1,
+    user_ids: Iterable[int] = None,
+    column_ids: Iterable[str] = None,
+    group_ids: Iterable[str] = None,
+    item_ids: Iterable[int] = None,
+    from_: datetime = None,
+    to: datetime = None,
+    return_fields: Iterable[str] = None,
+) -> Dict[str, Any]:
+    """
+    The board log events.
+
+    Args:
+        monday_credentials: Credentials to use for authentication with Monday.
+        limit: Number of items to get, the default is 25.
+        page: Page number to get, starting at 1.
+        ids: A list of boards unique identifiers.
+        board_kind: The board's kind (public / private / share).
+        state: The state of the board (all / active / archived /
+            deleted), the default is active.
+        newest_first: Get the recently created boards at the top of the
+            list, (Deprecated, use order_by:created_at).
+        order_by: Property to order by (created_at / used_at).
+        activity_logs_limit: Number of items to get, the default is 25.
+        activity_logs_page: Page number to get, starting at 1.
+        user_ids: User ids to filter.
+        column_ids: Column ids to filter.
+        group_ids: Group ids to filter.
+        item_ids: Item id to filter.
+        from_: From timestamp (ISO8601).
+        to: To timestamp (ISO8601).
+        return_fields: Subset the return fields (as snake_case); defaults to
+            fields listed in configs/query/*.json.
+
+    Returns:
+        A dict of the returned fields.
+    """
+    op = Operation(graphql_schema.Query)
+    op_selection = op.boards(
+        **strip_kwargs(
+            limit=limit,
+            page=page,
+            ids=ids,
+            board_kind=board_kind,
+            state=state,
+            newest_first=newest_first,
+            order_by=order_by,
+        )
+    ).activity_logs(
+        **strip_kwargs(
+            limit=activity_logs_limit,
+            page=activity_logs_page,
+            user_ids=user_ids,
+            column_ids=column_ids,
+            group_ids=group_ids,
+            item_ids=item_ids,
+            from_=from_,
+            to=to,
+        )
+    )
+
+    op_stack = (
+        "boards",
+        "activity_logs",
+    )
+    op_selection = _subset_return_fields(
+        op_selection, op_stack, return_fields, return_fields_defaults
+    )
+
+    result = await _execute_graphql_op(op, monday_credentials)
+    return result["boards"]["activity_logs"]

@@ -1,0 +1,12 @@
+{
+  "change_column_metadata": [
+    "archived",
+    "description",
+    "id",
+    "pos",
+    "settings_str",
+    "title",
+    "type",
+    "width"
+  ]
+}

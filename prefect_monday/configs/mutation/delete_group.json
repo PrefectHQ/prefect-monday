@@ -1,0 +1,21 @@
+{
+  "delete_group": [
+    "archived",
+    "color",
+    "deleted",
+    "id",
+    {
+      "items": [
+        "created_at",
+        "creator_id",
+        "email",
+        "id",
+        "name",
+        "state",
+        "updated_at"
+      ]
+    },
+    "position",
+    "title"
+  ]
+}

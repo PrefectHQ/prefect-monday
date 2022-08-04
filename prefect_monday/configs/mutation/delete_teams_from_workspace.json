@@ -1,0 +1,39 @@
+{
+  "delete_teams_from_workspace": [
+    "id",
+    "name",
+    "picture_url",
+    {
+      "users": [
+        "birthday",
+        "country_code",
+        "created_at",
+        "current_language",
+        "email",
+        "enabled",
+        "encrypt_api_token",
+        "id",
+        "is_admin",
+        "is_guest",
+        "is_pending",
+        "is_verified",
+        "is_view_only",
+        "join_date",
+        "location",
+        "mobile_phone",
+        "name",
+        "phone",
+        "photo_original",
+        "photo_small",
+        "photo_thumb",
+        "photo_thumb_small",
+        "photo_tiny",
+        "sign_up_product_kind",
+        "time_zone_identifier",
+        "title",
+        "url",
+        "utc_hours_diff"
+      ]
+    }
+  ]
+}

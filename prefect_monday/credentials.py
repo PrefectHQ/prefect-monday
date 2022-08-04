@@ -1,20 +1,29 @@
 """Credential classes used to perform authenticated interactions with Monday"""
 
-from dataclasses import dataclass
-
+from prefect.blocks.core import Block
+from pydantic import SecretStr
 from sgqlc.endpoint.http import HTTPEndpoint
 
 
-@dataclass
-class MondayCredentials:
+class MondayCredentials(Block):
     """
-    Dataclass used to manage Monday authentication.
+    Block used to manage Monday authentication.
 
     Args:
         token: the token to authenticate into Monday.
+
+    Examples:
+        Load stored Monday credentials:
+        ```python
+        from prefect_monday import MondayCredentials
+        monday_credentials_block = MondayCredentials.load("BLOCK_NAME")
+        ```
     """
 
-    token: str
+    _block_type_name = "Monday Credentials"
+    # _logo_url = "<LOGO_URL_HERE>"
+
+    token: SecretStr = None
 
     def get_endpoint(self) -> HTTPEndpoint:
         """
@@ -32,14 +41,16 @@ class MondayCredentials:
             @flow
             def example_get_endpoint_flow():
                 token = "consumer_key"
-                monday_credentials = MondayCredentials(token)
+                monday_credentials = MondayCredentials(token=token)
                 endpoint = monday_credentials.get_endpoint()
                 return endpoint
 
             example_get_endpoint_flow()
             ```
         """
-        endpoint = HTTPEndpoint(
-            "https://api.monday.com/v2", {"Authorization": f"Bearer {self.token}"}
-        )
+        if self.token is not None:
+            base_headers = {"Authorization": f"Bearer {self.token.get_secret_value()}"}
+        else:
+            base_headers = None
+        endpoint = HTTPEndpoint("https://api.monday.com/v2", base_headers=base_headers)
         return endpoint

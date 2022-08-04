@@ -1,0 +1,8 @@
+{
+  "create_webhook": [
+    "board_id",
+    "config",
+    "event",
+    "id"
+  ]
+}

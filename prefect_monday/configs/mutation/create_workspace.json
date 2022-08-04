@@ -1,0 +1,8 @@
+{
+  "create_workspace": [
+    "description",
+    "id",
+    "kind",
+    "name"
+  ]
+}
