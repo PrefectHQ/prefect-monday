@@ -21,7 +21,7 @@ class MondayCredentials(Block):
     """
 
     _block_type_name = "Monday Credentials"
-    # _logo_url = "<LOGO_URL_HERE>"
+    _logo_url = "https://images.ctfassets.net/gm98wzqotmnx/3ohoKiYTO3Kjt6sri58HXu/27b45e8641127b196008976dde856058/imageedit_5_6047243931.png?h=250"  # noqa
 
     token: SecretStr = None
 
