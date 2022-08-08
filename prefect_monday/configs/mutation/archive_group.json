@@ -8,6 +8,7 @@
       "items": [
         "created_at",
         "creator_id",
+        "email",
         "id",
         "name",
         "state",

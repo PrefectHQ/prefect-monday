@@ -1,10 +1,22 @@
 site_name: prefect-monday
+site_url: https://PrefectHQ.github.io/prefect-monday
 repo_url: https://github.com/PrefectHQ/prefect-monday
+edit_uri: /edit/main/docs/
 theme:
   name: material
+  favicon: img/favicon.ico
   palette:
     primary: blue
     accent: blue
+  icon:
+    repo: fontawesome/brands/github
+  logo:
+    img/prefect-logo-white.png
+  font:
+    text: Inter
+    code: Source Code Pro
+extra_css:
+    - stylesheets/extra.css
 markdown_extensions:
     - admonition
     - attr_list
@@ -42,8 +54,6 @@ nav:
     - Assets: assets.md
     - Boards: boards.md
     - Complexity: complexity.md
-    - Credentials: credentials.md
-    - Graphql: graphql.md
     - Items: items.md
     - Items By Column Values: items_by_column_values.md
     - Items By Multiple Column Values: items_by_multiple_column_values.md
@@ -53,4 +63,5 @@ nav:
     - Teams: teams.md
     - Updates: updates.md
     - Users: users.md
-    - Utils: utils.md 
+    - Webhooks: webhooks.md
+    

@@ -1,5 +1,5 @@
 """
-This is a module for interacting with Monday Query assets tasks.
+This is a module for interacting with Monday assets tasks.
 It was auto-generated using prefect-collection-generator so
 manually editing this file is not recommended.
 """
@@ -8,11 +8,12 @@ from pathlib import Path
 from typing import Any, Dict, Iterable
 
 from prefect import task
+from sgqlc.operation import Operation
+
 from prefect_monday import MondayCredentials
 from prefect_monday.graphql import _execute_graphql_op, _subset_return_fields
 from prefect_monday.schemas import graphql_schema
 from prefect_monday.utils import initialize_return_fields_defaults, strip_kwargs
-from sgqlc.operation import Operation
 
 config_path = Path(__file__).parent.resolve() / "configs" / "query" / "assets.json"
 return_fields_defaults = initialize_return_fields_defaults(config_path)
@@ -20,7 +21,7 @@ return_fields_defaults = initialize_return_fields_defaults(config_path)
 
 @task
 async def query_assets(
-    ids: int,
+    ids: Iterable[int],
     monday_credentials: MondayCredentials,
     return_fields: Iterable[str] = None,
 ) -> Dict[str, Any]:
@@ -54,7 +55,7 @@ async def query_assets(
 
 @task
 async def query_assets_uploaded_by(
-    ids: int,
+    ids: Iterable[int],
     monday_credentials: MondayCredentials,
     return_fields: Iterable[str] = None,
 ) -> Dict[str, Any]:

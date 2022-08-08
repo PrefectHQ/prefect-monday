@@ -1,5 +1,5 @@
 """
-This is a module for interacting with Monday Query items_by_column_values tasks.
+This is a module for interacting with Monday items_by_column_values tasks.
 It was auto-generated using prefect-collection-generator so
 manually editing this file is not recommended.
 """
@@ -8,11 +8,12 @@ from pathlib import Path
 from typing import Any, Dict, Iterable
 
 from prefect import task
+from sgqlc.operation import Operation
+
 from prefect_monday import MondayCredentials
 from prefect_monday.graphql import _execute_graphql_op, _subset_return_fields
 from prefect_monday.schemas import graphql_schema
 from prefect_monday.utils import initialize_return_fields_defaults, strip_kwargs
-from sgqlc.operation import Operation
 
 config_path = (
     Path(__file__).parent.resolve()
@@ -74,6 +75,120 @@ async def query_items_by_column_values(
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["items_by_column_values"]
+
+
+@task
+async def query_items_by_column_values_board(
+    board_id: int,
+    column_id: str,
+    column_value: str,
+    monday_credentials: MondayCredentials,
+    limit: int = None,
+    page: int = 1,
+    column_type: str = None,
+    state: graphql_schema.State = "active",
+    return_fields: Iterable[str] = None,
+) -> Dict[str, Any]:
+    """
+    The board that contains this item.
+
+    Args:
+        board_id: The board's unique identifier.
+        column_id: The column's unique identifier.
+        column_value: The column value to search items
+            by.
+        monday_credentials: Credentials to use for authentication with Monday.
+        limit: Number of items to get.
+        page: Page number to get, starting at 1.
+        column_type: The column type.
+        state: The state of the item (all / active /
+            archived / deleted), the default is active.
+        return_fields: Subset the return fields (as snake_case); defaults to
+            fields listed in configs/query/*.json.
+
+    Returns:
+        A dict of the returned fields.
+    """
+    op = Operation(graphql_schema.Query)
+    op_selection = op.items_by_column_values(
+        **strip_kwargs(
+            board_id=board_id,
+            column_id=column_id,
+            column_value=column_value,
+            limit=limit,
+            page=page,
+            column_type=column_type,
+            state=state,
+        )
+    ).board(**strip_kwargs())
+
+    op_stack = (
+        "items_by_column_values",
+        "board",
+    )
+    op_selection = _subset_return_fields(
+        op_selection, op_stack, return_fields, return_fields_defaults
+    )
+
+    result = await _execute_graphql_op(op, monday_credentials)
+    return result["items_by_column_values"]["board"]
+
+
+@task
+async def query_items_by_column_values_group(
+    board_id: int,
+    column_id: str,
+    column_value: str,
+    monday_credentials: MondayCredentials,
+    limit: int = None,
+    page: int = 1,
+    column_type: str = None,
+    state: graphql_schema.State = "active",
+    return_fields: Iterable[str] = None,
+) -> Dict[str, Any]:
+    """
+    The group that contains this item.
+
+    Args:
+        board_id: The board's unique identifier.
+        column_id: The column's unique identifier.
+        column_value: The column value to search items
+            by.
+        monday_credentials: Credentials to use for authentication with Monday.
+        limit: Number of items to get.
+        page: Page number to get, starting at 1.
+        column_type: The column type.
+        state: The state of the item (all / active /
+            archived / deleted), the default is active.
+        return_fields: Subset the return fields (as snake_case); defaults to
+            fields listed in configs/query/*.json.
+
+    Returns:
+        A dict of the returned fields.
+    """
+    op = Operation(graphql_schema.Query)
+    op_selection = op.items_by_column_values(
+        **strip_kwargs(
+            board_id=board_id,
+            column_id=column_id,
+            column_value=column_value,
+            limit=limit,
+            page=page,
+            column_type=column_type,
+            state=state,
+        )
+    ).group(**strip_kwargs())
+
+    op_stack = (
+        "items_by_column_values",
+        "group",
+    )
+    op_selection = _subset_return_fields(
+        op_selection, op_stack, return_fields, return_fields_defaults
+    )
+
+    result = await _execute_graphql_op(op, monday_credentials)
+    return result["items_by_column_values"]["group"]
 
 
 @task
@@ -143,126 +258,6 @@ async def query_items_by_column_values_assets(
 
 
 @task
-async def query_items_by_column_values_board(
-    board_id: int,
-    column_id: str,
-    column_value: str,
-    monday_credentials: MondayCredentials,
-    limit: int = None,
-    page: int = 1,
-    column_type: str = None,
-    state: graphql_schema.State = "active",
-    return_fields: Iterable[str] = None,
-) -> Dict[str, Any]:
-    """
-    The board that contains this item.
-
-    Args:
-        board_id: The board's unique identifier.
-        column_id: The column's unique identifier.
-        column_value: The column value to search items
-            by.
-        monday_credentials: Credentials to use for authentication with Monday.
-        limit: Number of items to get.
-        page: Page number to get, starting at 1.
-        column_type: The column type.
-        state: The state of the item (all / active /
-            archived / deleted), the default is active.
-        return_fields: Subset the return fields (as snake_case); defaults to
-            fields listed in configs/query/*.json.
-
-    Returns:
-        A dict of the returned fields.
-    """
-    op = Operation(graphql_schema.Query)
-    op_selection = op.items_by_column_values(
-        **strip_kwargs(
-            board_id=board_id,
-            column_id=column_id,
-            column_value=column_value,
-            limit=limit,
-            page=page,
-            column_type=column_type,
-            state=state,
-        )
-    ).board(**strip_kwargs())
-
-    op_stack = (
-        "items_by_column_values",
-        "board",
-    )
-    op_selection = _subset_return_fields(
-        op_selection, op_stack, return_fields, return_fields_defaults
-    )
-
-    result = await _execute_graphql_op(op, monday_credentials)
-    return result["items_by_column_values"]["board"]
-
-
-@task
-async def query_items_by_column_values(
-    board_id: int,
-    column_id: str,
-    column_value: str,
-    monday_credentials: MondayCredentials,
-    limit: int = None,
-    page: int = 1,
-    column_type: str = None,
-    state: graphql_schema.State = "active",
-    ids: Iterable[str] = None,
-    return_fields: Iterable[str] = None,
-) -> Dict[str, Any]:
-    """
-    The item's column values.
-
-    Args:
-        board_id: The board's unique identifier.
-        column_id: The column's unique identifier.
-        column_value: The column value to search items
-            by.
-        monday_credentials: Credentials to use for authentication with Monday.
-        limit: Number of items to get.
-        page: Page number to get, starting at 1.
-        column_type: The column type.
-        state: The state of the item (all / active /
-            archived / deleted), the default is active.
-        ids: A list of column ids to return.
-        return_fields: Subset the return fields (as snake_case); defaults to
-            fields listed in configs/query/*.json.
-
-    Returns:
-        A dict of the returned fields.
-    """
-    op = Operation(graphql_schema.Query)
-    op_selection = op.items_by_column_values(
-        **strip_kwargs(
-            board_id=board_id,
-            column_id=column_id,
-            column_value=column_value,
-            limit=limit,
-            page=page,
-            column_type=column_type,
-            state=state,
-        )
-    ).column_values(
-        **strip_kwargs(
-            ids=ids,
-        )
-    )
-
-    op_stack = (
-        "items_by_column_values",
-        "column_values",
-    )
-    op_selection = _subset_return_fields(
-        op_selection, op_stack, return_fields, return_fields_defaults
-    )
-
-    result = await _execute_graphql_op(op, monday_credentials)
-    return result["items_by_column_values"]["column_values"]
-
-
-@task
 async def query_items_by_column_values_creator(
     board_id: int,
     column_id: str,
@@ -320,7 +315,7 @@ async def query_items_by_column_values_creator(
 
 
 @task
-async def query_items_by_column_values_group(
+async def query_items_by_column_values_updates(
     board_id: int,
     column_id: str,
     column_value: str,
@@ -329,10 +324,12 @@ async def query_items_by_column_values_group(
     page: int = 1,
     column_type: str = None,
     state: graphql_schema.State = "active",
+    updates_limit: int = 25,
+    updates_page: int = 1,
     return_fields: Iterable[str] = None,
 ) -> Dict[str, Any]:
     """
-    The group that contains this item.
+    The item's updates.
 
     Args:
         board_id: The board's unique identifier.
@@ -345,6 +342,8 @@ async def query_items_by_column_values_group(
         column_type: The column type.
         state: The state of the item (all / active /
             archived / deleted), the default is active.
+        updates_limit: Number of items to get, the default is 25.
+        updates_page: Page number to get, starting at 1.
         return_fields: Subset the return fields (as snake_case); defaults to
             fields listed in configs/query/*.json.
 
@@ -362,18 +361,23 @@ async def query_items_by_column_values_group(
             column_type=column_type,
             state=state,
         )
-    ).group(**strip_kwargs())
+    ).updates(
+        **strip_kwargs(
+            limit=updates_limit,
+            page=updates_page,
+        )
+    )
 
     op_stack = (
         "items_by_column_values",
-        "group",
+        "updates",
     )
     op_selection = _subset_return_fields(
         op_selection, op_stack, return_fields, return_fields_defaults
     )
 
     result = await _execute_graphql_op(op, monday_credentials)
-    return result["items_by_column_values"]["group"]
+    return result["items_by_column_values"]["updates"]
 
 
 @task
@@ -491,7 +495,7 @@ async def query_items_by_column_values_subscribers(
 
 
 @task
-async def query_items_by_column_values_updates(
+async def query_items_by_column_values_column_values(
     board_id: int,
     column_id: str,
     column_value: str,
@@ -500,12 +504,11 @@ async def query_items_by_column_values_updates(
     page: int = 1,
     column_type: str = None,
     state: graphql_schema.State = "active",
-    updates_limit: int = 25,
-    updates_page: int = 1,
+    ids: Iterable[str] = None,
     return_fields: Iterable[str] = None,
 ) -> Dict[str, Any]:
     """
-    The item's updates.
+    The item's column values.
 
     Args:
         board_id: The board's unique identifier.
@@ -518,8 +521,7 @@ async def query_items_by_column_values_updates(
         column_type: The column type.
         state: The state of the item (all / active /
             archived / deleted), the default is active.
-        updates_limit: Number of items to get, the default is 25.
-        updates_page: Page number to get, starting at 1.
+        ids: A list of column ids to return.
         return_fields: Subset the return fields (as snake_case); defaults to
             fields listed in configs/query/*.json.
 
@@ -537,20 +539,19 @@ async def query_items_by_column_values_updates(
             column_type=column_type,
             state=state,
         )
-    ).updates(
+    ).column_values(
         **strip_kwargs(
-            limit=updates_limit,
-            page=updates_page,
+            ids=ids,
         )
     )
 
     op_stack = (
         "items_by_column_values",
-        "updates",
+        "column_values",
     )
     op_selection = _subset_return_fields(
         op_selection, op_stack, return_fields, return_fields_defaults
     )
 
     result = await _execute_graphql_op(op, monday_credentials)
-    return result["items_by_column_values"]["updates"]
+    return result["items_by_column_values"]["column_values"]

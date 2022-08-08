@@ -1,0 +1,51 @@
+{
+  "delete_users_from_workspace": [
+    {
+      "account": [
+        "first_day_of_the_week",
+        "id",
+        "logo",
+        "name",
+        "show_timeline_weekends",
+        "sign_up_product_kind",
+        "slug",
+        "tier"
+      ]
+    },
+    "birthday",
+    "country_code",
+    "created_at",
+    "current_language",
+    "email",
+    "enabled",
+    "encrypt_api_token",
+    "id",
+    "is_admin",
+    "is_guest",
+    "is_pending",
+    "is_verified",
+    "is_view_only",
+    "join_date",
+    "location",
+    "mobile_phone",
+    "name",
+    "phone",
+    "photo_original",
+    "photo_small",
+    "photo_thumb",
+    "photo_thumb_small",
+    "photo_tiny",
+    "sign_up_product_kind",
+    {
+      "teams": [
+        "id",
+        "name",
+        "picture_url"
+      ]
+    },
+    "time_zone_identifier",
+    "title",
+    "url",
+    "utc_hours_diff"
+  ]
+}

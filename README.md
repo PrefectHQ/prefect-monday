@@ -2,7 +2,7 @@
 
 ## Welcome!
 
-Prefect tasks and subflows for monday.com
+Prefect integrations interacting with monday.com.
 
 The tasks within this collection were created by a code generator using the service's GraphQL schema.
 
@@ -28,13 +28,15 @@ pip install prefect-monday
 
 ```python
 from prefect import flow
+
 from prefect_monday.credentials import MondayCredentials
 from prefect_monday.me import query_me
 
 @flow
 def query_me_flow():
-    monday_credentials = MondayCredentials("token")
+    monday_credentials = MondayCredentials(token="token")
     result = query_me(monday_credentials)
+    print(result)
     return result
 
 query_me_flow()

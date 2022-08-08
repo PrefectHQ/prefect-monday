@@ -1,0 +1,8 @@
+{
+  "webhooks": [
+    "board_id",
+    "config",
+    "event",
+    "id"
+  ]
+}

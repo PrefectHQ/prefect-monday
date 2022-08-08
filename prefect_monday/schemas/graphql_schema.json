@@ -742,6 +742,37 @@
                   "ofType": null
                 }
               }
+            },
+            {
+              "args": [
+                {
+                  "defaultValue": null,
+                  "description": "Board unique identifier.",
+                  "name": "board_id",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "Int",
+                      "ofType": null
+                    }
+                  }
+                }
+              ],
+              "deprecationReason": null,
+              "description": "Get a collection of webhooks for the board",
+              "isDeprecated": false,
+              "name": "webhooks",
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "Webhook",
+                  "ofType": null
+                }
+              }
             }
           ],
           "inputFields": null,
@@ -1154,9 +1185,9 @@
             },
             {
               "args": [],
-              "deprecationReason": null,
+              "deprecationReason": "pos is no longer supported and returns invalid value",
               "description": "The board's position.",
-              "isDeprecated": false,
+              "isDeprecated": true,
               "name": "pos",
               "type": {
                 "kind": "SCALAR",
@@ -1230,6 +1261,18 @@
                   "name": "Group",
                   "ofType": null
                 }
+              }
+            },
+            {
+              "args": [],
+              "deprecationReason": null,
+              "description": "The board object type.",
+              "isDeprecated": false,
+              "name": "type",
+              "type": {
+                "kind": "ENUM",
+                "name": "BoardObjectType",
+                "ofType": null
               }
             },
             {
@@ -1500,6 +1543,18 @@
               "type": {
                 "kind": "SCALAR",
                 "name": "Date",
+                "ofType": null
+              }
+            },
+            {
+              "args": [],
+              "deprecationReason": null,
+              "description": "The current user's language",
+              "isDeprecated": false,
+              "name": "current_language",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
                 "ofType": null
               }
             },
@@ -2262,6 +2317,35 @@
           "possibleTypes": null
         },
         {
+          "description": "The board object types.",
+          "enumValues": [
+            {
+              "deprecationReason": null,
+              "description": "Parent Board.",
+              "isDeprecated": false,
+              "name": "board"
+            },
+            {
+              "deprecationReason": null,
+              "description": "Sub Items Board.",
+              "isDeprecated": false,
+              "name": "sub_items_board"
+            },
+            {
+              "deprecationReason": null,
+              "description": "Document.",
+              "isDeprecated": false,
+              "name": "document"
+            }
+          ],
+          "fields": null,
+          "inputFields": null,
+          "interfaces": null,
+          "kind": "ENUM",
+          "name": "BoardObjectType",
+          "possibleTypes": null
+        },
+        {
           "description": "A JSON formated string.",
           "enumValues": null,
           "fields": null,
@@ -2649,6 +2733,22 @@
               "description": "The unique identifier of the item creator.",
               "isDeprecated": false,
               "name": "creator_id",
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              }
+            },
+            {
+              "args": [],
+              "deprecationReason": null,
+              "description": "The item's email.",
+              "isDeprecated": false,
+              "name": "email",
               "type": {
                 "kind": "NON_NULL",
                 "name": null,
@@ -3910,6 +4010,178 @@
           "interfaces": [],
           "kind": "OBJECT",
           "name": "AppMonetizationStatus",
+          "possibleTypes": null
+        },
+        {
+          "description": "Monday webhooks",
+          "enumValues": null,
+          "fields": [
+            {
+              "args": [],
+              "deprecationReason": null,
+              "description": "The webhooks's board id.",
+              "isDeprecated": false,
+              "name": "board_id",
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                }
+              }
+            },
+            {
+              "args": [],
+              "deprecationReason": null,
+              "description": "The webhooks's config.",
+              "isDeprecated": false,
+              "name": "config",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            {
+              "args": [],
+              "deprecationReason": null,
+              "description": "The event webhook listen to (incoming_notification / change_column_value / change_status_column_value / change_subitem_column_value / change_specific_column_value / create_item / create_subitem / create_update / create_subitem_update / change_subitem_name / change_name / when_date_arrived / item_deleted / subitem_deleted / item_archived / subitem_archived)",
+              "isDeprecated": false,
+              "name": "event",
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "ENUM",
+                  "name": "WebhookEventType",
+                  "ofType": null
+                }
+              }
+            },
+            {
+              "args": [],
+              "deprecationReason": null,
+              "description": "The webhooks's unique identifier.",
+              "isDeprecated": false,
+              "name": "id",
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
+              }
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "kind": "OBJECT",
+          "name": "Webhook",
+          "possibleTypes": null
+        },
+        {
+          "description": "The webhook's target type.",
+          "enumValues": [
+            {
+              "deprecationReason": null,
+              "description": "Column value changed on board",
+              "isDeprecated": false,
+              "name": "change_column_value"
+            },
+            {
+              "deprecationReason": null,
+              "description": "Status column value changed on board",
+              "isDeprecated": false,
+              "name": "change_status_column_value"
+            },
+            {
+              "deprecationReason": null,
+              "description": "Column value changed on board subitem",
+              "isDeprecated": false,
+              "name": "change_subitem_column_value"
+            },
+            {
+              "deprecationReason": null,
+              "description": "Specific Column value changed on board",
+              "isDeprecated": false,
+              "name": "change_specific_column_value"
+            },
+            {
+              "deprecationReason": null,
+              "description": "An item was created on board",
+              "isDeprecated": false,
+              "name": "create_item"
+            },
+            {
+              "deprecationReason": null,
+              "description": "An subitem was created on a bord",
+              "isDeprecated": false,
+              "name": "create_subitem"
+            },
+            {
+              "deprecationReason": null,
+              "description": "An update was posted on board item",
+              "isDeprecated": false,
+              "name": "create_update"
+            },
+            {
+              "deprecationReason": null,
+              "description": "An update was posted on board subitem",
+              "isDeprecated": false,
+              "name": "create_subitem_update"
+            },
+            {
+              "deprecationReason": null,
+              "description": "An subitem name changed on board",
+              "isDeprecated": false,
+              "name": "change_subitem_name"
+            },
+            {
+              "deprecationReason": null,
+              "description": "An item name changed on board",
+              "isDeprecated": false,
+              "name": "change_name"
+            },
+            {
+              "deprecationReason": null,
+              "description": "An item date has arrived",
+              "isDeprecated": false,
+              "name": "when_date_arrived"
+            },
+            {
+              "deprecationReason": null,
+              "description": "An item was deleted from a board",
+              "isDeprecated": false,
+              "name": "item_deleted"
+            },
+            {
+              "deprecationReason": null,
+              "description": "A subitem was deleted from a board",
+              "isDeprecated": false,
+              "name": "subitem_deleted"
+            },
+            {
+              "deprecationReason": null,
+              "description": "An item was archived on a board",
+              "isDeprecated": false,
+              "name": "item_archived"
+            },
+            {
+              "deprecationReason": null,
+              "description": "An subitem was archived on a board",
+              "isDeprecated": false,
+              "name": "subitem_archived"
+            }
+          ],
+          "fields": null,
+          "inputFields": null,
+          "interfaces": null,
+          "kind": "ENUM",
+          "name": "WebhookEventType",
           "possibleTypes": null
         },
         {
@@ -5338,7 +5610,7 @@
                 },
                 {
                   "defaultValue": null,
-                  "description": "The event to listen to (incoming_notification / change_column_value / change_subitem_column_value / change_specific_column_value / create_item / create_subitem / create_update / create_subitem_update / change_subitem_name / change_name / when_date_arrived)",
+                  "description": "The event to listen to (incoming_notification / change_column_value / change_status_column_value / change_subitem_column_value / change_specific_column_value / create_item / create_subitem / create_update / create_subitem_update / change_subitem_name / change_name / when_date_arrived / item_deleted / subitem_deleted / item_archived / subitem_archived)",
                   "name": "event",
                   "type": {
                     "kind": "NON_NULL",
@@ -5419,6 +5691,33 @@
               "type": {
                 "kind": "OBJECT",
                 "name": "Workspace",
+                "ofType": null
+              }
+            },
+            {
+              "args": [
+                {
+                  "defaultValue": null,
+                  "description": "The board's unique identifier",
+                  "name": "board_id",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "Int",
+                      "ofType": null
+                    }
+                  }
+                }
+              ],
+              "deprecationReason": null,
+              "description": "Delete a board.",
+              "isDeprecated": false,
+              "name": "delete_board",
+              "type": {
+                "kind": "OBJECT",
+                "name": "Board",
                 "ofType": null
               }
             },
@@ -6076,7 +6375,7 @@
                 },
                 {
                   "defaultValue": null,
-                  "description": "The board's attribute to update (description / communication)",
+                  "description": "The board's attribute to update (name / description / communication)",
                   "name": "board_attribute",
                   "type": {
                     "kind": "NON_NULL",
@@ -6510,120 +6809,6 @@
           "possibleTypes": null
         },
         {
-          "description": "Monday webhooks",
-          "enumValues": null,
-          "fields": [
-            {
-              "args": [],
-              "deprecationReason": null,
-              "description": "The webhooks's board id.",
-              "isDeprecated": false,
-              "name": "board_id",
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "Int",
-                  "ofType": null
-                }
-              }
-            },
-            {
-              "args": [],
-              "deprecationReason": null,
-              "description": "The webhooks's unique identifier.",
-              "isDeprecated": false,
-              "name": "id",
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "ID",
-                  "ofType": null
-                }
-              }
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [],
-          "kind": "OBJECT",
-          "name": "Webhook",
-          "possibleTypes": null
-        },
-        {
-          "description": "The webhook's target type.",
-          "enumValues": [
-            {
-              "deprecationReason": null,
-              "description": "Column value changed on board",
-              "isDeprecated": false,
-              "name": "change_column_value"
-            },
-            {
-              "deprecationReason": null,
-              "description": "Column value changed on board subitem",
-              "isDeprecated": false,
-              "name": "change_subitem_column_value"
-            },
-            {
-              "deprecationReason": null,
-              "description": "Specific Column value changed on board",
-              "isDeprecated": false,
-              "name": "change_specific_column_value"
-            },
-            {
-              "deprecationReason": null,
-              "description": "An item was created on board",
-              "isDeprecated": false,
-              "name": "create_item"
-            },
-            {
-              "deprecationReason": null,
-              "description": "An subitem was created on a bord",
-              "isDeprecated": false,
-              "name": "create_subitem"
-            },
-            {
-              "deprecationReason": null,
-              "description": "An update was posted on board item",
-              "isDeprecated": false,
-              "name": "create_update"
-            },
-            {
-              "deprecationReason": null,
-              "description": "An update was posted on board subitem",
-              "isDeprecated": false,
-              "name": "create_subitem_update"
-            },
-            {
-              "deprecationReason": null,
-              "description": "An subitem name changed on board",
-              "isDeprecated": false,
-              "name": "change_subitem_name"
-            },
-            {
-              "deprecationReason": null,
-              "description": "An item name changed on board",
-              "isDeprecated": false,
-              "name": "change_name"
-            },
-            {
-              "deprecationReason": null,
-              "description": "An item date has arrived",
-              "isDeprecated": false,
-              "name": "when_date_arrived"
-            }
-          ],
-          "fields": null,
-          "inputFields": null,
-          "interfaces": null,
-          "kind": "ENUM",
-          "name": "WebhookEventType",
-          "possibleTypes": null
-        },
-        {
           "description": "A multipart file",
           "enumValues": null,
           "fields": null,
@@ -6636,6 +6821,12 @@
         {
           "description": "The board attributes available.",
           "enumValues": [
+            {
+              "deprecationReason": null,
+              "description": "Board name.",
+              "isDeprecated": false,
+              "name": "name"
+            },
             {
               "deprecationReason": null,
               "description": "Board description.",
@@ -6763,6 +6954,30 @@
               "description": "Work Management",
               "isDeprecated": false,
               "name": "core"
+            },
+            {
+              "deprecationReason": null,
+              "description": "monday sales CRM",
+              "isDeprecated": false,
+              "name": "crm"
+            },
+            {
+              "deprecationReason": null,
+              "description": "monday dev",
+              "isDeprecated": false,
+              "name": "software"
+            },
+            {
+              "deprecationReason": null,
+              "description": "monday marketer",
+              "isDeprecated": false,
+              "name": "marketing"
+            },
+            {
+              "deprecationReason": null,
+              "description": "monday projects",
+              "isDeprecated": false,
+              "name": "project_management"
             }
           ],
           "fields": null,

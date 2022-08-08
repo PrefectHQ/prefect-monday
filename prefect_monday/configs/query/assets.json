@@ -12,6 +12,7 @@
         "birthday",
         "country_code",
         "created_at",
+        "current_language",
         "email",
         "enabled",
         "encrypt_api_token",
