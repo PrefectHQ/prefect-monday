@@ -48,6 +48,9 @@ plugins:
 
 nav:
     - Home: index.md
+    - Credentials: credentials.md
+    - Graphql: graphql.md
+    - Utils: utils.md
     - Account: account.md
     - App Subscription: app_subscription.md
     - Apps Monetization Status: apps_monetization_status.md

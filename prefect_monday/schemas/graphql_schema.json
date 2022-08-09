@@ -2362,6 +2362,18 @@
             {
               "args": [],
               "deprecationReason": null,
+              "description": "The account product that contains workspace.",
+              "isDeprecated": false,
+              "name": "account_product",
+              "type": {
+                "kind": "OBJECT",
+                "name": "AccountProduct",
+                "ofType": null
+              }
+            },
+            {
+              "args": [],
+              "deprecationReason": null,
               "description": "The workspace's description.",
               "isDeprecated": false,
               "name": "description",
@@ -2443,6 +2455,94 @@
           "interfaces": null,
           "kind": "ENUM",
           "name": "WorkspaceKind",
+          "possibleTypes": null
+        },
+        {
+          "description": "The product a workspace is used in.",
+          "enumValues": null,
+          "fields": [
+            {
+              "args": [],
+              "deprecationReason": null,
+              "description": "The account product id",
+              "isDeprecated": false,
+              "name": "id",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            {
+              "args": [],
+              "deprecationReason": null,
+              "description": "The account product kind (core / marketing / crm / software / projectManagement / forms / whiteboard).",
+              "isDeprecated": false,
+              "name": "kind",
+              "type": {
+                "kind": "ENUM",
+                "name": "AccountProductKind",
+                "ofType": null
+              }
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "kind": "OBJECT",
+          "name": "AccountProduct",
+          "possibleTypes": null
+        },
+        {
+          "description": "The account product kinds available.",
+          "enumValues": [
+            {
+              "deprecationReason": null,
+              "description": "monday work management",
+              "isDeprecated": false,
+              "name": "core"
+            },
+            {
+              "deprecationReason": null,
+              "description": "monday marketer",
+              "isDeprecated": false,
+              "name": "marketing"
+            },
+            {
+              "deprecationReason": null,
+              "description": "monday sales CRM",
+              "isDeprecated": false,
+              "name": "crm"
+            },
+            {
+              "deprecationReason": null,
+              "description": "monday dev",
+              "isDeprecated": false,
+              "name": "software"
+            },
+            {
+              "deprecationReason": null,
+              "description": "monday projects",
+              "isDeprecated": false,
+              "name": "projectManagement"
+            },
+            {
+              "deprecationReason": null,
+              "description": "workforms",
+              "isDeprecated": false,
+              "name": "forms"
+            },
+            {
+              "deprecationReason": null,
+              "description": "canvas",
+              "isDeprecated": false,
+              "name": "whiteboard"
+            }
+          ],
+          "fields": null,
+          "inputFields": null,
+          "interfaces": null,
+          "kind": "ENUM",
+          "name": "AccountProductKind",
           "possibleTypes": null
         },
         {

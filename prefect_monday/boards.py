@@ -1,7 +1,10 @@
 """
-This is a module for interacting with Monday boards tasks.
+This is a module containing:
+Monday query_boards* tasks
+
 It was auto-generated using prefect-collection-generator so
-manually editing this file is not recommended.
+manually editing this file is not recommended. If this module
+is outdated, rerun scripts/generate.py.
 """
 
 from datetime import datetime

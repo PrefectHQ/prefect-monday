@@ -43,7 +43,8 @@ query_me_flow()
 ```
 
 ### Query available boards
-```
+
+```python
 from prefect import flow
 
 from prefect_monday.credentials import MondayCredentials
@@ -56,6 +57,28 @@ def query_boards_flow():
     return boards
 
 query_boards_flow()
+```
+
+### Create new workspace
+
+```python
+from prefect import flow
+
+from prefect_monday.credentials import MondayCredentials
+from prefect_monday.mutations import create_workspace
+from prefect_monday.schemas import graphql_schema
+
+@flow
+def create_workspace_flow():
+    monday_credentials = MondayCredentials.load("monday-token")
+    workspace = create_workspace(
+        "integrations-test-workspace",
+        graphql_schema.WorkspaceKind.open,
+        monday_credentials=monday_credentials
+    )
+    return workspace
+
+create_workspace_flow()
 ```
 
 ## Resources

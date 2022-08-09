@@ -1,5 +1,11 @@
 {
   "create_workspace": [
+    {
+      "account_product": [
+        "id",
+        "kind"
+      ]
+    },
     "description",
     "id",
     "kind",
