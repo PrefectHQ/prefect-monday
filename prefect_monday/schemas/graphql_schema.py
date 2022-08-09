@@ -7,6 +7,19 @@ graphql_schema = sgqlc.types.Schema()
 ########################################################################
 # Scalars and Enumerations
 ########################################################################
+class AccountProductKind(sgqlc.types.Enum):
+    __schema__ = graphql_schema
+    __choices__ = (
+        "core",
+        "crm",
+        "forms",
+        "marketing",
+        "projectManagement",
+        "software",
+        "whiteboard",
+    )
+
+
 class AssetsSource(sgqlc.types.Enum):
     __schema__ = graphql_schema
     __choices__ = ("all", "columns", "gallery")
@@ -231,6 +244,13 @@ class Account(sgqlc.types.Type):
     )
     slug = sgqlc.types.Field(sgqlc.types.non_null(String), graphql_name="slug")
     tier = sgqlc.types.Field(String, graphql_name="tier")
+
+
+class AccountProduct(sgqlc.types.Type):
+    __schema__ = graphql_schema
+    __field_names__ = ("id", "kind")
+    id = sgqlc.types.Field(Int, graphql_name="id")
+    kind = sgqlc.types.Field(AccountProductKind, graphql_name="kind")
 
 
 class ActivityLogType(sgqlc.types.Type):
@@ -2228,7 +2248,8 @@ class Webhook(sgqlc.types.Type):
 
 class Workspace(sgqlc.types.Type):
     __schema__ = graphql_schema
-    __field_names__ = ("description", "id", "kind", "name")
+    __field_names__ = ("account_product", "description", "id", "kind", "name")
+    account_product = sgqlc.types.Field(AccountProduct, graphql_name="account_product")
     description = sgqlc.types.Field(String, graphql_name="description")
     id = sgqlc.types.Field(sgqlc.types.non_null(Int), graphql_name="id")
     kind = sgqlc.types.Field(WorkspaceKind, graphql_name="kind")

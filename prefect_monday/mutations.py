@@ -1,7 +1,11 @@
 """
-This is a module for interacting with Monday  tasks.
+This is a module containing:
+Monday mutation tasks
+
+
 It was auto-generated using prefect-collection-generator so
-manually editing this file is not recommended.
+manually editing this file is not recommended. If this module
+is outdated, rerun scripts/generate.py.
 """
 
 from datetime import datetime
@@ -52,13 +56,11 @@ async def change_simple_column_value(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.change_simple_column_value(
         **strip_kwargs(
-            input=dict(
-                column_id=column_id,
-                board_id=board_id,
-                value=value,
-                item_id=item_id,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            column_id=column_id,
+            board_id=board_id,
+            value=value,
+            item_id=item_id,
+            create_labels_if_missing=create_labels_if_missing,
         )
     )
 
@@ -102,13 +104,11 @@ async def change_simple_column_value_board(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.change_simple_column_value(
         **strip_kwargs(
-            input=dict(
-                column_id=column_id,
-                board_id=board_id,
-                value=value,
-                item_id=item_id,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            column_id=column_id,
+            board_id=board_id,
+            value=value,
+            item_id=item_id,
+            create_labels_if_missing=create_labels_if_missing,
         )
     ).board(**strip_kwargs())
 
@@ -155,13 +155,11 @@ async def change_simple_column_value_group(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.change_simple_column_value(
         **strip_kwargs(
-            input=dict(
-                column_id=column_id,
-                board_id=board_id,
-                value=value,
-                item_id=item_id,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            column_id=column_id,
+            board_id=board_id,
+            value=value,
+            item_id=item_id,
+            create_labels_if_missing=create_labels_if_missing,
         )
     ).group(**strip_kwargs())
 
@@ -212,20 +210,16 @@ async def change_simple_column_value_assets(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.change_simple_column_value(
         **strip_kwargs(
-            input=dict(
-                column_id=column_id,
-                board_id=board_id,
-                value=value,
-                item_id=item_id,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            column_id=column_id,
+            board_id=board_id,
+            value=value,
+            item_id=item_id,
+            create_labels_if_missing=create_labels_if_missing,
         )
     ).assets(
         **strip_kwargs(
-            input=dict(
-                assets_source=assets_source,
-                column_ids=column_ids,
-            )
+            assets_source=assets_source,
+            column_ids=column_ids,
         )
     )
 
@@ -272,13 +266,11 @@ async def change_simple_column_value_creator(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.change_simple_column_value(
         **strip_kwargs(
-            input=dict(
-                column_id=column_id,
-                board_id=board_id,
-                value=value,
-                item_id=item_id,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            column_id=column_id,
+            board_id=board_id,
+            value=value,
+            item_id=item_id,
+            create_labels_if_missing=create_labels_if_missing,
         )
     ).creator(**strip_kwargs())
 
@@ -329,20 +321,16 @@ async def change_simple_column_value_updates(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.change_simple_column_value(
         **strip_kwargs(
-            input=dict(
-                column_id=column_id,
-                board_id=board_id,
-                value=value,
-                item_id=item_id,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            column_id=column_id,
+            board_id=board_id,
+            value=value,
+            item_id=item_id,
+            create_labels_if_missing=create_labels_if_missing,
         )
     ).updates(
         **strip_kwargs(
-            input=dict(
-                limit=limit,
-                page=page,
-            )
+            limit=limit,
+            page=page,
         )
     )
 
@@ -389,13 +377,11 @@ async def change_simple_column_value_subitems(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.change_simple_column_value(
         **strip_kwargs(
-            input=dict(
-                column_id=column_id,
-                board_id=board_id,
-                value=value,
-                item_id=item_id,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            column_id=column_id,
+            board_id=board_id,
+            value=value,
+            item_id=item_id,
+            create_labels_if_missing=create_labels_if_missing,
         )
     ).subitems(**strip_kwargs())
 
@@ -442,13 +428,11 @@ async def change_simple_column_value_subscribers(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.change_simple_column_value(
         **strip_kwargs(
-            input=dict(
-                column_id=column_id,
-                board_id=board_id,
-                value=value,
-                item_id=item_id,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            column_id=column_id,
+            board_id=board_id,
+            value=value,
+            item_id=item_id,
+            create_labels_if_missing=create_labels_if_missing,
         )
     ).subscribers(**strip_kwargs())
 
@@ -497,19 +481,15 @@ async def change_simple_column_value_column_values(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.change_simple_column_value(
         **strip_kwargs(
-            input=dict(
-                column_id=column_id,
-                board_id=board_id,
-                value=value,
-                item_id=item_id,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            column_id=column_id,
+            board_id=board_id,
+            value=value,
+            item_id=item_id,
+            create_labels_if_missing=create_labels_if_missing,
         )
     ).column_values(
         **strip_kwargs(
-            input=dict(
-                ids=ids,
-            )
+            ids=ids,
         )
     )
 
@@ -549,10 +529,8 @@ async def remove_mock_app_subscription(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.remove_mock_app_subscription(
         **strip_kwargs(
-            input=dict(
-                app_id=app_id,
-                partial_signing_secret=partial_signing_secret,
-            )
+            app_id=app_id,
+            partial_signing_secret=partial_signing_secret,
         )
     )
 
@@ -593,12 +571,10 @@ async def change_multiple_column_values(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.change_multiple_column_values(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                column_values=column_values,
-                item_id=item_id,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            board_id=board_id,
+            column_values=column_values,
+            item_id=item_id,
+            create_labels_if_missing=create_labels_if_missing,
         )
     )
 
@@ -640,12 +616,10 @@ async def change_multiple_column_values_board(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.change_multiple_column_values(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                column_values=column_values,
-                item_id=item_id,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            board_id=board_id,
+            column_values=column_values,
+            item_id=item_id,
+            create_labels_if_missing=create_labels_if_missing,
         )
     ).board(**strip_kwargs())
 
@@ -690,12 +664,10 @@ async def change_multiple_column_values_group(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.change_multiple_column_values(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                column_values=column_values,
-                item_id=item_id,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            board_id=board_id,
+            column_values=column_values,
+            item_id=item_id,
+            create_labels_if_missing=create_labels_if_missing,
         )
     ).group(**strip_kwargs())
 
@@ -744,19 +716,15 @@ async def change_multiple_column_values_assets(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.change_multiple_column_values(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                column_values=column_values,
-                item_id=item_id,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            board_id=board_id,
+            column_values=column_values,
+            item_id=item_id,
+            create_labels_if_missing=create_labels_if_missing,
         )
     ).assets(
         **strip_kwargs(
-            input=dict(
-                assets_source=assets_source,
-                column_ids=column_ids,
-            )
+            assets_source=assets_source,
+            column_ids=column_ids,
         )
     )
 
@@ -801,12 +769,10 @@ async def change_multiple_column_values_creator(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.change_multiple_column_values(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                column_values=column_values,
-                item_id=item_id,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            board_id=board_id,
+            column_values=column_values,
+            item_id=item_id,
+            create_labels_if_missing=create_labels_if_missing,
         )
     ).creator(**strip_kwargs())
 
@@ -855,19 +821,15 @@ async def change_multiple_column_values_updates(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.change_multiple_column_values(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                column_values=column_values,
-                item_id=item_id,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            board_id=board_id,
+            column_values=column_values,
+            item_id=item_id,
+            create_labels_if_missing=create_labels_if_missing,
         )
     ).updates(
         **strip_kwargs(
-            input=dict(
-                limit=limit,
-                page=page,
-            )
+            limit=limit,
+            page=page,
         )
     )
 
@@ -912,12 +874,10 @@ async def change_multiple_column_values_subitems(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.change_multiple_column_values(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                column_values=column_values,
-                item_id=item_id,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            board_id=board_id,
+            column_values=column_values,
+            item_id=item_id,
+            create_labels_if_missing=create_labels_if_missing,
         )
     ).subitems(**strip_kwargs())
 
@@ -962,12 +922,10 @@ async def change_multiple_column_values_subscribers(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.change_multiple_column_values(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                column_values=column_values,
-                item_id=item_id,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            board_id=board_id,
+            column_values=column_values,
+            item_id=item_id,
+            create_labels_if_missing=create_labels_if_missing,
         )
     ).subscribers(**strip_kwargs())
 
@@ -1014,18 +972,14 @@ async def change_multiple_column_values_column_values(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.change_multiple_column_values(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                column_values=column_values,
-                item_id=item_id,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            board_id=board_id,
+            column_values=column_values,
+            item_id=item_id,
+            create_labels_if_missing=create_labels_if_missing,
         )
     ).column_values(
         **strip_kwargs(
-            input=dict(
-                ids=ids,
-            )
+            ids=ids,
         )
     )
 
@@ -1066,11 +1020,9 @@ async def add_file_to_column(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.add_file_to_column(
         **strip_kwargs(
-            input=dict(
-                item_id=item_id,
-                column_id=column_id,
-                file=file,
-            )
+            item_id=item_id,
+            column_id=column_id,
+            file=file,
         )
     )
 
@@ -1108,11 +1060,9 @@ async def add_file_to_column_uploaded_by(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.add_file_to_column(
         **strip_kwargs(
-            input=dict(
-                item_id=item_id,
-                column_id=column_id,
-                file=file,
-            )
+            item_id=item_id,
+            column_id=column_id,
+            file=file,
         )
     ).uploaded_by(**strip_kwargs())
 
@@ -1149,9 +1099,7 @@ async def delete_item(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.delete_item(
         **strip_kwargs(
-            input=dict(
-                item_id=item_id,
-            )
+            item_id=item_id,
         )
     )
 
@@ -1185,9 +1133,7 @@ async def delete_item_board(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.delete_item(
         **strip_kwargs(
-            input=dict(
-                item_id=item_id,
-            )
+            item_id=item_id,
         )
     ).board(**strip_kwargs())
 
@@ -1224,9 +1170,7 @@ async def delete_item_group(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.delete_item(
         **strip_kwargs(
-            input=dict(
-                item_id=item_id,
-            )
+            item_id=item_id,
         )
     ).group(**strip_kwargs())
 
@@ -1265,12 +1209,10 @@ async def delete_item_assets(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Mutation)
-    op_selection = op.delete_item(**strip_kwargs(input=dict(item_id=item_id,))).assets(
+    op_selection = op.delete_item(**strip_kwargs(item_id=item_id,)).assets(
         **strip_kwargs(
-            input=dict(
-                assets_source=assets_source,
-                column_ids=column_ids,
-            )
+            assets_source=assets_source,
+            column_ids=column_ids,
         )
     )
 
@@ -1307,9 +1249,7 @@ async def delete_item_creator(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.delete_item(
         **strip_kwargs(
-            input=dict(
-                item_id=item_id,
-            )
+            item_id=item_id,
         )
     ).creator(**strip_kwargs())
 
@@ -1348,12 +1288,10 @@ async def delete_item_updates(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Mutation)
-    op_selection = op.delete_item(**strip_kwargs(input=dict(item_id=item_id,))).updates(
+    op_selection = op.delete_item(**strip_kwargs(item_id=item_id,)).updates(
         **strip_kwargs(
-            input=dict(
-                limit=limit,
-                page=page,
-            )
+            limit=limit,
+            page=page,
         )
     )
 
@@ -1390,9 +1328,7 @@ async def delete_item_subitems(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.delete_item(
         **strip_kwargs(
-            input=dict(
-                item_id=item_id,
-            )
+            item_id=item_id,
         )
     ).subitems(**strip_kwargs())
 
@@ -1429,9 +1365,7 @@ async def delete_item_subscribers(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.delete_item(
         **strip_kwargs(
-            input=dict(
-                item_id=item_id,
-            )
+            item_id=item_id,
         )
     ).subscribers(**strip_kwargs())
 
@@ -1468,17 +1402,9 @@ async def delete_item_column_values(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Mutation)
-    op_selection = op.delete_item(
+    op_selection = op.delete_item(**strip_kwargs(item_id=item_id,)).column_values(
         **strip_kwargs(
-            input=dict(
-                item_id=item_id,
-            )
-        )
-    ).column_values(
-        **strip_kwargs(
-            input=dict(
-                ids=ids,
-            )
+            ids=ids,
         )
     )
 
@@ -1527,12 +1453,10 @@ async def create_webhook(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_webhook(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                url=url,
-                event=event,
-                config=config,
-            )
+            board_id=board_id,
+            url=url,
+            event=event,
+            config=config,
         )
     )
 
@@ -1574,13 +1498,11 @@ async def create_column(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_column(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                title=title,
-                description=description,
-                column_type=column_type,
-                defaults=defaults,
-            )
+            board_id=board_id,
+            title=title,
+            description=description,
+            column_type=column_type,
+            defaults=defaults,
         )
     )
 
@@ -1620,12 +1542,10 @@ async def create_notification(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_notification(
         **strip_kwargs(
-            input=dict(
-                text=text,
-                user_id=user_id,
-                target_id=target_id,
-                target_type=target_type,
-            )
+            text=text,
+            user_id=user_id,
+            target_id=target_id,
+            target_type=target_type,
         )
     )
 
@@ -1663,11 +1583,9 @@ async def change_column_title(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.change_column_title(
         **strip_kwargs(
-            input=dict(
-                column_id=column_id,
-                board_id=board_id,
-                title=title,
-            )
+            column_id=column_id,
+            board_id=board_id,
+            title=title,
         )
     )
 
@@ -1708,12 +1626,10 @@ async def create_subitem(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_subitem(
         **strip_kwargs(
-            input=dict(
-                parent_item_id=parent_item_id,
-                item_name=item_name,
-                column_values=column_values,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            parent_item_id=parent_item_id,
+            item_name=item_name,
+            column_values=column_values,
+            create_labels_if_missing=create_labels_if_missing,
         )
     )
 
@@ -1755,12 +1671,10 @@ async def create_subitem_board(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_subitem(
         **strip_kwargs(
-            input=dict(
-                parent_item_id=parent_item_id,
-                item_name=item_name,
-                column_values=column_values,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            parent_item_id=parent_item_id,
+            item_name=item_name,
+            column_values=column_values,
+            create_labels_if_missing=create_labels_if_missing,
         )
     ).board(**strip_kwargs())
 
@@ -1805,12 +1719,10 @@ async def create_subitem_group(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_subitem(
         **strip_kwargs(
-            input=dict(
-                parent_item_id=parent_item_id,
-                item_name=item_name,
-                column_values=column_values,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            parent_item_id=parent_item_id,
+            item_name=item_name,
+            column_values=column_values,
+            create_labels_if_missing=create_labels_if_missing,
         )
     ).group(**strip_kwargs())
 
@@ -1859,19 +1771,15 @@ async def create_subitem_assets(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_subitem(
         **strip_kwargs(
-            input=dict(
-                parent_item_id=parent_item_id,
-                item_name=item_name,
-                column_values=column_values,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            parent_item_id=parent_item_id,
+            item_name=item_name,
+            column_values=column_values,
+            create_labels_if_missing=create_labels_if_missing,
         )
     ).assets(
         **strip_kwargs(
-            input=dict(
-                assets_source=assets_source,
-                column_ids=column_ids,
-            )
+            assets_source=assets_source,
+            column_ids=column_ids,
         )
     )
 
@@ -1916,12 +1824,10 @@ async def create_subitem_creator(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_subitem(
         **strip_kwargs(
-            input=dict(
-                parent_item_id=parent_item_id,
-                item_name=item_name,
-                column_values=column_values,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            parent_item_id=parent_item_id,
+            item_name=item_name,
+            column_values=column_values,
+            create_labels_if_missing=create_labels_if_missing,
         )
     ).creator(**strip_kwargs())
 
@@ -1970,19 +1876,15 @@ async def create_subitem_updates(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_subitem(
         **strip_kwargs(
-            input=dict(
-                parent_item_id=parent_item_id,
-                item_name=item_name,
-                column_values=column_values,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            parent_item_id=parent_item_id,
+            item_name=item_name,
+            column_values=column_values,
+            create_labels_if_missing=create_labels_if_missing,
         )
     ).updates(
         **strip_kwargs(
-            input=dict(
-                limit=limit,
-                page=page,
-            )
+            limit=limit,
+            page=page,
         )
     )
 
@@ -2027,12 +1929,10 @@ async def create_subitem_subitems(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_subitem(
         **strip_kwargs(
-            input=dict(
-                parent_item_id=parent_item_id,
-                item_name=item_name,
-                column_values=column_values,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            parent_item_id=parent_item_id,
+            item_name=item_name,
+            column_values=column_values,
+            create_labels_if_missing=create_labels_if_missing,
         )
     ).subitems(**strip_kwargs())
 
@@ -2077,12 +1977,10 @@ async def create_subitem_subscribers(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_subitem(
         **strip_kwargs(
-            input=dict(
-                parent_item_id=parent_item_id,
-                item_name=item_name,
-                column_values=column_values,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            parent_item_id=parent_item_id,
+            item_name=item_name,
+            column_values=column_values,
+            create_labels_if_missing=create_labels_if_missing,
         )
     ).subscribers(**strip_kwargs())
 
@@ -2129,18 +2027,14 @@ async def create_subitem_column_values(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_subitem(
         **strip_kwargs(
-            input=dict(
-                parent_item_id=parent_item_id,
-                item_name=item_name,
-                column_values=column_values,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            parent_item_id=parent_item_id,
+            item_name=item_name,
+            column_values=column_values,
+            create_labels_if_missing=create_labels_if_missing,
         )
     ).column_values(
         **strip_kwargs(
-            input=dict(
-                ids=ids,
-            )
+            ids=ids,
         )
     )
 
@@ -2177,9 +2071,7 @@ async def delete_board(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.delete_board(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-            )
+            board_id=board_id,
         )
     )
 
@@ -2213,9 +2105,7 @@ async def delete_board_tags(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.delete_board(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-            )
+            board_id=board_id,
         )
     ).tags(**strip_kwargs())
 
@@ -2260,21 +2150,13 @@ async def delete_board_items(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Mutation)
-    op_selection = op.delete_board(
+    op_selection = op.delete_board(**strip_kwargs(board_id=board_id,)).items(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-            )
-        )
-    ).items(
-        **strip_kwargs(
-            input=dict(
-                ids=ids,
-                limit=limit,
-                page=page,
-                newest_first=newest_first,
-                exclude_nonactive=exclude_nonactive,
-            )
+            ids=ids,
+            limit=limit,
+            page=page,
+            newest_first=newest_first,
+            exclude_nonactive=exclude_nonactive,
         )
     )
 
@@ -2311,9 +2193,7 @@ async def delete_board_owner(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.delete_board(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-            )
+            board_id=board_id,
         )
     ).owner(**strip_kwargs())
 
@@ -2352,18 +2232,10 @@ async def delete_board_views(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Mutation)
-    op_selection = op.delete_board(
+    op_selection = op.delete_board(**strip_kwargs(board_id=board_id,)).views(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-            )
-        )
-    ).views(
-        **strip_kwargs(
-            input=dict(
-                ids=ids,
-                type=type,
-            )
+            ids=ids,
+            type=type,
         )
     )
 
@@ -2400,17 +2272,9 @@ async def delete_board_groups(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Mutation)
-    op_selection = op.delete_board(
+    op_selection = op.delete_board(**strip_kwargs(board_id=board_id,)).groups(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-            )
-        )
-    ).groups(
-        **strip_kwargs(
-            input=dict(
-                ids=ids,
-            )
+            ids=ids,
         )
     )
 
@@ -2447,9 +2311,7 @@ async def delete_board_owners(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.delete_board(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-            )
+            board_id=board_id,
         )
     ).owners(**strip_kwargs())
 
@@ -2486,17 +2348,9 @@ async def delete_board_columns(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Mutation)
-    op_selection = op.delete_board(
+    op_selection = op.delete_board(**strip_kwargs(board_id=board_id,)).columns(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-            )
-        )
-    ).columns(
-        **strip_kwargs(
-            input=dict(
-                ids=ids,
-            )
+            ids=ids,
         )
     )
 
@@ -2533,9 +2387,7 @@ async def delete_board_creator(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.delete_board(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-            )
+            board_id=board_id,
         )
     ).creator(**strip_kwargs())
 
@@ -2574,18 +2426,10 @@ async def delete_board_updates(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Mutation)
-    op_selection = op.delete_board(
+    op_selection = op.delete_board(**strip_kwargs(board_id=board_id,)).updates(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-            )
-        )
-    ).updates(
-        **strip_kwargs(
-            input=dict(
-                limit=limit,
-                page=page,
-            )
+            limit=limit,
+            page=page,
         )
     )
 
@@ -2622,9 +2466,7 @@ async def delete_board_top_group(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.delete_board(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-            )
+            board_id=board_id,
         )
     ).top_group(**strip_kwargs())
 
@@ -2661,9 +2503,7 @@ async def delete_board_workspace(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.delete_board(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-            )
+            board_id=board_id,
         )
     ).workspace(**strip_kwargs())
 
@@ -2700,9 +2540,7 @@ async def delete_board_subscribers(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.delete_board(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-            )
+            board_id=board_id,
         )
     ).subscribers(**strip_kwargs())
 
@@ -2753,24 +2591,16 @@ async def delete_board_activity_logs(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Mutation)
-    op_selection = op.delete_board(
+    op_selection = op.delete_board(**strip_kwargs(board_id=board_id,)).activity_logs(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-            )
-        )
-    ).activity_logs(
-        **strip_kwargs(
-            input=dict(
-                limit=limit,
-                page=page,
-                user_ids=user_ids,
-                column_ids=column_ids,
-                group_ids=group_ids,
-                item_ids=item_ids,
-                from_=from_,
-                to=to,
-            )
+            limit=limit,
+            page=page,
+            user_ids=user_ids,
+            column_ids=column_ids,
+            group_ids=group_ids,
+            item_ids=item_ids,
+            from_=from_,
+            to=to,
         )
     )
 
@@ -2819,15 +2649,13 @@ async def create_board(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_board(
         **strip_kwargs(
-            input=dict(
-                board_name=board_name,
-                board_kind=board_kind,
-                folder_id=folder_id,
-                workspace_id=workspace_id,
-                template_id=template_id,
-                board_owner_ids=board_owner_ids,
-                board_subscriber_ids=board_subscriber_ids,
-            )
+            board_name=board_name,
+            board_kind=board_kind,
+            folder_id=folder_id,
+            workspace_id=workspace_id,
+            template_id=template_id,
+            board_owner_ids=board_owner_ids,
+            board_subscriber_ids=board_subscriber_ids,
         )
     )
 
@@ -2873,15 +2701,13 @@ async def create_board_tags(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_board(
         **strip_kwargs(
-            input=dict(
-                board_name=board_name,
-                board_kind=board_kind,
-                folder_id=folder_id,
-                workspace_id=workspace_id,
-                template_id=template_id,
-                board_owner_ids=board_owner_ids,
-                board_subscriber_ids=board_subscriber_ids,
-            )
+            board_name=board_name,
+            board_kind=board_kind,
+            folder_id=folder_id,
+            workspace_id=workspace_id,
+            template_id=template_id,
+            board_owner_ids=board_owner_ids,
+            board_subscriber_ids=board_subscriber_ids,
         )
     ).tags(**strip_kwargs())
 
@@ -2940,25 +2766,21 @@ async def create_board_items(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_board(
         **strip_kwargs(
-            input=dict(
-                board_name=board_name,
-                board_kind=board_kind,
-                folder_id=folder_id,
-                workspace_id=workspace_id,
-                template_id=template_id,
-                board_owner_ids=board_owner_ids,
-                board_subscriber_ids=board_subscriber_ids,
-            )
+            board_name=board_name,
+            board_kind=board_kind,
+            folder_id=folder_id,
+            workspace_id=workspace_id,
+            template_id=template_id,
+            board_owner_ids=board_owner_ids,
+            board_subscriber_ids=board_subscriber_ids,
         )
     ).items(
         **strip_kwargs(
-            input=dict(
-                ids=ids,
-                limit=limit,
-                page=page,
-                newest_first=newest_first,
-                exclude_nonactive=exclude_nonactive,
-            )
+            ids=ids,
+            limit=limit,
+            page=page,
+            newest_first=newest_first,
+            exclude_nonactive=exclude_nonactive,
         )
     )
 
@@ -3007,15 +2829,13 @@ async def create_board_owner(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_board(
         **strip_kwargs(
-            input=dict(
-                board_name=board_name,
-                board_kind=board_kind,
-                folder_id=folder_id,
-                workspace_id=workspace_id,
-                template_id=template_id,
-                board_owner_ids=board_owner_ids,
-                board_subscriber_ids=board_subscriber_ids,
-            )
+            board_name=board_name,
+            board_kind=board_kind,
+            folder_id=folder_id,
+            workspace_id=workspace_id,
+            template_id=template_id,
+            board_owner_ids=board_owner_ids,
+            board_subscriber_ids=board_subscriber_ids,
         )
     ).owner(**strip_kwargs())
 
@@ -3068,22 +2888,18 @@ async def create_board_views(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_board(
         **strip_kwargs(
-            input=dict(
-                board_name=board_name,
-                board_kind=board_kind,
-                folder_id=folder_id,
-                workspace_id=workspace_id,
-                template_id=template_id,
-                board_owner_ids=board_owner_ids,
-                board_subscriber_ids=board_subscriber_ids,
-            )
+            board_name=board_name,
+            board_kind=board_kind,
+            folder_id=folder_id,
+            workspace_id=workspace_id,
+            template_id=template_id,
+            board_owner_ids=board_owner_ids,
+            board_subscriber_ids=board_subscriber_ids,
         )
     ).views(
         **strip_kwargs(
-            input=dict(
-                ids=ids,
-                type=type,
-            )
+            ids=ids,
+            type=type,
         )
     )
 
@@ -3134,21 +2950,17 @@ async def create_board_groups(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_board(
         **strip_kwargs(
-            input=dict(
-                board_name=board_name,
-                board_kind=board_kind,
-                folder_id=folder_id,
-                workspace_id=workspace_id,
-                template_id=template_id,
-                board_owner_ids=board_owner_ids,
-                board_subscriber_ids=board_subscriber_ids,
-            )
+            board_name=board_name,
+            board_kind=board_kind,
+            folder_id=folder_id,
+            workspace_id=workspace_id,
+            template_id=template_id,
+            board_owner_ids=board_owner_ids,
+            board_subscriber_ids=board_subscriber_ids,
         )
     ).groups(
         **strip_kwargs(
-            input=dict(
-                ids=ids,
-            )
+            ids=ids,
         )
     )
 
@@ -3197,15 +3009,13 @@ async def create_board_owners(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_board(
         **strip_kwargs(
-            input=dict(
-                board_name=board_name,
-                board_kind=board_kind,
-                folder_id=folder_id,
-                workspace_id=workspace_id,
-                template_id=template_id,
-                board_owner_ids=board_owner_ids,
-                board_subscriber_ids=board_subscriber_ids,
-            )
+            board_name=board_name,
+            board_kind=board_kind,
+            folder_id=folder_id,
+            workspace_id=workspace_id,
+            template_id=template_id,
+            board_owner_ids=board_owner_ids,
+            board_subscriber_ids=board_subscriber_ids,
         )
     ).owners(**strip_kwargs())
 
@@ -3256,21 +3066,17 @@ async def create_board_columns(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_board(
         **strip_kwargs(
-            input=dict(
-                board_name=board_name,
-                board_kind=board_kind,
-                folder_id=folder_id,
-                workspace_id=workspace_id,
-                template_id=template_id,
-                board_owner_ids=board_owner_ids,
-                board_subscriber_ids=board_subscriber_ids,
-            )
+            board_name=board_name,
+            board_kind=board_kind,
+            folder_id=folder_id,
+            workspace_id=workspace_id,
+            template_id=template_id,
+            board_owner_ids=board_owner_ids,
+            board_subscriber_ids=board_subscriber_ids,
         )
     ).columns(
         **strip_kwargs(
-            input=dict(
-                ids=ids,
-            )
+            ids=ids,
         )
     )
 
@@ -3319,15 +3125,13 @@ async def create_board_creator(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_board(
         **strip_kwargs(
-            input=dict(
-                board_name=board_name,
-                board_kind=board_kind,
-                folder_id=folder_id,
-                workspace_id=workspace_id,
-                template_id=template_id,
-                board_owner_ids=board_owner_ids,
-                board_subscriber_ids=board_subscriber_ids,
-            )
+            board_name=board_name,
+            board_kind=board_kind,
+            folder_id=folder_id,
+            workspace_id=workspace_id,
+            template_id=template_id,
+            board_owner_ids=board_owner_ids,
+            board_subscriber_ids=board_subscriber_ids,
         )
     ).creator(**strip_kwargs())
 
@@ -3380,22 +3184,18 @@ async def create_board_updates(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_board(
         **strip_kwargs(
-            input=dict(
-                board_name=board_name,
-                board_kind=board_kind,
-                folder_id=folder_id,
-                workspace_id=workspace_id,
-                template_id=template_id,
-                board_owner_ids=board_owner_ids,
-                board_subscriber_ids=board_subscriber_ids,
-            )
+            board_name=board_name,
+            board_kind=board_kind,
+            folder_id=folder_id,
+            workspace_id=workspace_id,
+            template_id=template_id,
+            board_owner_ids=board_owner_ids,
+            board_subscriber_ids=board_subscriber_ids,
         )
     ).updates(
         **strip_kwargs(
-            input=dict(
-                limit=limit,
-                page=page,
-            )
+            limit=limit,
+            page=page,
         )
     )
 
@@ -3444,15 +3244,13 @@ async def create_board_top_group(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_board(
         **strip_kwargs(
-            input=dict(
-                board_name=board_name,
-                board_kind=board_kind,
-                folder_id=folder_id,
-                workspace_id=workspace_id,
-                template_id=template_id,
-                board_owner_ids=board_owner_ids,
-                board_subscriber_ids=board_subscriber_ids,
-            )
+            board_name=board_name,
+            board_kind=board_kind,
+            folder_id=folder_id,
+            workspace_id=workspace_id,
+            template_id=template_id,
+            board_owner_ids=board_owner_ids,
+            board_subscriber_ids=board_subscriber_ids,
         )
     ).top_group(**strip_kwargs())
 
@@ -3501,15 +3299,13 @@ async def create_board_workspace(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_board(
         **strip_kwargs(
-            input=dict(
-                board_name=board_name,
-                board_kind=board_kind,
-                folder_id=folder_id,
-                workspace_id=workspace_id,
-                template_id=template_id,
-                board_owner_ids=board_owner_ids,
-                board_subscriber_ids=board_subscriber_ids,
-            )
+            board_name=board_name,
+            board_kind=board_kind,
+            folder_id=folder_id,
+            workspace_id=workspace_id,
+            template_id=template_id,
+            board_owner_ids=board_owner_ids,
+            board_subscriber_ids=board_subscriber_ids,
         )
     ).workspace(**strip_kwargs())
 
@@ -3558,15 +3354,13 @@ async def create_board_subscribers(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_board(
         **strip_kwargs(
-            input=dict(
-                board_name=board_name,
-                board_kind=board_kind,
-                folder_id=folder_id,
-                workspace_id=workspace_id,
-                template_id=template_id,
-                board_owner_ids=board_owner_ids,
-                board_subscriber_ids=board_subscriber_ids,
-            )
+            board_name=board_name,
+            board_kind=board_kind,
+            folder_id=folder_id,
+            workspace_id=workspace_id,
+            template_id=template_id,
+            board_owner_ids=board_owner_ids,
+            board_subscriber_ids=board_subscriber_ids,
         )
     ).subscribers(**strip_kwargs())
 
@@ -3631,28 +3425,24 @@ async def create_board_activity_logs(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_board(
         **strip_kwargs(
-            input=dict(
-                board_name=board_name,
-                board_kind=board_kind,
-                folder_id=folder_id,
-                workspace_id=workspace_id,
-                template_id=template_id,
-                board_owner_ids=board_owner_ids,
-                board_subscriber_ids=board_subscriber_ids,
-            )
+            board_name=board_name,
+            board_kind=board_kind,
+            folder_id=folder_id,
+            workspace_id=workspace_id,
+            template_id=template_id,
+            board_owner_ids=board_owner_ids,
+            board_subscriber_ids=board_subscriber_ids,
         )
     ).activity_logs(
         **strip_kwargs(
-            input=dict(
-                limit=limit,
-                page=page,
-                user_ids=user_ids,
-                column_ids=column_ids,
-                group_ids=group_ids,
-                item_ids=item_ids,
-                from_=from_,
-                to=to,
-            )
+            limit=limit,
+            page=page,
+            user_ids=user_ids,
+            column_ids=column_ids,
+            group_ids=group_ids,
+            item_ids=item_ids,
+            from_=from_,
+            to=to,
         )
     )
 
@@ -3693,11 +3483,9 @@ async def duplicate_item(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.duplicate_item(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                with_updates=with_updates,
-                item_id=item_id,
-            )
+            board_id=board_id,
+            with_updates=with_updates,
+            item_id=item_id,
         )
     )
 
@@ -3735,11 +3523,9 @@ async def duplicate_item_board(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.duplicate_item(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                with_updates=with_updates,
-                item_id=item_id,
-            )
+            board_id=board_id,
+            with_updates=with_updates,
+            item_id=item_id,
         )
     ).board(**strip_kwargs())
 
@@ -3780,11 +3566,9 @@ async def duplicate_item_group(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.duplicate_item(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                with_updates=with_updates,
-                item_id=item_id,
-            )
+            board_id=board_id,
+            with_updates=with_updates,
+            item_id=item_id,
         )
     ).group(**strip_kwargs())
 
@@ -3829,18 +3613,14 @@ async def duplicate_item_assets(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.duplicate_item(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                with_updates=with_updates,
-                item_id=item_id,
-            )
+            board_id=board_id,
+            with_updates=with_updates,
+            item_id=item_id,
         )
     ).assets(
         **strip_kwargs(
-            input=dict(
-                assets_source=assets_source,
-                column_ids=column_ids,
-            )
+            assets_source=assets_source,
+            column_ids=column_ids,
         )
     )
 
@@ -3881,11 +3661,9 @@ async def duplicate_item_creator(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.duplicate_item(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                with_updates=with_updates,
-                item_id=item_id,
-            )
+            board_id=board_id,
+            with_updates=with_updates,
+            item_id=item_id,
         )
     ).creator(**strip_kwargs())
 
@@ -3930,18 +3708,14 @@ async def duplicate_item_updates(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.duplicate_item(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                with_updates=with_updates,
-                item_id=item_id,
-            )
+            board_id=board_id,
+            with_updates=with_updates,
+            item_id=item_id,
         )
     ).updates(
         **strip_kwargs(
-            input=dict(
-                limit=limit,
-                page=page,
-            )
+            limit=limit,
+            page=page,
         )
     )
 
@@ -3982,11 +3756,9 @@ async def duplicate_item_subitems(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.duplicate_item(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                with_updates=with_updates,
-                item_id=item_id,
-            )
+            board_id=board_id,
+            with_updates=with_updates,
+            item_id=item_id,
         )
     ).subitems(**strip_kwargs())
 
@@ -4027,11 +3799,9 @@ async def duplicate_item_subscribers(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.duplicate_item(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                with_updates=with_updates,
-                item_id=item_id,
-            )
+            board_id=board_id,
+            with_updates=with_updates,
+            item_id=item_id,
         )
     ).subscribers(**strip_kwargs())
 
@@ -4074,17 +3844,13 @@ async def duplicate_item_column_values(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.duplicate_item(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                with_updates=with_updates,
-                item_id=item_id,
-            )
+            board_id=board_id,
+            with_updates=with_updates,
+            item_id=item_id,
         )
     ).column_values(
         **strip_kwargs(
-            input=dict(
-                ids=ids,
-            )
+            ids=ids,
         )
     )
 
@@ -4121,9 +3887,7 @@ async def like_update(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.like_update(
         **strip_kwargs(
-            input=dict(
-                update_id=update_id,
-            )
+            update_id=update_id,
         )
     )
 
@@ -4157,9 +3921,7 @@ async def like_update_assets(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.like_update(
         **strip_kwargs(
-            input=dict(
-                update_id=update_id,
-            )
+            update_id=update_id,
         )
     ).assets(**strip_kwargs())
 
@@ -4196,9 +3958,7 @@ async def like_update_creator(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.like_update(
         **strip_kwargs(
-            input=dict(
-                update_id=update_id,
-            )
+            update_id=update_id,
         )
     ).creator(**strip_kwargs())
 
@@ -4235,9 +3995,7 @@ async def like_update_replies(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.like_update(
         **strip_kwargs(
-            input=dict(
-                update_id=update_id,
-            )
+            update_id=update_id,
         )
     ).replies(**strip_kwargs())
 
@@ -4276,10 +4034,8 @@ async def archive_group(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.archive_group(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                group_id=group_id,
-            )
+            board_id=board_id,
+            group_id=group_id,
         )
     )
 
@@ -4325,20 +4081,16 @@ async def archive_group_items(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.archive_group(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                group_id=group_id,
-            )
+            board_id=board_id,
+            group_id=group_id,
         )
     ).items(
         **strip_kwargs(
-            input=dict(
-                ids=ids,
-                limit=limit,
-                page=page,
-                newest_first=newest_first,
-                exclude_nonactive=exclude_nonactive,
-            )
+            ids=ids,
+            limit=limit,
+            page=page,
+            newest_first=newest_first,
+            exclude_nonactive=exclude_nonactive,
         )
     )
 
@@ -4379,11 +4131,9 @@ async def create_workspace(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_workspace(
         **strip_kwargs(
-            input=dict(
-                name=name,
-                kind=kind,
-                description=description,
-            )
+            name=name,
+            kind=kind,
+            description=description,
         )
     )
 
@@ -4394,6 +4144,49 @@ async def create_workspace(
 
     result = await _execute_graphql_op(op, monday_credentials)
     return result["create_workspace"]
+
+
+@task
+async def create_workspace_account_product(
+    name: str,
+    kind: graphql_schema.WorkspaceKind,
+    monday_credentials: MondayCredentials,
+    description: str = None,
+    return_fields: Iterable[str] = None,
+) -> Dict[str, Any]:
+    """
+    Create a new workspace.
+
+    Args:
+        name: The Workspace's name.
+        kind: The workspace's kind (open / closed).
+        monday_credentials: Credentials to use for authentication with Monday.
+        description: The Workspace's description.
+        return_fields: Subset the return fields (as snake_case); defaults to
+            fields listed in configs/mutation/*.json.
+
+    Returns:
+        A dict of the returned fields.
+    """
+    op = Operation(graphql_schema.Mutation)
+    op_selection = op.create_workspace(
+        **strip_kwargs(
+            name=name,
+            kind=kind,
+            description=description,
+        )
+    ).account_product(**strip_kwargs())
+
+    op_stack = (
+        "create_workspace",
+        "account_product",
+    )
+    op_selection = _subset_return_fields(
+        op_selection, op_stack, return_fields, return_fields_defaults
+    )
+
+    result = await _execute_graphql_op(op, monday_credentials)
+    return result["create_workspace"]["account_product"]
 
 
 @task
@@ -4419,10 +4212,8 @@ async def move_item_to_group(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.move_item_to_group(
         **strip_kwargs(
-            input=dict(
-                group_id=group_id,
-                item_id=item_id,
-            )
+            group_id=group_id,
+            item_id=item_id,
         )
     )
 
@@ -4458,10 +4249,8 @@ async def move_item_to_group_board(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.move_item_to_group(
         **strip_kwargs(
-            input=dict(
-                group_id=group_id,
-                item_id=item_id,
-            )
+            group_id=group_id,
+            item_id=item_id,
         )
     ).board(**strip_kwargs())
 
@@ -4500,10 +4289,8 @@ async def move_item_to_group_group(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.move_item_to_group(
         **strip_kwargs(
-            input=dict(
-                group_id=group_id,
-                item_id=item_id,
-            )
+            group_id=group_id,
+            item_id=item_id,
         )
     ).group(**strip_kwargs())
 
@@ -4546,17 +4333,13 @@ async def move_item_to_group_assets(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.move_item_to_group(
         **strip_kwargs(
-            input=dict(
-                group_id=group_id,
-                item_id=item_id,
-            )
+            group_id=group_id,
+            item_id=item_id,
         )
     ).assets(
         **strip_kwargs(
-            input=dict(
-                assets_source=assets_source,
-                column_ids=column_ids,
-            )
+            assets_source=assets_source,
+            column_ids=column_ids,
         )
     )
 
@@ -4595,10 +4378,8 @@ async def move_item_to_group_creator(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.move_item_to_group(
         **strip_kwargs(
-            input=dict(
-                group_id=group_id,
-                item_id=item_id,
-            )
+            group_id=group_id,
+            item_id=item_id,
         )
     ).creator(**strip_kwargs())
 
@@ -4641,17 +4422,13 @@ async def move_item_to_group_updates(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.move_item_to_group(
         **strip_kwargs(
-            input=dict(
-                group_id=group_id,
-                item_id=item_id,
-            )
+            group_id=group_id,
+            item_id=item_id,
         )
     ).updates(
         **strip_kwargs(
-            input=dict(
-                limit=limit,
-                page=page,
-            )
+            limit=limit,
+            page=page,
         )
     )
 
@@ -4690,10 +4467,8 @@ async def move_item_to_group_subitems(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.move_item_to_group(
         **strip_kwargs(
-            input=dict(
-                group_id=group_id,
-                item_id=item_id,
-            )
+            group_id=group_id,
+            item_id=item_id,
         )
     ).subitems(**strip_kwargs())
 
@@ -4732,10 +4507,8 @@ async def move_item_to_group_subscribers(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.move_item_to_group(
         **strip_kwargs(
-            input=dict(
-                group_id=group_id,
-                item_id=item_id,
-            )
+            group_id=group_id,
+            item_id=item_id,
         )
     ).subscribers(**strip_kwargs())
 
@@ -4776,16 +4549,12 @@ async def move_item_to_group_column_values(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.move_item_to_group(
         **strip_kwargs(
-            input=dict(
-                group_id=group_id,
-                item_id=item_id,
-            )
+            group_id=group_id,
+            item_id=item_id,
         )
     ).column_values(
         **strip_kwargs(
-            input=dict(
-                ids=ids,
-            )
+            ids=ids,
         )
     )
 
@@ -4828,12 +4597,10 @@ async def duplicate_group(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.duplicate_group(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                group_id=group_id,
-                add_to_top=add_to_top,
-                group_title=group_title,
-            )
+            board_id=board_id,
+            group_id=group_id,
+            add_to_top=add_to_top,
+            group_title=group_title,
         )
     )
 
@@ -4883,22 +4650,18 @@ async def duplicate_group_items(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.duplicate_group(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                group_id=group_id,
-                add_to_top=add_to_top,
-                group_title=group_title,
-            )
+            board_id=board_id,
+            group_id=group_id,
+            add_to_top=add_to_top,
+            group_title=group_title,
         )
     ).items(
         **strip_kwargs(
-            input=dict(
-                ids=ids,
-                limit=limit,
-                page=page,
-                newest_first=newest_first,
-                exclude_nonactive=exclude_nonactive,
-            )
+            ids=ids,
+            limit=limit,
+            page=page,
+            newest_first=newest_first,
+            exclude_nonactive=exclude_nonactive,
         )
     )
 
@@ -4937,10 +4700,8 @@ async def delete_users_from_workspace(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.delete_users_from_workspace(
         **strip_kwargs(
-            input=dict(
-                workspace_id=workspace_id,
-                user_ids=user_ids,
-            )
+            workspace_id=workspace_id,
+            user_ids=user_ids,
         )
     )
 
@@ -4980,16 +4741,12 @@ async def delete_users_from_workspace_teams(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.delete_users_from_workspace(
         **strip_kwargs(
-            input=dict(
-                workspace_id=workspace_id,
-                user_ids=user_ids,
-            )
+            workspace_id=workspace_id,
+            user_ids=user_ids,
         )
     ).teams(
         **strip_kwargs(
-            input=dict(
-                ids=ids,
-            )
+            ids=ids,
         )
     )
 
@@ -5030,10 +4787,8 @@ async def delete_users_from_workspace_account(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.delete_users_from_workspace(
         **strip_kwargs(
-            input=dict(
-                workspace_id=workspace_id,
-                user_ids=user_ids,
-            )
+            workspace_id=workspace_id,
+            user_ids=user_ids,
         )
     ).account(**strip_kwargs())
 
@@ -5072,10 +4827,8 @@ async def delete_subscribers_from_board(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.delete_subscribers_from_board(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                user_ids=user_ids,
-            )
+            board_id=board_id,
+            user_ids=user_ids,
         )
     )
 
@@ -5114,16 +4867,12 @@ async def delete_subscribers_from_board_teams(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.delete_subscribers_from_board(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                user_ids=user_ids,
-            )
+            board_id=board_id,
+            user_ids=user_ids,
         )
     ).teams(
         **strip_kwargs(
-            input=dict(
-                ids=ids,
-            )
+            ids=ids,
         )
     )
 
@@ -5163,10 +4912,8 @@ async def delete_subscribers_from_board_account(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.delete_subscribers_from_board(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                user_ids=user_ids,
-            )
+            board_id=board_id,
+            user_ids=user_ids,
         )
     ).account(**strip_kwargs())
 
@@ -5207,11 +4954,9 @@ async def create_update(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_update(
         **strip_kwargs(
-            input=dict(
-                body=body,
-                item_id=item_id,
-                parent_id=parent_id,
-            )
+            body=body,
+            item_id=item_id,
+            parent_id=parent_id,
         )
     )
 
@@ -5249,11 +4994,9 @@ async def create_update_assets(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_update(
         **strip_kwargs(
-            input=dict(
-                body=body,
-                item_id=item_id,
-                parent_id=parent_id,
-            )
+            body=body,
+            item_id=item_id,
+            parent_id=parent_id,
         )
     ).assets(**strip_kwargs())
 
@@ -5294,11 +5037,9 @@ async def create_update_creator(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_update(
         **strip_kwargs(
-            input=dict(
-                body=body,
-                item_id=item_id,
-                parent_id=parent_id,
-            )
+            body=body,
+            item_id=item_id,
+            parent_id=parent_id,
         )
     ).creator(**strip_kwargs())
 
@@ -5339,11 +5080,9 @@ async def create_update_replies(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_update(
         **strip_kwargs(
-            input=dict(
-                body=body,
-                item_id=item_id,
-                parent_id=parent_id,
-            )
+            body=body,
+            item_id=item_id,
+            parent_id=parent_id,
         )
     ).replies(**strip_kwargs())
 
@@ -5391,14 +5130,12 @@ async def set_mock_app_subscription(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.set_mock_app_subscription(
         **strip_kwargs(
-            input=dict(
-                app_id=app_id,
-                partial_signing_secret=partial_signing_secret,
-                plan_id=plan_id,
-                is_trial=is_trial,
-                renewal_date=renewal_date,
-                billing_period=billing_period,
-            )
+            app_id=app_id,
+            partial_signing_secret=partial_signing_secret,
+            plan_id=plan_id,
+            is_trial=is_trial,
+            renewal_date=renewal_date,
+            billing_period=billing_period,
         )
     )
 
@@ -5432,9 +5169,7 @@ async def clear_item_updates(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.clear_item_updates(
         **strip_kwargs(
-            input=dict(
-                item_id=item_id,
-            )
+            item_id=item_id,
         )
     )
 
@@ -5468,9 +5203,7 @@ async def clear_item_updates_board(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.clear_item_updates(
         **strip_kwargs(
-            input=dict(
-                item_id=item_id,
-            )
+            item_id=item_id,
         )
     ).board(**strip_kwargs())
 
@@ -5507,9 +5240,7 @@ async def clear_item_updates_group(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.clear_item_updates(
         **strip_kwargs(
-            input=dict(
-                item_id=item_id,
-            )
+            item_id=item_id,
         )
     ).group(**strip_kwargs())
 
@@ -5548,18 +5279,10 @@ async def clear_item_updates_assets(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Mutation)
-    op_selection = op.clear_item_updates(
+    op_selection = op.clear_item_updates(**strip_kwargs(item_id=item_id,)).assets(
         **strip_kwargs(
-            input=dict(
-                item_id=item_id,
-            )
-        )
-    ).assets(
-        **strip_kwargs(
-            input=dict(
-                assets_source=assets_source,
-                column_ids=column_ids,
-            )
+            assets_source=assets_source,
+            column_ids=column_ids,
         )
     )
 
@@ -5596,9 +5319,7 @@ async def clear_item_updates_creator(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.clear_item_updates(
         **strip_kwargs(
-            input=dict(
-                item_id=item_id,
-            )
+            item_id=item_id,
         )
     ).creator(**strip_kwargs())
 
@@ -5637,18 +5358,10 @@ async def clear_item_updates_updates(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Mutation)
-    op_selection = op.clear_item_updates(
+    op_selection = op.clear_item_updates(**strip_kwargs(item_id=item_id,)).updates(
         **strip_kwargs(
-            input=dict(
-                item_id=item_id,
-            )
-        )
-    ).updates(
-        **strip_kwargs(
-            input=dict(
-                limit=limit,
-                page=page,
-            )
+            limit=limit,
+            page=page,
         )
     )
 
@@ -5685,9 +5398,7 @@ async def clear_item_updates_subitems(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.clear_item_updates(
         **strip_kwargs(
-            input=dict(
-                item_id=item_id,
-            )
+            item_id=item_id,
         )
     ).subitems(**strip_kwargs())
 
@@ -5724,9 +5435,7 @@ async def clear_item_updates_subscribers(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.clear_item_updates(
         **strip_kwargs(
-            input=dict(
-                item_id=item_id,
-            )
+            item_id=item_id,
         )
     ).subscribers(**strip_kwargs())
 
@@ -5765,15 +5474,11 @@ async def clear_item_updates_column_values(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.clear_item_updates(
         **strip_kwargs(
-            input=dict(
-                item_id=item_id,
-            )
+            item_id=item_id,
         )
     ).column_values(
         **strip_kwargs(
-            input=dict(
-                ids=ids,
-            )
+            ids=ids,
         )
     )
 
@@ -5812,10 +5517,8 @@ async def add_file_to_update(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.add_file_to_update(
         **strip_kwargs(
-            input=dict(
-                update_id=update_id,
-                file=file,
-            )
+            update_id=update_id,
+            file=file,
         )
     )
 
@@ -5851,10 +5554,8 @@ async def add_file_to_update_uploaded_by(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.add_file_to_update(
         **strip_kwargs(
-            input=dict(
-                update_id=update_id,
-                file=file,
-            )
+            update_id=update_id,
+            file=file,
         )
     ).uploaded_by(**strip_kwargs())
 
@@ -5891,9 +5592,7 @@ async def delete_update(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.delete_update(
         **strip_kwargs(
-            input=dict(
-                id=id,
-            )
+            id=id,
         )
     )
 
@@ -5927,9 +5626,7 @@ async def delete_update_assets(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.delete_update(
         **strip_kwargs(
-            input=dict(
-                id=id,
-            )
+            id=id,
         )
     ).assets(**strip_kwargs())
 
@@ -5966,9 +5663,7 @@ async def delete_update_creator(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.delete_update(
         **strip_kwargs(
-            input=dict(
-                id=id,
-            )
+            id=id,
         )
     ).creator(**strip_kwargs())
 
@@ -6005,9 +5700,7 @@ async def delete_update_replies(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.delete_update(
         **strip_kwargs(
-            input=dict(
-                id=id,
-            )
+            id=id,
         )
     ).replies(**strip_kwargs())
 
@@ -6048,11 +5741,9 @@ async def add_subscribers_to_board(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.add_subscribers_to_board(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                user_ids=user_ids,
-                kind=kind,
-            )
+            board_id=board_id,
+            user_ids=user_ids,
+            kind=kind,
         )
     )
 
@@ -6092,17 +5783,13 @@ async def add_subscribers_to_board_teams(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.add_subscribers_to_board(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                user_ids=user_ids,
-                kind=kind,
-            )
+            board_id=board_id,
+            user_ids=user_ids,
+            kind=kind,
         )
     ).teams(
         **strip_kwargs(
-            input=dict(
-                ids=ids,
-            )
+            ids=ids,
         )
     )
 
@@ -6143,11 +5830,9 @@ async def add_subscribers_to_board_account(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.add_subscribers_to_board(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                user_ids=user_ids,
-                kind=kind,
-            )
+            board_id=board_id,
+            user_ids=user_ids,
+            kind=kind,
         )
     ).account(**strip_kwargs())
 
@@ -6184,9 +5869,7 @@ async def delete_webhook(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.delete_webhook(
         **strip_kwargs(
-            input=dict(
-                id=id,
-            )
+            id=id,
         )
     )
 
@@ -6222,10 +5905,8 @@ async def add_teams_to_workspace(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.add_teams_to_workspace(
         **strip_kwargs(
-            input=dict(
-                workspace_id=workspace_id,
-                team_ids=team_ids,
-            )
+            workspace_id=workspace_id,
+            team_ids=team_ids,
         )
     )
 
@@ -6271,20 +5952,16 @@ async def add_teams_to_workspace_users(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.add_teams_to_workspace(
         **strip_kwargs(
-            input=dict(
-                workspace_id=workspace_id,
-                team_ids=team_ids,
-            )
+            workspace_id=workspace_id,
+            team_ids=team_ids,
         )
     ).users(
         **strip_kwargs(
-            input=dict(
-                ids=ids,
-                kind=kind,
-                newest_first=newest_first,
-                limit=limit,
-                emails=emails,
-            )
+            ids=ids,
+            kind=kind,
+            newest_first=newest_first,
+            limit=limit,
+            emails=emails,
         )
     )
 
@@ -6358,13 +6035,11 @@ async def create_item(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_item(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                item_name=item_name,
-                group_id=group_id,
-                column_values=column_values,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            board_id=board_id,
+            item_name=item_name,
+            group_id=group_id,
+            column_values=column_values,
+            create_labels_if_missing=create_labels_if_missing,
         )
     )
 
@@ -6408,13 +6083,11 @@ async def create_item_board(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_item(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                item_name=item_name,
-                group_id=group_id,
-                column_values=column_values,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            board_id=board_id,
+            item_name=item_name,
+            group_id=group_id,
+            column_values=column_values,
+            create_labels_if_missing=create_labels_if_missing,
         )
     ).board(**strip_kwargs())
 
@@ -6461,13 +6134,11 @@ async def create_item_group(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_item(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                item_name=item_name,
-                group_id=group_id,
-                column_values=column_values,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            board_id=board_id,
+            item_name=item_name,
+            group_id=group_id,
+            column_values=column_values,
+            create_labels_if_missing=create_labels_if_missing,
         )
     ).group(**strip_kwargs())
 
@@ -6518,20 +6189,16 @@ async def create_item_assets(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_item(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                item_name=item_name,
-                group_id=group_id,
-                column_values=column_values,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            board_id=board_id,
+            item_name=item_name,
+            group_id=group_id,
+            column_values=column_values,
+            create_labels_if_missing=create_labels_if_missing,
         )
     ).assets(
         **strip_kwargs(
-            input=dict(
-                assets_source=assets_source,
-                column_ids=column_ids,
-            )
+            assets_source=assets_source,
+            column_ids=column_ids,
         )
     )
 
@@ -6578,13 +6245,11 @@ async def create_item_creator(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_item(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                item_name=item_name,
-                group_id=group_id,
-                column_values=column_values,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            board_id=board_id,
+            item_name=item_name,
+            group_id=group_id,
+            column_values=column_values,
+            create_labels_if_missing=create_labels_if_missing,
         )
     ).creator(**strip_kwargs())
 
@@ -6635,20 +6300,16 @@ async def create_item_updates(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_item(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                item_name=item_name,
-                group_id=group_id,
-                column_values=column_values,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            board_id=board_id,
+            item_name=item_name,
+            group_id=group_id,
+            column_values=column_values,
+            create_labels_if_missing=create_labels_if_missing,
         )
     ).updates(
         **strip_kwargs(
-            input=dict(
-                limit=limit,
-                page=page,
-            )
+            limit=limit,
+            page=page,
         )
     )
 
@@ -6695,13 +6356,11 @@ async def create_item_subitems(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_item(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                item_name=item_name,
-                group_id=group_id,
-                column_values=column_values,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            board_id=board_id,
+            item_name=item_name,
+            group_id=group_id,
+            column_values=column_values,
+            create_labels_if_missing=create_labels_if_missing,
         )
     ).subitems(**strip_kwargs())
 
@@ -6748,13 +6407,11 @@ async def create_item_subscribers(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_item(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                item_name=item_name,
-                group_id=group_id,
-                column_values=column_values,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            board_id=board_id,
+            item_name=item_name,
+            group_id=group_id,
+            column_values=column_values,
+            create_labels_if_missing=create_labels_if_missing,
         )
     ).subscribers(**strip_kwargs())
 
@@ -6803,19 +6460,15 @@ async def create_item_column_values(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_item(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                item_name=item_name,
-                group_id=group_id,
-                column_values=column_values,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            board_id=board_id,
+            item_name=item_name,
+            group_id=group_id,
+            column_values=column_values,
+            create_labels_if_missing=create_labels_if_missing,
         )
     ).column_values(
         **strip_kwargs(
-            input=dict(
-                ids=ids,
-            )
+            ids=ids,
         )
     )
 
@@ -6861,13 +6514,11 @@ async def change_column_value(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.change_column_value(
         **strip_kwargs(
-            input=dict(
-                column_id=column_id,
-                board_id=board_id,
-                value=value,
-                item_id=item_id,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            column_id=column_id,
+            board_id=board_id,
+            value=value,
+            item_id=item_id,
+            create_labels_if_missing=create_labels_if_missing,
         )
     )
 
@@ -6911,13 +6562,11 @@ async def change_column_value_board(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.change_column_value(
         **strip_kwargs(
-            input=dict(
-                column_id=column_id,
-                board_id=board_id,
-                value=value,
-                item_id=item_id,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            column_id=column_id,
+            board_id=board_id,
+            value=value,
+            item_id=item_id,
+            create_labels_if_missing=create_labels_if_missing,
         )
     ).board(**strip_kwargs())
 
@@ -6964,13 +6613,11 @@ async def change_column_value_group(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.change_column_value(
         **strip_kwargs(
-            input=dict(
-                column_id=column_id,
-                board_id=board_id,
-                value=value,
-                item_id=item_id,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            column_id=column_id,
+            board_id=board_id,
+            value=value,
+            item_id=item_id,
+            create_labels_if_missing=create_labels_if_missing,
         )
     ).group(**strip_kwargs())
 
@@ -7021,20 +6668,16 @@ async def change_column_value_assets(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.change_column_value(
         **strip_kwargs(
-            input=dict(
-                column_id=column_id,
-                board_id=board_id,
-                value=value,
-                item_id=item_id,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            column_id=column_id,
+            board_id=board_id,
+            value=value,
+            item_id=item_id,
+            create_labels_if_missing=create_labels_if_missing,
         )
     ).assets(
         **strip_kwargs(
-            input=dict(
-                assets_source=assets_source,
-                column_ids=column_ids,
-            )
+            assets_source=assets_source,
+            column_ids=column_ids,
         )
     )
 
@@ -7081,13 +6724,11 @@ async def change_column_value_creator(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.change_column_value(
         **strip_kwargs(
-            input=dict(
-                column_id=column_id,
-                board_id=board_id,
-                value=value,
-                item_id=item_id,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            column_id=column_id,
+            board_id=board_id,
+            value=value,
+            item_id=item_id,
+            create_labels_if_missing=create_labels_if_missing,
         )
     ).creator(**strip_kwargs())
 
@@ -7138,20 +6779,16 @@ async def change_column_value_updates(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.change_column_value(
         **strip_kwargs(
-            input=dict(
-                column_id=column_id,
-                board_id=board_id,
-                value=value,
-                item_id=item_id,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            column_id=column_id,
+            board_id=board_id,
+            value=value,
+            item_id=item_id,
+            create_labels_if_missing=create_labels_if_missing,
         )
     ).updates(
         **strip_kwargs(
-            input=dict(
-                limit=limit,
-                page=page,
-            )
+            limit=limit,
+            page=page,
         )
     )
 
@@ -7198,13 +6835,11 @@ async def change_column_value_subitems(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.change_column_value(
         **strip_kwargs(
-            input=dict(
-                column_id=column_id,
-                board_id=board_id,
-                value=value,
-                item_id=item_id,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            column_id=column_id,
+            board_id=board_id,
+            value=value,
+            item_id=item_id,
+            create_labels_if_missing=create_labels_if_missing,
         )
     ).subitems(**strip_kwargs())
 
@@ -7251,13 +6886,11 @@ async def change_column_value_subscribers(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.change_column_value(
         **strip_kwargs(
-            input=dict(
-                column_id=column_id,
-                board_id=board_id,
-                value=value,
-                item_id=item_id,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            column_id=column_id,
+            board_id=board_id,
+            value=value,
+            item_id=item_id,
+            create_labels_if_missing=create_labels_if_missing,
         )
     ).subscribers(**strip_kwargs())
 
@@ -7306,19 +6939,15 @@ async def change_column_value_column_values(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.change_column_value(
         **strip_kwargs(
-            input=dict(
-                column_id=column_id,
-                board_id=board_id,
-                value=value,
-                item_id=item_id,
-                create_labels_if_missing=create_labels_if_missing,
-            )
+            column_id=column_id,
+            board_id=board_id,
+            value=value,
+            item_id=item_id,
+            create_labels_if_missing=create_labels_if_missing,
         )
     ).column_values(
         **strip_kwargs(
-            input=dict(
-                ids=ids,
-            )
+            ids=ids,
         )
     )
 
@@ -7357,10 +6986,8 @@ async def delete_group(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.delete_group(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                group_id=group_id,
-            )
+            board_id=board_id,
+            group_id=group_id,
         )
     )
 
@@ -7406,20 +7033,16 @@ async def delete_group_items(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.delete_group(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                group_id=group_id,
-            )
+            board_id=board_id,
+            group_id=group_id,
         )
     ).items(
         **strip_kwargs(
-            input=dict(
-                ids=ids,
-                limit=limit,
-                page=page,
-                newest_first=newest_first,
-                exclude_nonactive=exclude_nonactive,
-            )
+            ids=ids,
+            limit=limit,
+            page=page,
+            newest_first=newest_first,
+            exclude_nonactive=exclude_nonactive,
         )
     )
 
@@ -7456,9 +7079,7 @@ async def archive_item(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.archive_item(
         **strip_kwargs(
-            input=dict(
-                item_id=item_id,
-            )
+            item_id=item_id,
         )
     )
 
@@ -7492,9 +7113,7 @@ async def archive_item_board(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.archive_item(
         **strip_kwargs(
-            input=dict(
-                item_id=item_id,
-            )
+            item_id=item_id,
         )
     ).board(**strip_kwargs())
 
@@ -7531,9 +7150,7 @@ async def archive_item_group(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.archive_item(
         **strip_kwargs(
-            input=dict(
-                item_id=item_id,
-            )
+            item_id=item_id,
         )
     ).group(**strip_kwargs())
 
@@ -7572,12 +7189,10 @@ async def archive_item_assets(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Mutation)
-    op_selection = op.archive_item(**strip_kwargs(input=dict(item_id=item_id,))).assets(
+    op_selection = op.archive_item(**strip_kwargs(item_id=item_id,)).assets(
         **strip_kwargs(
-            input=dict(
-                assets_source=assets_source,
-                column_ids=column_ids,
-            )
+            assets_source=assets_source,
+            column_ids=column_ids,
         )
     )
 
@@ -7614,9 +7229,7 @@ async def archive_item_creator(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.archive_item(
         **strip_kwargs(
-            input=dict(
-                item_id=item_id,
-            )
+            item_id=item_id,
         )
     ).creator(**strip_kwargs())
 
@@ -7655,18 +7268,10 @@ async def archive_item_updates(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Mutation)
-    op_selection = op.archive_item(
+    op_selection = op.archive_item(**strip_kwargs(item_id=item_id,)).updates(
         **strip_kwargs(
-            input=dict(
-                item_id=item_id,
-            )
-        )
-    ).updates(
-        **strip_kwargs(
-            input=dict(
-                limit=limit,
-                page=page,
-            )
+            limit=limit,
+            page=page,
         )
     )
 
@@ -7703,9 +7308,7 @@ async def archive_item_subitems(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.archive_item(
         **strip_kwargs(
-            input=dict(
-                item_id=item_id,
-            )
+            item_id=item_id,
         )
     ).subitems(**strip_kwargs())
 
@@ -7742,9 +7345,7 @@ async def archive_item_subscribers(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.archive_item(
         **strip_kwargs(
-            input=dict(
-                item_id=item_id,
-            )
+            item_id=item_id,
         )
     ).subscribers(**strip_kwargs())
 
@@ -7781,17 +7382,9 @@ async def archive_item_column_values(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Mutation)
-    op_selection = op.archive_item(
+    op_selection = op.archive_item(**strip_kwargs(item_id=item_id,)).column_values(
         **strip_kwargs(
-            input=dict(
-                item_id=item_id,
-            )
-        )
-    ).column_values(
-        **strip_kwargs(
-            input=dict(
-                ids=ids,
-            )
+            ids=ids,
         )
     )
 
@@ -7832,11 +7425,9 @@ async def add_users_to_workspace(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.add_users_to_workspace(
         **strip_kwargs(
-            input=dict(
-                workspace_id=workspace_id,
-                user_ids=user_ids,
-                kind=kind,
-            )
+            workspace_id=workspace_id,
+            user_ids=user_ids,
+            kind=kind,
         )
     )
 
@@ -7876,17 +7467,13 @@ async def add_users_to_workspace_teams(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.add_users_to_workspace(
         **strip_kwargs(
-            input=dict(
-                workspace_id=workspace_id,
-                user_ids=user_ids,
-                kind=kind,
-            )
+            workspace_id=workspace_id,
+            user_ids=user_ids,
+            kind=kind,
         )
     ).teams(
         **strip_kwargs(
-            input=dict(
-                ids=ids,
-            )
+            ids=ids,
         )
     )
 
@@ -7927,11 +7514,9 @@ async def add_users_to_workspace_account(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.add_users_to_workspace(
         **strip_kwargs(
-            input=dict(
-                workspace_id=workspace_id,
-                user_ids=user_ids,
-                kind=kind,
-            )
+            workspace_id=workspace_id,
+            user_ids=user_ids,
+            kind=kind,
         )
     ).account(**strip_kwargs())
 
@@ -7970,10 +7555,8 @@ async def create_group(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_group(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                group_name=group_name,
-            )
+            board_id=board_id,
+            group_name=group_name,
         )
     )
 
@@ -8019,20 +7602,16 @@ async def create_group_items(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_group(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                group_name=group_name,
-            )
+            board_id=board_id,
+            group_name=group_name,
         )
     ).items(
         **strip_kwargs(
-            input=dict(
-                ids=ids,
-                limit=limit,
-                page=page,
-                newest_first=newest_first,
-                exclude_nonactive=exclude_nonactive,
-            )
+            ids=ids,
+            limit=limit,
+            page=page,
+            newest_first=newest_first,
+            exclude_nonactive=exclude_nonactive,
         )
     )
 
@@ -8069,9 +7648,7 @@ async def archive_board(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.archive_board(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-            )
+            board_id=board_id,
         )
     )
 
@@ -8105,9 +7682,7 @@ async def archive_board_tags(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.archive_board(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-            )
+            board_id=board_id,
         )
     ).tags(**strip_kwargs())
 
@@ -8152,21 +7727,13 @@ async def archive_board_items(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Mutation)
-    op_selection = op.archive_board(
+    op_selection = op.archive_board(**strip_kwargs(board_id=board_id,)).items(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-            )
-        )
-    ).items(
-        **strip_kwargs(
-            input=dict(
-                ids=ids,
-                limit=limit,
-                page=page,
-                newest_first=newest_first,
-                exclude_nonactive=exclude_nonactive,
-            )
+            ids=ids,
+            limit=limit,
+            page=page,
+            newest_first=newest_first,
+            exclude_nonactive=exclude_nonactive,
         )
     )
 
@@ -8203,9 +7770,7 @@ async def archive_board_owner(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.archive_board(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-            )
+            board_id=board_id,
         )
     ).owner(**strip_kwargs())
 
@@ -8244,18 +7809,10 @@ async def archive_board_views(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Mutation)
-    op_selection = op.archive_board(
+    op_selection = op.archive_board(**strip_kwargs(board_id=board_id,)).views(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-            )
-        )
-    ).views(
-        **strip_kwargs(
-            input=dict(
-                ids=ids,
-                type=type,
-            )
+            ids=ids,
+            type=type,
         )
     )
 
@@ -8292,17 +7849,9 @@ async def archive_board_groups(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Mutation)
-    op_selection = op.archive_board(
+    op_selection = op.archive_board(**strip_kwargs(board_id=board_id,)).groups(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-            )
-        )
-    ).groups(
-        **strip_kwargs(
-            input=dict(
-                ids=ids,
-            )
+            ids=ids,
         )
     )
 
@@ -8339,9 +7888,7 @@ async def archive_board_owners(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.archive_board(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-            )
+            board_id=board_id,
         )
     ).owners(**strip_kwargs())
 
@@ -8378,17 +7925,9 @@ async def archive_board_columns(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Mutation)
-    op_selection = op.archive_board(
+    op_selection = op.archive_board(**strip_kwargs(board_id=board_id,)).columns(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-            )
-        )
-    ).columns(
-        **strip_kwargs(
-            input=dict(
-                ids=ids,
-            )
+            ids=ids,
         )
     )
 
@@ -8425,9 +7964,7 @@ async def archive_board_creator(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.archive_board(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-            )
+            board_id=board_id,
         )
     ).creator(**strip_kwargs())
 
@@ -8466,18 +8003,10 @@ async def archive_board_updates(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Mutation)
-    op_selection = op.archive_board(
+    op_selection = op.archive_board(**strip_kwargs(board_id=board_id,)).updates(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-            )
-        )
-    ).updates(
-        **strip_kwargs(
-            input=dict(
-                limit=limit,
-                page=page,
-            )
+            limit=limit,
+            page=page,
         )
     )
 
@@ -8514,9 +8043,7 @@ async def archive_board_top_group(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.archive_board(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-            )
+            board_id=board_id,
         )
     ).top_group(**strip_kwargs())
 
@@ -8553,9 +8080,7 @@ async def archive_board_workspace(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.archive_board(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-            )
+            board_id=board_id,
         )
     ).workspace(**strip_kwargs())
 
@@ -8592,9 +8117,7 @@ async def archive_board_subscribers(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.archive_board(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-            )
+            board_id=board_id,
         )
     ).subscribers(**strip_kwargs())
 
@@ -8645,24 +8168,16 @@ async def archive_board_activity_logs(
         A dict of the returned fields.
     """
     op = Operation(graphql_schema.Mutation)
-    op_selection = op.archive_board(
+    op_selection = op.archive_board(**strip_kwargs(board_id=board_id,)).activity_logs(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-            )
-        )
-    ).activity_logs(
-        **strip_kwargs(
-            input=dict(
-                limit=limit,
-                page=page,
-                user_ids=user_ids,
-                column_ids=column_ids,
-                group_ids=group_ids,
-                item_ids=item_ids,
-                from_=from_,
-                to=to,
-            )
+            limit=limit,
+            page=page,
+            user_ids=user_ids,
+            column_ids=column_ids,
+            group_ids=group_ids,
+            item_ids=item_ids,
+            from_=from_,
+            to=to,
         )
     )
 
@@ -8701,10 +8216,8 @@ async def delete_teams_from_workspace(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.delete_teams_from_workspace(
         **strip_kwargs(
-            input=dict(
-                workspace_id=workspace_id,
-                team_ids=team_ids,
-            )
+            workspace_id=workspace_id,
+            team_ids=team_ids,
         )
     )
 
@@ -8752,20 +8265,16 @@ async def delete_teams_from_workspace_users(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.delete_teams_from_workspace(
         **strip_kwargs(
-            input=dict(
-                workspace_id=workspace_id,
-                team_ids=team_ids,
-            )
+            workspace_id=workspace_id,
+            team_ids=team_ids,
         )
     ).users(
         **strip_kwargs(
-            input=dict(
-                ids=ids,
-                kind=kind,
-                newest_first=newest_first,
-                limit=limit,
-                emails=emails,
-            )
+            ids=ids,
+            kind=kind,
+            newest_first=newest_first,
+            limit=limit,
+            emails=emails,
         )
     )
 
@@ -8809,12 +8318,10 @@ async def change_column_metadata(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.change_column_metadata(
         **strip_kwargs(
-            input=dict(
-                column_id=column_id,
-                board_id=board_id,
-                column_property=column_property,
-                value=value,
-            )
+            column_id=column_id,
+            board_id=board_id,
+            column_property=column_property,
+            value=value,
         )
     )
 
@@ -8851,10 +8358,8 @@ async def create_or_get_tag(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.create_or_get_tag(
         **strip_kwargs(
-            input=dict(
-                tag_name=tag_name,
-                board_id=board_id,
-            )
+            tag_name=tag_name,
+            board_id=board_id,
         )
     )
 
@@ -8902,14 +8407,12 @@ async def duplicate_board(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.duplicate_board(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                duplicate_type=duplicate_type,
-                board_name=board_name,
-                workspace_id=workspace_id,
-                folder_id=folder_id,
-                keep_subscribers=keep_subscribers,
-            )
+            board_id=board_id,
+            duplicate_type=duplicate_type,
+            board_name=board_name,
+            workspace_id=workspace_id,
+            folder_id=folder_id,
+            keep_subscribers=keep_subscribers,
         )
     )
 
@@ -8957,14 +8460,12 @@ async def duplicate_board_board(
     op = Operation(graphql_schema.Mutation)
     op_selection = op.duplicate_board(
         **strip_kwargs(
-            input=dict(
-                board_id=board_id,
-                duplicate_type=duplicate_type,
-                board_name=board_name,
-                workspace_id=workspace_id,
-                folder_id=folder_id,
-                keep_subscribers=keep_subscribers,
-            )
+            board_id=board_id,
+            duplicate_type=duplicate_type,
+            board_name=board_name,
+            workspace_id=workspace_id,
+            folder_id=folder_id,
+            keep_subscribers=keep_subscribers,
         )
     ).board(**strip_kwargs())
 

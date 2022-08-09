@@ -24,7 +24,7 @@ Install `prefect-monday` with `pip`:
 pip install prefect-monday
 ```
 
-### Write and run a flow
+### Query personal account info
 
 ```python
 from prefect import flow
@@ -34,12 +34,51 @@ from prefect_monday.me import query_me
 
 @flow
 def query_me_flow():
-    monday_credentials = MondayCredentials(token="token")
+    monday_credentials = MondayCredentials.load("monday-token")
     result = query_me(monday_credentials)
     print(result)
     return result
 
 query_me_flow()
+```
+
+### Query available boards
+
+```python
+from prefect import flow
+
+from prefect_monday.credentials import MondayCredentials
+from prefect_monday.boards import query_boards
+
+@flow
+def query_boards_flow():
+    monday_credentials = MondayCredentials.load("monday-token")
+    boards = query_boards(monday_credentials=monday_credentials)
+    return boards
+
+query_boards_flow()
+```
+
+### Create new workspace
+
+```python
+from prefect import flow
+
+from prefect_monday.credentials import MondayCredentials
+from prefect_monday.mutations import create_workspace
+from prefect_monday.schemas import graphql_schema
+
+@flow
+def create_workspace_flow():
+    monday_credentials = MondayCredentials.load("monday-token")
+    workspace = create_workspace(
+        "integrations-test-workspace",
+        graphql_schema.WorkspaceKind.open,
+        monday_credentials=monday_credentials
+    )
+    return workspace
+
+create_workspace_flow()
 ```
 
 ## Resources
