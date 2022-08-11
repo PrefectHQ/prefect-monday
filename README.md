@@ -44,7 +44,6 @@ from prefect_monday.me import query_me
 def query_me_flow():
     monday_credentials = MondayCredentials.load("BLOCK_NAME")
     result = query_me(monday_credentials)
-    print(result)
     return result
 
 query_me_flow()
