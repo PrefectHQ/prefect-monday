@@ -32,7 +32,7 @@ prefect block register -m prefect_monday.credentials
 
 ### Query personal account info
 
-Note, to use the `load` method, you must already have a block [saved through code](https://orion-docs.prefect.io/concepts/blocks/#saving-blocks) or [saved through the UI](https://orion-docs.prefect.io/ui/blocks/).
+Note, to use the `load` method, you must already have a block document [saved through code](https://orion-docs.prefect.io/concepts/blocks/#saving-blocks) or [saved through the UI](https://orion-docs.prefect.io/ui/blocks/).
 
 ```python
 from prefect import flow
