@@ -24,7 +24,15 @@ Install `prefect-monday` with `pip`:
 pip install prefect-monday
 ```
 
+Then, register to [view the block](https://orion-docs.prefect.io/ui/blocks/) on Prefect Cloud:
+
+```bash
+prefect block register -m prefect_monday.credentials
+```
+
 ### Query personal account info
+
+Note, to use the `load` method, you must already have a block document [saved through code](https://orion-docs.prefect.io/concepts/blocks/#saving-blocks) or [saved through the UI](https://orion-docs.prefect.io/ui/blocks/).
 
 ```python
 from prefect import flow
@@ -34,9 +42,8 @@ from prefect_monday.me import query_me
 
 @flow
 def query_me_flow():
-    monday_credentials = MondayCredentials.load("monday-token")
+    monday_credentials = MondayCredentials.load("BLOCK_NAME")
     result = query_me(monday_credentials)
-    print(result)
     return result
 
 query_me_flow()
@@ -52,7 +59,7 @@ from prefect_monday.boards import query_boards
 
 @flow
 def query_boards_flow():
-    monday_credentials = MondayCredentials.load("monday-token")
+    monday_credentials = MondayCredentials.load("BLOCK_NAME")
     boards = query_boards(monday_credentials=monday_credentials)
     return boards
 
@@ -70,7 +77,7 @@ from prefect_monday.schemas import graphql_schema
 
 @flow
 def create_workspace_flow():
-    monday_credentials = MondayCredentials.load("monday-token")
+    monday_credentials = MondayCredentials.load("BLOCK_NAME")
     workspace = create_workspace(
         "integrations-test-workspace",
         graphql_schema.WorkspaceKind.open,
