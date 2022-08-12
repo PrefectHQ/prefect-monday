@@ -30,6 +30,9 @@ async def _execute_graphql_op(
     if "errors" in result:
         errors = pformat(result["errors"])
         raise RuntimeError(f"Errors encountered:\n{errors}")
+    elif "error_message" in result:
+        error_message = result["error_message"]
+        raise RuntimeError(error_message)
     return result["data"]
 
 

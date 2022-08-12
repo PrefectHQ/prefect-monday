@@ -24,23 +24,24 @@ def test_subset_return_fields(return_fields_key):
 
 
 class MockCredentials:
-    def __init__(self, fail=False):
-        self.result = {"errors": 42} if fail else {"data": "success"}
+    def __init__(self, fail_key=None):
+        self.result = {fail_key: "Expected fail"} if fail_key else {"data": "success"}
 
     def get_endpoint(self):
         return lambda op, vars: self.result
 
 
-@pytest.mark.parametrize("fail", [True, False])
-def test_execute_graphql(fail):
-    mock_credentials = MockCredentials(fail=fail)
+@pytest.mark.parametrize("fail_key", ["errors", "error_message", False])
+def test_execute_graphql(fail_key):
+    mock_credentials = MockCredentials(fail_key=fail_key)
 
     @flow
     def test_flow():
         return execute_graphql("op", mock_credentials)
 
-    if fail:
-        with pytest.raises(RuntimeError, match="Errors encountered:"):
+    if fail_key:
+        match = "Errors encountered:" if fail_key == "errors" else "Expected fail"
+        with pytest.raises(RuntimeError, match=match):
             test_flow()
     else:
         assert test_flow() == "success"
