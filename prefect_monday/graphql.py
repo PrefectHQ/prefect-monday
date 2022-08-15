@@ -27,12 +27,9 @@ async def _execute_graphql_op(
     endpoint = monday_credentials.get_endpoint()
     partial_endpoint = partial(endpoint, op, vars)
     result = await to_thread.run_sync(partial_endpoint)
-    if "errors" in result:
-        errors = pformat(result["errors"])
-        raise RuntimeError(f"Errors encountered:\n{errors}")
-    elif "error_message" in result:
-        error_message = result["error_message"]
-        raise RuntimeError(error_message)
+    if "error_message" in result:
+        errors = pformat(result["error_message"])
+        raise RuntimeError(f"Error encountered:\n{errors}")
     return result["data"]
 
 

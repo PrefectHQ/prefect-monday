@@ -39,5 +39,10 @@ root_to_op_types = {"query": None, "mutation": None}
 overwrite = True
 
 populate_collection_repo(
-    service_name, service_url, token, root_to_op_types, repo_directory=REPO_DIRECTORY
+    service_name,
+    service_url,
+    token,
+    root_to_op_types,
+    error_key="error_message",
+    repo_directory=REPO_DIRECTORY,
 )
