@@ -67,4 +67,4 @@ nav:
     - Updates: updates.md
     - Users: users.md
     - Webhooks: webhooks.md
-    
+    - Graphql Schema: schemas/graphql_schema.md

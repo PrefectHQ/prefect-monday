@@ -8,6 +8,10 @@ graphql_schema = sgqlc.types.Schema()
 # Scalars and Enumerations
 ########################################################################
 class AccountProductKind(sgqlc.types.Enum):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __choices__ = (
         "core",
@@ -21,31 +25,55 @@ class AccountProductKind(sgqlc.types.Enum):
 
 
 class AssetsSource(sgqlc.types.Enum):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __choices__ = ("all", "columns", "gallery")
 
 
 class BoardAttributes(sgqlc.types.Enum):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __choices__ = ("communication", "description", "name")
 
 
 class BoardKind(sgqlc.types.Enum):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __choices__ = ("private", "public", "share")
 
 
 class BoardObjectType(sgqlc.types.Enum):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __choices__ = ("board", "document", "sub_items_board")
 
 
 class BoardSubscriberKind(sgqlc.types.Enum):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __choices__ = ("owner", "subscriber")
 
 
 class BoardsOrderBy(sgqlc.types.Enum):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __choices__ = ("created_at", "used_at")
 
@@ -54,11 +82,19 @@ Boolean = sgqlc.types.Boolean
 
 
 class ColumnProperty(sgqlc.types.Enum):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __choices__ = ("description", "title")
 
 
 class ColumnType(sgqlc.types.Enum):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __choices__ = (
         "auto_number",
@@ -99,6 +135,10 @@ Date = sgqlc.types.datetime.Date
 
 
 class DuplicateBoardType(sgqlc.types.Enum):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __choices__ = (
         "duplicate_board_with_pulses",
@@ -108,10 +148,18 @@ class DuplicateBoardType(sgqlc.types.Enum):
 
 
 class File(sgqlc.types.Scalar):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
 
 
 class FirstDayOfTheWeek(sgqlc.types.Enum):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __choices__ = ("monday", "sunday")
 
@@ -120,6 +168,10 @@ ID = sgqlc.types.ID
 
 
 class ISO8601DateTime(sgqlc.types.Scalar):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
 
 
@@ -127,30 +179,54 @@ Int = sgqlc.types.Int
 
 
 class InvitedUserKind(sgqlc.types.Enum):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __choices__ = ("guest", "member", "view_only")
 
 
 class JSON(sgqlc.types.Scalar):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
 
 
 class LinkageType(sgqlc.types.Enum):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __choices__ = ("connection", "reflection")
 
 
 class MentionType(sgqlc.types.Enum):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __choices__ = ("Board", "Project", "Team", "User")
 
 
 class NotificationTargetType(sgqlc.types.Enum):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __choices__ = ("Post", "Project")
 
 
 class ProductKind(sgqlc.types.Enum):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __choices__ = (
         "core",
@@ -166,6 +242,10 @@ class ProductKind(sgqlc.types.Enum):
 
 
 class State(sgqlc.types.Enum):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __choices__ = ("active", "all", "archived", "deleted")
 
@@ -174,11 +254,19 @@ String = sgqlc.types.String
 
 
 class UserKind(sgqlc.types.Enum):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __choices__ = ("all", "guests", "non_guests", "non_pending")
 
 
 class WebhookEventType(sgqlc.types.Enum):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __choices__ = (
         "change_column_value",
@@ -200,11 +288,19 @@ class WebhookEventType(sgqlc.types.Enum):
 
 
 class WorkspaceKind(sgqlc.types.Enum):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __choices__ = ("closed", "open")
 
 
 class WorkspaceSubscriberKind(sgqlc.types.Enum):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __choices__ = ("owner", "subscriber")
 
@@ -217,6 +313,10 @@ class WorkspaceSubscriberKind(sgqlc.types.Enum):
 # Output Objects and Interfaces
 ########################################################################
 class Account(sgqlc.types.Type):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __field_names__ = (
         "first_day_of_the_week",
@@ -247,6 +347,10 @@ class Account(sgqlc.types.Type):
 
 
 class AccountProduct(sgqlc.types.Type):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __field_names__ = ("id", "kind")
     id = sgqlc.types.Field(Int, graphql_name="id")
@@ -254,6 +358,10 @@ class AccountProduct(sgqlc.types.Type):
 
 
 class ActivityLogType(sgqlc.types.Type):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __field_names__ = (
         "account_id",
@@ -278,6 +386,10 @@ class ActivityLogType(sgqlc.types.Type):
 
 
 class AppFeature(sgqlc.types.Type):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __field_names__ = (
         "app_id",
@@ -298,6 +410,10 @@ class AppFeature(sgqlc.types.Type):
 
 
 class AppMonetizationStatus(sgqlc.types.Type):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __field_names__ = ("is_supported",)
     is_supported = sgqlc.types.Field(
@@ -306,6 +422,10 @@ class AppMonetizationStatus(sgqlc.types.Type):
 
 
 class AppSubscription(sgqlc.types.Type):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __field_names__ = (
         "billing_period",
@@ -324,6 +444,10 @@ class AppSubscription(sgqlc.types.Type):
 
 
 class Asset(sgqlc.types.Type):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __field_names__ = (
         "created_at",
@@ -356,6 +480,10 @@ class Asset(sgqlc.types.Type):
 
 
 class Board(sgqlc.types.Type):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __field_names__ = (
         "activity_logs",
@@ -541,6 +669,10 @@ class Board(sgqlc.types.Type):
 
 
 class BoardDuplication(sgqlc.types.Type):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __field_names__ = ("board", "is_async")
     board = sgqlc.types.Field(sgqlc.types.non_null(Board), graphql_name="board")
@@ -548,6 +680,10 @@ class BoardDuplication(sgqlc.types.Type):
 
 
 class BoardView(sgqlc.types.Type):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __field_names__ = ("id", "name", "settings_str", "type", "view_specific_data_str")
     id = sgqlc.types.Field(sgqlc.types.non_null(ID), graphql_name="id")
@@ -562,6 +698,10 @@ class BoardView(sgqlc.types.Type):
 
 
 class Column(sgqlc.types.Type):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __field_names__ = (
         "archived",
@@ -586,6 +726,10 @@ class Column(sgqlc.types.Type):
 
 
 class ColumnValue(sgqlc.types.Type):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __field_names__ = (
         "additional_info",
@@ -606,6 +750,10 @@ class ColumnValue(sgqlc.types.Type):
 
 
 class Complexity(sgqlc.types.Type):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __field_names__ = ("after", "before", "query", "reset_in_x_seconds")
     after = sgqlc.types.Field(sgqlc.types.non_null(Int), graphql_name="after")
@@ -617,6 +765,10 @@ class Complexity(sgqlc.types.Type):
 
 
 class Group(sgqlc.types.Type):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __field_names__ = (
         "archived",
@@ -662,6 +814,10 @@ class Group(sgqlc.types.Type):
 
 
 class Item(sgqlc.types.Type):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __field_names__ = (
         "assets",
@@ -747,6 +903,10 @@ class Item(sgqlc.types.Type):
 
 
 class Mutation(sgqlc.types.Type):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __field_names__ = (
         "add_file_to_column",
@@ -1785,6 +1945,10 @@ class Mutation(sgqlc.types.Type):
 
 
 class Notification(sgqlc.types.Type):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __field_names__ = ("id", "text")
     id = sgqlc.types.Field(sgqlc.types.non_null(ID), graphql_name="id")
@@ -1792,6 +1956,10 @@ class Notification(sgqlc.types.Type):
 
 
 class Plan(sgqlc.types.Type):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __field_names__ = ("max_users", "period", "tier", "version")
     max_users = sgqlc.types.Field(sgqlc.types.non_null(Int), graphql_name="max_users")
@@ -1801,6 +1969,10 @@ class Plan(sgqlc.types.Type):
 
 
 class Query(sgqlc.types.Type):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __field_names__ = (
         "account",
@@ -2065,6 +2237,10 @@ class Query(sgqlc.types.Type):
 
 
 class Reply(sgqlc.types.Type):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __field_names__ = (
         "body",
@@ -2085,6 +2261,10 @@ class Reply(sgqlc.types.Type):
 
 
 class Tag(sgqlc.types.Type):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __field_names__ = ("color", "id", "name")
     color = sgqlc.types.Field(sgqlc.types.non_null(String), graphql_name="color")
@@ -2093,6 +2273,10 @@ class Tag(sgqlc.types.Type):
 
 
 class Team(sgqlc.types.Type):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __field_names__ = ("id", "name", "picture_url", "users")
     id = sgqlc.types.Field(sgqlc.types.non_null(Int), graphql_name="id")
@@ -2127,6 +2311,10 @@ class Team(sgqlc.types.Type):
 
 
 class Update(sgqlc.types.Type):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __field_names__ = (
         "assets",
@@ -2153,6 +2341,10 @@ class Update(sgqlc.types.Type):
 
 
 class User(sgqlc.types.Type):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __field_names__ = (
         "account",
@@ -2236,6 +2428,10 @@ class User(sgqlc.types.Type):
 
 
 class Webhook(sgqlc.types.Type):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __field_names__ = ("board_id", "config", "event", "id")
     board_id = sgqlc.types.Field(sgqlc.types.non_null(Int), graphql_name="board_id")
@@ -2247,6 +2443,10 @@ class Webhook(sgqlc.types.Type):
 
 
 class Workspace(sgqlc.types.Type):
+    """
+    See source code for the more info.
+    """
+
     __schema__ = graphql_schema
     __field_names__ = ("account_product", "description", "id", "kind", "name")
     account_product = sgqlc.types.Field(AccountProduct, graphql_name="account_product")
