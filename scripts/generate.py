@@ -45,4 +45,5 @@ populate_collection_repo(
     root_to_op_types,
     error_key="error_message",
     repo_directory=REPO_DIRECTORY,
+    regenerate_module_files=False,
 )
