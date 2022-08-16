@@ -40,7 +40,7 @@ class MondayCredentials(Block):
 
             @flow
             def example_get_endpoint_flow():
-                token = "consumer_key"
+                token = "token_xxxxxxx"
                 monday_credentials = MondayCredentials(token=token)
                 endpoint = monday_credentials.get_endpoint()
                 return endpoint

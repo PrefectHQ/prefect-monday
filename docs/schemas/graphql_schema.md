@@ -1,0 +1,1 @@
+::: prefect_monday.schemas.graphql_schema
