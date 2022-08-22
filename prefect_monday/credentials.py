@@ -9,7 +9,7 @@ class MondayCredentials(Block):
     """
     Block used to manage Monday authentication.
 
-    Args:
+    Attributes:
         token: the token to authenticate into Monday.
 
     Examples:
