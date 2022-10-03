@@ -1,0 +1,20 @@
+{
+  "template": "https://github.com/PrefectHQ/prefect-collection-template",
+  "commit": "3557dc4b7c0f84a736a78c1c0ec44cc3314c6460",
+  "context": {
+    "cookiecutter": {
+      "full_name": "Prefect Technologies",
+      "email": "help@prefect.io",
+      "github_organization": "PrefectHQ",
+      "collection_name": "prefect-monday",
+      "collection_slug": "prefect_monday",
+      "collection_short_description": "Prefect Collection for interacting with Monday.com",
+      "_copy_without_render": [
+        ".github/workflows/*.yml"
+      ],
+      "_template": "https://github.com/PrefectHQ/prefect-collection-template"
+    }
+  },
+  "directory": null,
+  "checkout": null
+}
