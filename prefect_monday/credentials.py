@@ -1,7 +1,13 @@
 """Credential classes used to perform authenticated interactions with Monday"""
 
 from prefect.blocks.core import Block
-from pydantic import SecretStr
+from pydantic import VERSION as PYDANTIC_VERSION
+
+if PYDANTIC_VERSION.startswith("2."):
+    from pydantic.v1 import SecretStr
+else:
+    from pydantic import SecretStr
+
 from sgqlc.endpoint.http import HTTPEndpoint
 
 
