@@ -10,8 +10,15 @@
       
         <link rel="canonical" href="https://PrefectHQ.github.io/prefect-monday/users/">
       
+      
+        <link rel="prev" href="../updates/">
+      
+      
+        <link rel="next" href="../webhooks/">
+      
+      
       <link rel="icon" href="../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.4">
     
     
       
@@ -19,18 +26,17 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.1d29e8d0.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.bd3936ea.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#2094f3">
-        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css">
       
       
+
+
     
+    
+      
     
     
       
@@ -46,10 +52,11 @@
     
       <link rel="stylesheet" href="../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
+    
     
     
   </head>
@@ -60,7 +67,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="blue">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
   
     
     
@@ -82,14 +89,17 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="prefect-monday" class="md-header__button md-logo" aria-label="prefect-monday" data-md-component="logo">
       
-  <img src="../img/prefect-logo-white.png" alt="logo">
+  <img src="../img/prefect-logo-mark-solid-white-500.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
+      
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
@@ -109,9 +119,12 @@
       </div>
     </div>
     
+      
+    
     
     
       <label class="md-header__button md-icon" for="__search">
+        
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
       </label>
       <div class="md-search" data-md-component="search" role="dialog">
@@ -120,12 +133,15 @@
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
+        
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -137,7 +153,7 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -149,7 +165,7 @@
         <a href="https://github.com/PrefectHQ/prefect-monday" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -179,11 +195,12 @@
                     
 
 
+
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="prefect-monday" class="md-nav__button md-logo" aria-label="prefect-monday" data-md-component="logo">
       
-  <img src="../img/prefect-logo-white.png" alt="logo">
+  <img src="../img/prefect-logo-mark-solid-white-500.png" alt="logo">
 
     </a>
     prefect-monday
@@ -193,7 +210,7 @@
       <a href="https://github.com/PrefectHQ/prefect-monday" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -205,14 +222,18 @@
     
       
       
-      
-
   
   
   
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
-        Home
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
       </a>
     </li>
   
@@ -220,14 +241,18 @@
     
       
       
-      
-
   
   
   
     <li class="md-nav__item">
       <a href="../credentials/" class="md-nav__link">
-        Credentials
+        
+  
+  <span class="md-ellipsis">
+    Credentials
+  </span>
+  
+
       </a>
     </li>
   
@@ -235,14 +260,18 @@
     
       
       
-      
-
   
   
   
     <li class="md-nav__item">
       <a href="../graphql/" class="md-nav__link">
-        Graphql
+        
+  
+  <span class="md-ellipsis">
+    Graphql
+  </span>
+  
+
       </a>
     </li>
   
@@ -250,14 +279,18 @@
     
       
       
-      
-
   
   
   
     <li class="md-nav__item">
       <a href="../utils/" class="md-nav__link">
-        Utils
+        
+  
+  <span class="md-ellipsis">
+    Utils
+  </span>
+  
+
       </a>
     </li>
   
@@ -265,14 +298,18 @@
     
       
       
-      
-
   
   
   
     <li class="md-nav__item">
       <a href="../account/" class="md-nav__link">
-        Account
+        
+  
+  <span class="md-ellipsis">
+    Account
+  </span>
+  
+
       </a>
     </li>
   
@@ -280,14 +317,18 @@
     
       
       
-      
-
   
   
   
     <li class="md-nav__item">
       <a href="../app_subscription/" class="md-nav__link">
-        App Subscription
+        
+  
+  <span class="md-ellipsis">
+    App Subscription
+  </span>
+  
+
       </a>
     </li>
   
@@ -295,14 +336,18 @@
     
       
       
-      
-
   
   
   
     <li class="md-nav__item">
       <a href="../apps_monetization_status/" class="md-nav__link">
-        Apps Monetization Status
+        
+  
+  <span class="md-ellipsis">
+    Apps Monetization Status
+  </span>
+  
+
       </a>
     </li>
   
@@ -310,14 +355,18 @@
     
       
       
-      
-
   
   
   
     <li class="md-nav__item">
       <a href="../assets/" class="md-nav__link">
-        Assets
+        
+  
+  <span class="md-ellipsis">
+    Assets
+  </span>
+  
+
       </a>
     </li>
   
@@ -325,14 +374,18 @@
     
       
       
-      
-
   
   
   
     <li class="md-nav__item">
       <a href="../boards/" class="md-nav__link">
-        Boards
+        
+  
+  <span class="md-ellipsis">
+    Boards
+  </span>
+  
+
       </a>
     </li>
   
@@ -340,14 +393,18 @@
     
       
       
-      
-
   
   
   
     <li class="md-nav__item">
       <a href="../complexity/" class="md-nav__link">
-        Complexity
+        
+  
+  <span class="md-ellipsis">
+    Complexity
+  </span>
+  
+
       </a>
     </li>
   
@@ -355,14 +412,18 @@
     
       
       
-      
-
   
   
   
     <li class="md-nav__item">
       <a href="../items/" class="md-nav__link">
-        Items
+        
+  
+  <span class="md-ellipsis">
+    Items
+  </span>
+  
+
       </a>
     </li>
   
@@ -370,14 +431,18 @@
     
       
       
-      
-
   
   
   
     <li class="md-nav__item">
       <a href="../items_by_column_values/" class="md-nav__link">
-        Items By Column Values
+        
+  
+  <span class="md-ellipsis">
+    Items By Column Values
+  </span>
+  
+
       </a>
     </li>
   
@@ -385,14 +450,18 @@
     
       
       
-      
-
   
   
   
     <li class="md-nav__item">
       <a href="../items_by_multiple_column_values/" class="md-nav__link">
-        Items By Multiple Column Values
+        
+  
+  <span class="md-ellipsis">
+    Items By Multiple Column Values
+  </span>
+  
+
       </a>
     </li>
   
@@ -400,14 +469,18 @@
     
       
       
-      
-
   
   
   
     <li class="md-nav__item">
       <a href="../me/" class="md-nav__link">
-        Me
+        
+  
+  <span class="md-ellipsis">
+    Me
+  </span>
+  
+
       </a>
     </li>
   
@@ -415,14 +488,18 @@
     
       
       
-      
-
   
   
   
     <li class="md-nav__item">
       <a href="../mutations/" class="md-nav__link">
-        Mutations
+        
+  
+  <span class="md-ellipsis">
+    Mutations
+  </span>
+  
+
       </a>
     </li>
   
@@ -430,14 +507,18 @@
     
       
       
-      
-
   
   
   
     <li class="md-nav__item">
       <a href="../tags/" class="md-nav__link">
-        Tags
+        
+  
+  <span class="md-ellipsis">
+    Tags
+  </span>
+  
+
       </a>
     </li>
   
@@ -445,14 +526,18 @@
     
       
       
-      
-
   
   
   
     <li class="md-nav__item">
       <a href="../teams/" class="md-nav__link">
-        Teams
+        
+  
+  <span class="md-ellipsis">
+    Teams
+  </span>
+  
+
       </a>
     </li>
   
@@ -460,14 +545,18 @@
     
       
       
-      
-
   
   
   
     <li class="md-nav__item">
       <a href="../updates/" class="md-nav__link">
-        Updates
+        
+  
+  <span class="md-ellipsis">
+    Updates
+  </span>
+  
+
       </a>
     </li>
   
@@ -475,8 +564,6 @@
     
       
       
-      
-
   
   
     
@@ -484,19 +571,29 @@
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
-      
-        
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Users
+          
+  
+  <span class="md-ellipsis">
+    Users
+  </span>
+  
+
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Users
+        
+  
+  <span class="md-ellipsis">
+    Users
+  </span>
+  
+
       </a>
       
         
@@ -505,14 +602,19 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prefect_monday.users" class="md-nav__link">
+    users
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#prefect_monday.users.query_users" class="md-nav__link">
@@ -545,14 +647,37 @@
     
       
       
-      
-
   
   
   
     <li class="md-nav__item">
       <a href="../webhooks/" class="md-nav__link">
-        Webhooks
+        
+  
+  <span class="md-ellipsis">
+    Webhooks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/graphql_schema/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Graphql Schema
+  </span>
+  
+
       </a>
     </li>
   
@@ -575,14 +700,19 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prefect_monday.users" class="md-nav__link">
+    users
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#prefect_monday.users.query_users" class="md-nav__link">
@@ -613,33 +743,27 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
-  <a href="https://github.com/edit/main/docs/users.md" title="Edit this page" class="md-content__button md-icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
-  </a>
+                  
+
+  
+  
 
 
+  <h1>Users</h1>
 
 <div class="doc doc-object doc-module">
 
 
 
-<h1 id="prefect_monday.users" class="doc doc-heading">
-          <code>prefect_monday.users</code>
-
-
-</h1>
-
+<a id="prefect_monday.users"></a>
   <div class="doc doc-contents first">
   
       <p>This is a module containing:
 Monday query_users* tasks</p>
-<p>It was auto-generated using prefect-collection-generator so
-manually editing this file is not recommended. If this module
-is outdated, rerun scripts/generate.py.</p>
 
   
 
@@ -653,12 +777,14 @@ is outdated, rerun scripts/generate.py.</p>
 
 
 
+
 <div class="doc doc-object doc-function">
 
 
 
+
 <h2 id="prefect_monday.users.query_users" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">query_users</span></code>
+          <code class="highlight language-python"><span class="n">query_users</span><span class="p">(</span><span class="n">monday_credentials</span><span class="p">,</span> <span class="n">ids</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">newest_first</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">emails</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">return_fields</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
   
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -670,6 +796,8 @@ is outdated, rerun scripts/generate.py.</p>
   <div class="doc doc-contents ">
   
       <p>Get your data from monday.com.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -687,7 +815,11 @@ is outdated, rerun scripts/generate.py.</p>
           <td>
                 <code><a class="autorefs autorefs-internal" title="prefect_monday.MondayCredentials" href="../credentials/#prefect_monday.credentials.MondayCredentials">MondayCredentials</a></code>
           </td>
-          <td><p>Credentials to use for authentication with Monday.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Credentials to use for authentication with Monday.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -697,7 +829,11 @@ is outdated, rerun scripts/generate.py.</p>
           <td>
                 <code><span title="typing.Iterable">Iterable</span>[int]</code>
           </td>
-          <td><p>A list of users unique identifiers.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A list of users unique identifiers.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -705,10 +841,14 @@ is outdated, rerun scripts/generate.py.</p>
         <tr>
           <td><code>kind</code></td>
           <td>
-                <code><span title="prefect_monday.schemas.graphql_schema">graphql_schema</span>.<span title="prefect_monday.schemas.graphql_schema.UserKind">UserKind</span></code>
+                <code><a class="autorefs autorefs-internal" title="prefect_monday.schemas.graphql_schema.UserKind" href="../schemas/graphql_schema/#prefect_monday.schemas.graphql_schema.UserKind">UserKind</a></code>
           </td>
-          <td><p>The kind to search users by (all / non_guests / guests /
-non_pending).</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The kind to search users by (all / non_guests / guests /
+non_pending).</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -718,7 +858,11 @@ non_pending).</p></td>
           <td>
                 <code>bool</code>
           </td>
-          <td><p>Get the recently created users at the top of the list.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Get the recently created users at the top of the list.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -728,7 +872,11 @@ non_pending).</p></td>
           <td>
                 <code>int</code>
           </td>
-          <td><p>Number of users to get.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Number of users to get.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -738,7 +886,11 @@ non_pending).</p></td>
           <td>
                 <code><span title="typing.Iterable">Iterable</span>[str]</code>
           </td>
-          <td><p>A list of users emails.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A list of users emails.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -748,14 +900,20 @@ non_pending).</p></td>
           <td>
                 <code><span title="typing.Iterable">Iterable</span>[str]</code>
           </td>
-          <td><p>Subset the return fields (as snake_case); defaults to
-fields listed in configs/query/*.json.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Subset the return fields (as snake_case); defaults to
+fields listed in configs/query/*.json.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -770,14 +928,18 @@ fields listed in configs/query/*.json.</p></td>
           <td>
                 <code><span title="typing.Dict">Dict</span>[str, <span title="typing.Any">Any</span>]</code>
           </td>
-          <td><p>A dict of the returned fields.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A dict of the returned fields.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>prefect_monday/users.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">25</span>
+          <details class="quote">
+            <summary>Source code in <code>prefect_monday/users.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">25</span>
 <span class="normal">26</span>
 <span class="normal">27</span>
 <span class="normal">28</span>
@@ -831,7 +993,7 @@ fields listed in configs/query/*.json.</p></td>
     <span class="n">emails</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">return_fields</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Get your data from monday.com.</span>
 
 <span class="sd">    Args:</span>
@@ -867,17 +1029,19 @@ fields listed in configs/query/*.json.</p></td>
     <span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">_execute_graphql_op</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">monday_credentials</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;users&quot;</span><span class="p">]</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
 
 
+
 <h2 id="prefect_monday.users.query_users_account" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">query_users_account</span></code>
+          <code class="highlight language-python"><span class="n">query_users_account</span><span class="p">(</span><span class="n">monday_credentials</span><span class="p">,</span> <span class="n">ids</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">newest_first</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">emails</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">return_fields</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
   
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -889,6 +1053,8 @@ fields listed in configs/query/*.json.</p></td>
   <div class="doc doc-contents ">
   
       <p>The user's account.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -906,7 +1072,11 @@ fields listed in configs/query/*.json.</p></td>
           <td>
                 <code><a class="autorefs autorefs-internal" title="prefect_monday.MondayCredentials" href="../credentials/#prefect_monday.credentials.MondayCredentials">MondayCredentials</a></code>
           </td>
-          <td><p>Credentials to use for authentication with Monday.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Credentials to use for authentication with Monday.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -916,7 +1086,11 @@ fields listed in configs/query/*.json.</p></td>
           <td>
                 <code><span title="typing.Iterable">Iterable</span>[int]</code>
           </td>
-          <td><p>A list of users unique identifiers.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A list of users unique identifiers.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -924,10 +1098,14 @@ fields listed in configs/query/*.json.</p></td>
         <tr>
           <td><code>kind</code></td>
           <td>
-                <code><span title="prefect_monday.schemas.graphql_schema">graphql_schema</span>.<span title="prefect_monday.schemas.graphql_schema.UserKind">UserKind</span></code>
+                <code><a class="autorefs autorefs-internal" title="prefect_monday.schemas.graphql_schema.UserKind" href="../schemas/graphql_schema/#prefect_monday.schemas.graphql_schema.UserKind">UserKind</a></code>
           </td>
-          <td><p>The kind to search users by (all / non_guests / guests /
-non_pending).</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The kind to search users by (all / non_guests / guests /
+non_pending).</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -937,8 +1115,12 @@ non_pending).</p></td>
           <td>
                 <code>bool</code>
           </td>
-          <td><p>Get the recently created users at the top of the
-list.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Get the recently created users at the top of the
+list.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -948,7 +1130,11 @@ list.</p></td>
           <td>
                 <code>int</code>
           </td>
-          <td><p>Number of users to get.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Number of users to get.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -958,7 +1144,11 @@ list.</p></td>
           <td>
                 <code><span title="typing.Iterable">Iterable</span>[str]</code>
           </td>
-          <td><p>A list of users emails.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A list of users emails.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -968,14 +1158,20 @@ list.</p></td>
           <td>
                 <code><span title="typing.Iterable">Iterable</span>[str]</code>
           </td>
-          <td><p>Subset the return fields (as snake_case); defaults to
-fields listed in configs/query/*.json.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Subset the return fields (as snake_case); defaults to
+fields listed in configs/query/*.json.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -990,14 +1186,18 @@ fields listed in configs/query/*.json.</p></td>
           <td>
                 <code><span title="typing.Dict">Dict</span>[str, <span title="typing.Any">Any</span>]</code>
           </td>
-          <td><p>A dict of the returned fields.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A dict of the returned fields.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>prefect_monday/users.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">129</span>
+          <details class="quote">
+            <summary>Source code in <code>prefect_monday/users.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">129</span>
 <span class="normal">130</span>
 <span class="normal">131</span>
 <span class="normal">132</span>
@@ -1055,7 +1255,7 @@ fields listed in configs/query/*.json.</p></td>
     <span class="n">emails</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">return_fields</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    The user&#39;s account.</span>
 
 <span class="sd">    Args:</span>
@@ -1095,17 +1295,19 @@ fields listed in configs/query/*.json.</p></td>
     <span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">_execute_graphql_op</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">monday_credentials</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;users&quot;</span><span class="p">][</span><span class="s2">&quot;account&quot;</span><span class="p">]</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
 
 
+
 <h2 id="prefect_monday.users.query_users_teams" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">query_users_teams</span></code>
+          <code class="highlight language-python"><span class="n">query_users_teams</span><span class="p">(</span><span class="n">monday_credentials</span><span class="p">,</span> <span class="n">ids</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">newest_first</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">emails</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">teams_ids</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">return_fields</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
   
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-async"><code>async</code></small>
@@ -1117,6 +1319,8 @@ fields listed in configs/query/*.json.</p></td>
   <div class="doc doc-contents ">
   
       <p>The teams the user is a member in.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -1134,7 +1338,11 @@ fields listed in configs/query/*.json.</p></td>
           <td>
                 <code><a class="autorefs autorefs-internal" title="prefect_monday.MondayCredentials" href="../credentials/#prefect_monday.credentials.MondayCredentials">MondayCredentials</a></code>
           </td>
-          <td><p>Credentials to use for authentication with Monday.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Credentials to use for authentication with Monday.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -1144,7 +1352,11 @@ fields listed in configs/query/*.json.</p></td>
           <td>
                 <code><span title="typing.Iterable">Iterable</span>[int]</code>
           </td>
-          <td><p>A list of users unique identifiers.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A list of users unique identifiers.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -1152,10 +1364,14 @@ fields listed in configs/query/*.json.</p></td>
         <tr>
           <td><code>kind</code></td>
           <td>
-                <code><span title="prefect_monday.schemas.graphql_schema">graphql_schema</span>.<span title="prefect_monday.schemas.graphql_schema.UserKind">UserKind</span></code>
+                <code><a class="autorefs autorefs-internal" title="prefect_monday.schemas.graphql_schema.UserKind" href="../schemas/graphql_schema/#prefect_monday.schemas.graphql_schema.UserKind">UserKind</a></code>
           </td>
-          <td><p>The kind to search users by (all / non_guests / guests /
-non_pending).</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The kind to search users by (all / non_guests / guests /
+non_pending).</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -1165,8 +1381,12 @@ non_pending).</p></td>
           <td>
                 <code>bool</code>
           </td>
-          <td><p>Get the recently created users at the top of the
-list.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Get the recently created users at the top of the
+list.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -1176,7 +1396,11 @@ list.</p></td>
           <td>
                 <code>int</code>
           </td>
-          <td><p>Number of users to get.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Number of users to get.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -1186,7 +1410,11 @@ list.</p></td>
           <td>
                 <code><span title="typing.Iterable">Iterable</span>[str]</code>
           </td>
-          <td><p>A list of users emails.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A list of users emails.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -1196,7 +1424,11 @@ list.</p></td>
           <td>
                 <code><span title="typing.Iterable">Iterable</span>[int]</code>
           </td>
-          <td><p>A list of teams unique identifiers.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A list of teams unique identifiers.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -1206,14 +1438,20 @@ list.</p></td>
           <td>
                 <code><span title="typing.Iterable">Iterable</span>[str]</code>
           </td>
-          <td><p>Subset the return fields (as snake_case); defaults to
-fields listed in configs/query/*.json.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Subset the return fields (as snake_case); defaults to
+fields listed in configs/query/*.json.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -1228,14 +1466,18 @@ fields listed in configs/query/*.json.</p></td>
           <td>
                 <code><span title="typing.Dict">Dict</span>[str, <span title="typing.Any">Any</span>]</code>
           </td>
-          <td><p>A dict of the returned fields.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A dict of the returned fields.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>prefect_monday/users.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 72</span>
+          <details class="quote">
+            <summary>Source code in <code>prefect_monday/users.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 72</span>
 <span class="normal"> 73</span>
 <span class="normal"> 74</span>
 <span class="normal"> 75</span>
@@ -1300,7 +1542,7 @@ fields listed in configs/query/*.json.</p></td>
     <span class="n">teams_ids</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">return_fields</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    The teams the user is a member in.</span>
 
 <span class="sd">    Args:</span>
@@ -1345,7 +1587,7 @@ fields listed in configs/query/*.json.</p></td>
     <span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">_execute_graphql_op</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">monday_credentials</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;users&quot;</span><span class="p">][</span><span class="s2">&quot;teams&quot;</span><span class="p">]</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
@@ -1358,51 +1600,20 @@ fields listed in configs/query/*.json.</p></td>
 
 </div>
 
-              
-            </article>
-            
-          </div>
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
         </div>
         
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../updates/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Updates" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Updates
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../webhooks/" class="md-footer__link md-footer__link--next" aria-label="Next: Webhooks" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Webhooks
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1424,10 +1635,12 @@ fields listed in configs/query/*.json.</p></td>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.94c44541.min.js"></script>
       
     
   </body>
