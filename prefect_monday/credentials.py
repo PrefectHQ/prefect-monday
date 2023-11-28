@@ -27,7 +27,7 @@ class MondayCredentials(Block):
     """
 
     _block_type_name = "Monday Credentials"
-    _logo_url = "https://images.ctfassets.net/gm98wzqotmnx/3ohoKiYTO3Kjt6sri58HXu/27b45e8641127b196008976dde856058/imageedit_5_6047243931.png?h=250"  # noqa
+    _logo_url = "https://cdn.sanity.io/images/3ugk85nk/production/ad8614977614bcafee59ec5a3ef080111f045ffc-250x250.png"  # noqa
 
     token: SecretStr = None
 
