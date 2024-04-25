@@ -1,5 +1,7 @@
 # prefect-monday
 
+> **Important Notice:** `prefect-monday` is no longer actively maintained. For more details, please see the [Maintenance Status](#maintenance-status) section below.
+
 <p align="center">
     <a href="https://pypi.python.org/pypi/prefect-monday/" alt="PyPI version">
         <img alt="PyPI" src="https://img.shields.io/pypi/v/prefect-monday?color=0052FF&labelColor=090422"></a>
@@ -16,6 +18,9 @@
         <img src="https://img.shields.io/badge/discourse-browse_forum-red.svg?color=0052FF&labelColor=090422&logo=discourse" /></a>
 </p>
 
+## Maintenance Status
+
+`prefect-monday` has been a valuable part of the Prefect ecosystem. Due to shifts in our strategic priorities, we have decided to discontinue the active maintenance of this library. While we will not be updating the code or addressing issues, the existing codebase will remain accessible for archival purposes. We appreciate the support and contributions from our community.
 
 ## Welcome!
 
